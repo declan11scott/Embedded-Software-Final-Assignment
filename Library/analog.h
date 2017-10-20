@@ -21,6 +21,10 @@
 #define ANALOG_NB_INPUTS  4
 #define ANALOG_NB_OUTPUTS 4
 
+// Sine wave array defines
+#define SINE_VALUES 6
+#define SINE_QUARTER_SAMPLE 5
+
 /*! @brief Data structure used to pass Analog configuration to a user thread
  *
  */
@@ -29,6 +33,35 @@ typedef struct AnalogThreadData
   OS_ECB* semaphore;
   uint8_t channelNb;
 } TAnalogThreadData;
+
+// Array for Sine wave over a period.
+// 0, 0.34202, 0.64279, 0.8660, 0.9848
+int32_t sine[] =
+    {
+        0, 3420, 6428, 8660, 9848, /*10000,*/ 9848, 8660, 6428, 3420, 0, -3420, -6428, -8660, -9848, /*10000,*/ -9848, -8660, -6428, -3420
+    };
+//      /*! @brief array to identify the direction and polarity of the wave
+//       *  @note This can be used for a FSM with sine[]
+//       */
+//      int wavequarter[4];
+//
+//      /* @brief FSM set up for wave output
+//       * @param value is the pointer to the voltage value
+//       * @param quarter is the state of the wave depending on the quadrant it is in
+//       */
+//      const struct QuarterWaveState
+//      {
+//        uint16_t *magnitude;
+//        int *quarter;
+//      };
+//      //Define the States
+//      #define Q1 &Analog_SineFSM[0]
+//      #define Q2 &Analog_SineFSM[1]
+//      #define Q3 &Analog_SineFSM[2]
+//      #define Q4 &Analog_SineFSM[3]
+//
+//      // FSM sine wave defined
+//      QuarterWaveState Analog_SineFSM[4];
 
 /*! @brief Sets up the ADC before first use.
  *
