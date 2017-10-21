@@ -8,6 +8,7 @@ C_SRCS += \
 ../Sources/MyFIFO.c \
 ../Sources/MyPacket.c \
 ../Sources/MyUART.c \
+../Sources/SPI.c \
 ../Sources/main.c \
 ../Sources/median.c 
 
@@ -16,6 +17,7 @@ OBJS += \
 ./Sources/MyFIFO.o \
 ./Sources/MyPacket.o \
 ./Sources/MyUART.o \
+./Sources/SPI.o \
 ./Sources/main.o \
 ./Sources/median.o 
 
@@ -24,6 +26,7 @@ C_DEPS += \
 ./Sources/MyFIFO.d \
 ./Sources/MyPacket.d \
 ./Sources/MyUART.d \
+./Sources/SPI.d \
 ./Sources/main.d \
 ./Sources/median.d 
 

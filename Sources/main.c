@@ -87,7 +87,7 @@
 #define FREQUENCY_Hz      50
 
 // Baudrates and peripheral constants
-#define UART_BaudRate     155200
+#define UARTBaudRate     155200
 #define PIT_DELAY         100000000
 
 // ----------------------------------------
@@ -96,6 +96,16 @@
 // Arbitrary thread stack size - big enough for stacking of interrupts and OS use.
 #define THREAD_STACK_SIZE 100
 #define NB_ANALOG_CHANNELS 4
+
+//-----------------------------------------
+// Sine wave set up
+//-----------------------------------------
+int WAVE_SAMPLE;
+
+ int32_t sine[] =
+     {
+         0, 3420, 6428, 8660, 9848, 10000, 9848, 8660, 6428, 3420, 0, -3420, -6428, -8660, -9848, 10000, -9848, -8660, -6428, -3420
+     };
 
 //      // Thread stacks
 //      OS_THREAD_STACK(InitModulesThreadStack, THREAD_STACK_SIZE); /*!< The stack for the LED Init thread. */
@@ -130,18 +140,34 @@
 //        },
 //      };
 
+void PITCallback(void* args)
+{
+  uint16union_t data;
+  //sample the analog data and send to computer
+  for (uint8_t i = 0; i < 2; i++)
+  {
+    Analog_Get(0x00, &data.l);
+    //median filter
+    MyPacket_Put(0x50, i, data.s.Lo, data.s.Hi);
+    Analog_Put(i, 0xFFFF & sine[WAVE_SAMPLE]);
+    WAVE_SAMPLE++;
+    if(WAVE_SAMPLE == 20)
+      WAVE_SAMPLE = 0;
+  }
+}
+
 
 void DEMInit()
 {
-  Packet_Init(UARTBaudRate, CPU_BUS_CLK_HZ);
+  MyPacket_Init(UARTBaudRate, CPU_BUS_CLK_HZ);
   Flash_Init();
-  LEDs_Init();
-  PIT_Init(CPU_BUS_CLK_HZ);
+//  LEDs_Init();
+  PIT_Init(CPU_BUS_CLK_HZ, PITCallback, NULL);
 //  RTC_Init();
 //  FTM_Init();
   Analog_Init(CPU_BUS_CLK_HZ);
 
-  PIT_Set(100000000, true);
+  PIT_Set(10000000, true); // assign the period
   PIT_Enable(true);
 
   // Write default tariff values to flash if clear
@@ -165,7 +191,6 @@ void DEMInit()
 //          // We only do this once - therefore delete this thread
 //          OS_ThreadDelete(OS_PRIORITY_SELF);
 //        }
-
 //      /*! @brief Samples a value on an ADC channel and sends it to the corresponding DAC channel.
 //       *
 //       */
@@ -205,6 +230,10 @@ void CommandHandle()
   uint16_t a, b, c;
   switch (Packet_Command)
     {
+      case 0x04:  //remove after testing
+        MyPacket_Put(0x04,0x00,0x00,0x00);
+        break;
+
       case CMD_TEST:
         Command_Test(a, b, c);
         break;
@@ -285,6 +314,16 @@ int main(void)
 //        OS_Start();
 
   DEMInit();
+
+  for(;;)
+  {
+    if (MyPacket_Get())
+    {
+//      FTM_StartTimer(&aFTMChannel);
+//      LEDs_On(LED_BLUE);
+      CommandHandle();
+  }
+}
 }
 
 /*!

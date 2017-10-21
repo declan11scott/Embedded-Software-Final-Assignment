@@ -36,10 +36,7 @@ typedef struct AnalogThreadData
 
 // Array for Sine wave over a period.
 // 0, 0.34202, 0.64279, 0.8660, 0.9848
-int32_t sine[] =
-    {
-        0, 3420, 6428, 8660, 9848, /*10000,*/ 9848, 8660, 6428, 3420, 0, -3420, -6428, -8660, -9848, /*10000,*/ -9848, -8660, -6428, -3420
-    };
+
 //      /*! @brief array to identify the direction and polarity of the wave
 //       *  @note This can be used for a FSM with sine[]
 //       */

@@ -14,6 +14,8 @@
 #include "FIFO.h"
 #include "Cpu.h"
 
+TFIFO TX_FIFO, RX_FIFO;
+
 /*! @brief Initialize the MyFIFO before first use.
  *
  *  @param FIFO A pointer to the FIFO that needs initializing.

@@ -78,28 +78,49 @@ void __attribute__ ((interrupt)) MyUART_ISR(void)
 {
    OS_ISREnter();
 
-   uint8_t tempdata;
+//           uint8_t tempdata;
+//
+//           /* Determine if data is ready to be sent from the Tower to PC */
+//           if (UART2_C2 & UART_C2_TIE_MASK)
+//           {
+//              if (UART2_S1 & UART_S1_TDRE_MASK)
+//            {
+//               UART2_C2 &= ~UART_C2_TIE_MASK;
+//               (void)OS_SemaphoreSignal(UARTTxSemaphore);
+//            }
+//           }
+//
+//           /* Determine if data has been sent from the PC to Tower */
+//           if (UART2_C2 & UART_C2_RIE_MASK)
+//           {
+//            if (UART2_S1 & UART_S1_RDRF_MASK)
+//            {
+//               MyUART_TempRxData = UART2_D;
+//               (void)OS_SemaphoreSignal(UARTRxSemaphore);
+//            }
+//           }
+//           OS_ISRExit();
 
-   /* Determine if data is ready to be sent from the Tower to PC */
-   if (UART2_C2 & UART_C2_TIE_MASK)
-   {
-      if (UART2_S1 & UART_S1_TDRE_MASK)
-	  {
-	     UART2_C2 &= ~UART_C2_TIE_MASK;
-	     (void)OS_SemaphoreSignal(UARTTxSemaphore);
-	  }
-   }
+   if (UART2_C2 & UART_C2_TIE_MASK)        //check
+    {
+      if (UART2_S1 & UART_S1_TDRE_MASK)     //there's something to be received from the PC, put in the RX_FIFO
+      {
+        if(!MyFIFO_Get(&TX_FIFO, &UART2_D))
+        {
+          //disable TIE if fails
+          UART2_C2 &= ~UART_C2_TIE_MASK;
+        }
+      }
+    }
 
-   /* Determine if data has been sent from the PC to Tower */
-   if (UART2_C2 & UART_C2_RIE_MASK)
-   {
-	  if (UART2_S1 & UART_S1_RDRF_MASK)
-	  {
-	     MyUART_TempRxData = UART2_D;
-	     (void)OS_SemaphoreSignal(UARTRxSemaphore);
-	  }
-   }
-   OS_ISRExit();
+
+    if (UART2_C2 & UART_C2_RIE_MASK)
+    {
+      if (UART2_S1 & UART_S1_RDRF_MASK)// put something from PC to TX_FIFO to transmit to FIFO
+      {
+        MyFIFO_Put(&RX_FIFO, UART2_D);
+      }
+    }
 }
 
 /* END UART */
