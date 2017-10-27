@@ -16,10 +16,10 @@ Sources/main.o: ../Sources/main.c \
  C:/Users/Declan/Documents/GitKraken/Power\ Meter/Generated_Code/PE_Const.h \
  C:/Users/Declan/Documents/GitKraken/Power\ Meter/Generated_Code/IO_Map.h \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/FIFO.h \
- ../Sources/MyUART.h \
+ C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/UART.h \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/Flash.h \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/PIT.h \
- ../Sources/median.h ../Sources/SPI.h
+ ../Sources/median.h
 
 C:/Users/Declan/Documents/GitKraken/Power\ Meter/Generated_Code/Cpu.h:
 
@@ -57,12 +57,10 @@ C:/Users/Declan/Documents/GitKraken/Power\ Meter/Generated_Code/IO_Map.h:
 
 C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/FIFO.h:
 
-../Sources/MyUART.h:
+C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/UART.h:
 
 C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/Flash.h:
 
 C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/PIT.h:
 
 ../Sources/median.h:
-
-../Sources/SPI.h:

@@ -25,13 +25,16 @@
 // Address of the end of the Flash block we are using for data storage
 #define FLASH_DATA_END   0x00080007LU
 
+
+
 /*! @brief Enables the Flash module.
  *
  *  @return bool - TRUE if the Flash was setup successfully.
  */
 bool Flash_Init(void);
  
-/*! @brief Allocates space for a non-volatile variable in the Flash memory.
+/*! @brief Allocates sp
+ * .ace for a non-volatile variable in the Flash memory.
  *
  *  @param variable is the address of a pointer to a variable that is to be allocated space in Flash memory.
  *         The pointer will be allocated to a relevant address:

@@ -51,7 +51,7 @@
 
 #include "FIFO.h"
 #include "packet.h"
-#include "MyUART.h"
+#include "UART.h"
 #include "Flash.h"
 #include "types.h"
 //#include "LEDs.h"
@@ -60,21 +60,9 @@
 #include "PIT.h"
 #include "analog.h"
 #include "median.h"
-#include "SPI.h"
+//#include "SPI.h"
 #include "OS.h"
-
-// Commands
-#define CMD_TEST          0x10
-#define CMD_TARIFF        0x11
-#define CMD_TIME_A        0x12
-#define CMD_TIME_B        0x13
-#define CMD_POWER         0x14
-#define CMD_ENERGY        0x15
-#define CMD_COST          0x16
-#define CMD_FREQUENCY     0x17
-#define CMD_VOLTAGE       0x18
-#define CMD_CURRENT       0x19
-#define CMD_POWER_FACTOR  0x20
+#include "Command.h"
 
 // Tariff scaled constants by 1000 saved in NvM
 #define TARIFF_PEAK       22235
@@ -87,25 +75,48 @@
 #define FREQUENCY_Hz      50
 
 // Baudrates and peripheral constants
-#define UARTBaudRate     155200
-#define PIT_DELAY         100000000
+#define UARTBaudRate     115200
+#define PIT_DELAY         10000000
+
+// Flash defines
+uint32_t* Flashy;
 
 // ----------------------------------------
 // Thread set up
 // ----------------------------------------
 // Arbitrary thread stack size - big enough for stacking of interrupts and OS use.
 #define THREAD_STACK_SIZE 100
-#define NB_ANALOG_CHANNELS 4
+#define ANALOG_NB_IO 4
 
 //-----------------------------------------
 // Sine wave set up
 //-----------------------------------------
-int WAVE_SAMPLE;
+TAnalogWaveData AnalogOutput[2];
+TAnalogInput    AnalogInput[ANALOG_NB_IO];
+int16_t sine[18] =
+    {
+        0xFC0C,
+        0xF81F,
+        0xF533,
+        0xF393,
+        0xF3B1,
+        0xF53B,
+        0xF7DF,
+        0xFB60,
+        0xFF47,
+        0x0377,
+        0x0719,
+        0x09F8,
+        0x0BC5,
+        0x0C4A,
+        0x0AE9,
+        0x083C,
+        0x0480,
+        0x0034
+    };
 
- int32_t sine[] =
-     {
-         0, 3420, 6428, 8660, 9848, 10000, 9848, 8660, 6428, 3420, 0, -3420, -6428, -8660, -9848, 10000, -9848, -8660, -6428, -3420
-     };
+int16_t* wavePtr1;
+int16_t* wavePtr2;
 
 //      // Thread stacks
 //      OS_THREAD_STACK(InitModulesThreadStack, THREAD_STACK_SIZE); /*!< The stack for the LED Init thread. */
@@ -140,38 +151,97 @@ int WAVE_SAMPLE;
 //        },
 //      };
 
-void PITCallback(void* args)
+static void PITCallback(void* args)
 {
-  uint16union_t data;
+//      uint16union_t flashTemp;
+//      *Flashy = FLASH_DATA_START;
+//        Analog_Put(0x00, *AnalogOutput.wavePtr);
+//
+//
+//        if (*AnalogOutput.wavePtr == AnalogOutput[i])
+//          wavePtr = sine;
+//        else wavePtr++;
+
+//      //read and send back flash data.
+//      for(uint16_t i = 0; i < 8; i++)
+//      {
+//        flashTemp.l = _FH(Flashy);
+//        Packet_Put(0x40, 0x00, flashTemp.s.Lo, flashTemp.s.Hi);
+//        Flashy++;
+//      }
+
   //sample the analog data and send to computer
   for (uint8_t i = 0; i < 2; i++)
   {
-    Analog_Get(0x00, &data.l);
-    //median filter
-    MyPacket_Put(0x50, i, data.s.Lo, data.s.Hi);
-    Analog_Put(i, 0xFFFF & sine[WAVE_SAMPLE]);
-    WAVE_SAMPLE++;
-    if(WAVE_SAMPLE == 20)
-      WAVE_SAMPLE = 0;
+    Analog_Put(i, 3 * (*AnalogOutput[i].wavePtr));
+//    Analog_Get(i, &AnalogInput[i].value.l);
+//    uint16union_t tempdata;
+//    tempdata.l = AnalogInput[i].putPtr;
+//    Packet_Put(0x50, i, AnalogInput[i].value.s.Lo, AnalogInput[i].value.s.Hi);
+
+    // Check for maximum number in buffer
+   if (AnalogInput[i].putPtr == &AnalogInput[i].values[4])
+     AnalogInput[i].putPtr= AnalogInput[i].values;
+   else AnalogInput[i].putPtr++;
+
+       if (AnalogOutput[i].wavePtr == &sine[17])
+     AnalogOutput[i].wavePtr = sine;
+   else AnalogOutput[i].wavePtr++;
+  }
+
+}
+
+void TariffDefaults()
+{
+  bool success;
+  uint16_t* address;
+  uint8_t size = 0x02;
+  // Read the values, if different, write defaults.
+  if (_FH(FLASH_DATA_START) != TARIFF_THREE)
+  {
+    // If different, erase all before writing
+    success = Flash_Erase();
+    Flash_AllocateVar((volatile void**)&address, size);
+    address+2;
+    success &= Flash_Write16(address,TARIFF_PEAK);
+    address+2;
+    success &= Flash_Write16(address,TARIFF_SHOULDER);
+    address+2;
+    success &= Flash_Write16(address,TARIFF_OPEAK);
+    address+2;
+    success &= Flash_Write16(address,TARIFF_TWO);
+    address+2;
+    success &= Flash_Write16(address,TARIFF_THREE);
   }
 }
 
 
 void DEMInit()
 {
-  MyPacket_Init(UARTBaudRate, CPU_BUS_CLK_HZ);
+  Packet_Init(UARTBaudRate, CPU_BUS_CLK_HZ);
   Flash_Init();
 //  LEDs_Init();
   PIT_Init(CPU_BUS_CLK_HZ, PITCallback, NULL);
 //  RTC_Init();
 //  FTM_Init();
   Analog_Init(CPU_BUS_CLK_HZ);
+  
+// Initialise the wave pointers.
+  for(int i = 0; i < 2; i++)
+  {
+//    *AnalogOutput[i].wave = *sine;
+    AnalogOutput[i].wavePtr = sine;
+//    AnalogInput[i].putPtr  = AnalogInput[i].values;
+  }
 
-  PIT_Set(10000000, true); // assign the period
+  PIT_Set(PIT_DELAY, true); // assign the period
   PIT_Enable(true);
 
   // Write default tariff values to flash if clear
+TariffDefaults();
 
+  // write start up values
+  Packet_Put(0x00,0x01,0x02,0x03);
 }
 
 //        /*! @brief Initialises modules.
@@ -231,7 +301,7 @@ void CommandHandle()
   switch (Packet_Command)
     {
       case 0x04:  //remove after testing
-        MyPacket_Put(0x04,0x00,0x00,0x00);
+        Packet_Put(0x04,0x00,0x00,0x00);
         break;
 
       case CMD_TEST:
@@ -312,12 +382,14 @@ int main(void)
 //
 //        // Start multithreading - never returns!
 //        OS_Start();
-
+EnterCritical();
   DEMInit();
+ExitCritical();
+
 
   for(;;)
   {
-    if (MyPacket_Get())
+    if (Packet_Get())
     {
 //      FTM_StartTimer(&aFTMChannel);
 //      LEDs_On(LED_BLUE);
