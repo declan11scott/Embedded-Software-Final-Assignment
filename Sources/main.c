@@ -76,22 +76,34 @@
 
 // Baudrates and peripheral constants
 #define UARTBaudRate     115200
-#define PIT_DELAY         10000000
+#define PIT_DELAY        10000000
 
 // Flash defines
-uint32_t* Flashy;
 
 // ----------------------------------------
 // Thread set up
 // ----------------------------------------
 // Arbitrary thread stack size - big enough for stacking of interrupts and OS use.
 #define THREAD_STACK_SIZE 100
-#define ANALOG_NB_IO 4
+
+    int16_t InputVoltValues[16];
+    int16_t InputCurrValues[16];
+    float   VoltageRMS[ANALOG_NB_IO];
+    float   CurrentRMS[ANALOG_NB_IO];
+
+    uint16_t* InputVoltPtr;
+    uint16_t* InputCurrPtr;
+
+//    TAnalogInputData InputData[2] =
+//        {
+//            Cu
+//        };
 
 //-----------------------------------------
 // Sine wave set up
 //-----------------------------------------
-TAnalogWaveData AnalogOutput[2];
+TAnalogOutputData AnalogOutput[2];
+
 TAnalogInput    AnalogInput[ANALOG_NB_IO];
 int16_t sine[18] =
     {
@@ -115,8 +127,6 @@ int16_t sine[18] =
         0x0034
     };
 
-int16_t* wavePtr1;
-int16_t* wavePtr2;
 
 //      // Thread stacks
 //      OS_THREAD_STACK(InitModulesThreadStack, THREAD_STACK_SIZE); /*!< The stack for the LED Init thread. */
@@ -173,7 +183,8 @@ static void PITCallback(void* args)
   //sample the analog data and send to computer
   for (uint8_t i = 0; i < 2; i++)
   {
-    Analog_Put(i, 3 * (*AnalogOutput[i].wavePtr));
+    Analog_Put(i, (*AnalogOutput[i].wavePtr));
+
 //    Analog_Get(i, &AnalogInput[i].value.l);
 //    uint16union_t tempdata;
 //    tempdata.l = AnalogInput[i].putPtr;
@@ -188,7 +199,19 @@ static void PITCallback(void* args)
      AnalogOutput[i].wavePtr = sine;
    else AnalogOutput[i].wavePtr++;
   }
+  Analog_Get(0x00, InputVoltPtr);
+  Analog_Get(0x01, InputCurrPtr);
+  InputVoltPtr++;
+  InputCurrPtr++;
+  if(*InputVoltPtr == 16)
+    // Call the functions to calc.
+    // - RMS
+    // - Multiply with current and store in the a p array
+    // - calc. cost
+    // - clear Ptrs
+  {
 
+  }
 }
 
 void TariffDefaults()
@@ -233,6 +256,8 @@ void DEMInit()
     AnalogOutput[i].wavePtr = sine;
 //    AnalogInput[i].putPtr  = AnalogInput[i].values;
   }
+  InputVoltPtr = InputVoltValues;
+  InputCurrPtr = InputCurrValues;
 
   PIT_Set(PIT_DELAY, true); // assign the period
   PIT_Enable(true);

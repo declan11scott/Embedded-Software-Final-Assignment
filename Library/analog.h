@@ -18,7 +18,7 @@
 #include "types.h"
 
 // Maximum number of channels
-#define ANALOG_NB_IO  4
+#define ANALOG_NB_IO  2
 #define ANALOG_NB_OUTPUTS 4
 
 // Sine wave array defines
@@ -45,33 +45,17 @@ typedef struct
 typedef struct AnalogWaveData
 {
   int16_t* wavePtr;
-  int16_t sine[18];
-}TAnalogWaveData;
+  int16_t wave[18];
+}TAnalogOutputData;
 
-// Array for Sine wave (2Vpp 0Voffset) over a period.
-int16_t sine[18] =
-    {
-        0xfd09,
-        0xf9e5,
-        0xf78f,
-        0xf642,
-        0xf65a,
-        0xf795,
-        0xf9b2,
-        0xfc80,
-        0xff9f,
-        0x02c6,
-        0x05ae,
-        0x07fa,
-        0x096b,
-        0x09d5,
-        0x08bb,
-        0x0697,
-        0x039a,
-        0x002a
-    };
+typedef struct AnalogInputData
+{
+  int16_t InputValues[16];
+  int16_t* InputPtr;
+}TAnalogInputData;
 
-
+extern int16_t InputVoltValues[16];
+extern int16_t InputCurrValues[16];
 
 //      /*! @brief array to identify the direction and polarity of the wave
 //       *  @note This can be used for a FSM with sine[]
