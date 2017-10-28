@@ -1,5 +1,6 @@
 Sources/median.o: ../Sources/median.c ../Sources/types.h \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/OS.h \
+ C:/Users/Declan/Documents/GitKraken/Power\ Meter/Generated_Code/PE_Types.h \
  ../Sources/median.h \
  C:/Users/Declan/Documents/GitKraken/Power\ Meter/Generated_Code/Cpu.h \
  C:/Users/Declan/Documents/GitKraken/Power\ Meter/Generated_Code/PE_Types.h \
@@ -11,6 +12,8 @@ Sources/median.o: ../Sources/median.c ../Sources/types.h \
 ../Sources/types.h:
 
 C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/OS.h:
+
+C:/Users/Declan/Documents/GitKraken/Power\ Meter/Generated_Code/PE_Types.h:
 
 ../Sources/median.h:
 

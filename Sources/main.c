@@ -56,7 +56,7 @@
 #include "types.h"
 //#include "LEDs.h"
 //#include "FTM.h"
-//#include "RTC.h"
+#include "RTC.h"
 #include "PIT.h"
 #include "analog.h"
 #include "median.h"
@@ -104,7 +104,10 @@
 //-----------------------------------------
 TAnalogOutputData AnalogOutput[2];
 
-TAnalogInput    AnalogInput[ANALOG_NB_IO];
+TAnalogInputData VoltageInputData;
+TAnalogInputData CurrentInputData;
+int32_t InstantPower;
+
 int16_t sine[18] =
     {
         0xFC0C,
@@ -161,7 +164,7 @@ int16_t sine[18] =
 //        },
 //      };
 
-static void PITCallback(void* args)
+static void PIT0Callback(void* args)
 {
 //      uint16union_t flashTemp;
 //      *Flashy = FLASH_DATA_START;
@@ -181,37 +184,51 @@ static void PITCallback(void* args)
 //      }
 
   //sample the analog data and send to computer
-  for (uint8_t i = 0; i < 2; i++)
-  {
-    Analog_Put(i, (*AnalogOutput[i].wavePtr));
 
-//    Analog_Get(i, &AnalogInput[i].value.l);
-//    uint16union_t tempdata;
-//    tempdata.l = AnalogInput[i].putPtr;
-//    Packet_Put(0x50, i, AnalogInput[i].value.s.Lo, AnalogInput[i].value.s.Hi);
+  Analog_Get(0x00, VoltageInputData.InputPtr);
+  Analog_Get(0x01, CurrentInputData.InputPtr);
+  VoltageInputData.InputPtr++;
+  CurrentInputData.InputPtr++;
 
-    // Check for maximum number in buffer
-   if (AnalogInput[i].putPtr == &AnalogInput[i].values[4])
-     AnalogInput[i].putPtr= AnalogInput[i].values;
-   else AnalogInput[i].putPtr++;
+  InstantPower = (uint32_t)(VoltageInputData.InputPtr * CurrentInputData.InputPtr);
 
-       if (AnalogOutput[i].wavePtr == &sine[17])
-     AnalogOutput[i].wavePtr = sine;
-   else AnalogOutput[i].wavePtr++;
-  }
-  Analog_Get(0x00, InputVoltPtr);
-  Analog_Get(0x01, InputCurrPtr);
-  InputVoltPtr++;
-  InputCurrPtr++;
-  if(*InputVoltPtr == 16)
+  if(Mathematics_FindLargest(InputVoltPtr))
+    // Calculate the amount of interrupts to find frequency and p.f
+    ;
+  if(Mathematics_FindLargest(InputCurrPtr))
+    // Calculate the amount of interrupts to find frequency and p.f
+    ;
+  // Calculate instantaneous power
+  // Calculate cost
+  if(VoltageInputData.InputPtr == &VoltageInputData.InputValues[15])
     // Call the functions to calc.
-    // - RMS
+    //
     // - Multiply with current and store in the a p array
     // - calc. cost
     // - clear Ptrs
   {
 
   }
+}
+
+
+static void PIT1Callback(void* args)
+{
+  Analog_Put(0x00, *AnalogOutput[0].wavePtr);
+  Analog_Put(0x01, *AnalogOutput[1].wavePtr);
+  if (AnalogOutput[0].wavePtr == &sine[17])
+    AnalogOutput[0].wavePtr = sine;
+  else AnalogOutput[0].wavePtr++;
+}
+
+static void PIT2Callback(void* args)
+{
+
+}
+
+static void PIT3Callback(void* args)
+{
+
 }
 
 void TariffDefaults()
@@ -238,14 +255,19 @@ void TariffDefaults()
   }
 }
 
+static void RTC_Callback(void *args)
+{
+
+}
+
 
 void DEMInit()
 {
   Packet_Init(UARTBaudRate, CPU_BUS_CLK_HZ);
   Flash_Init();
 //  LEDs_Init();
-  PIT_Init(CPU_BUS_CLK_HZ, PITCallback, NULL);
-//  RTC_Init();
+  MyPIT_Init(PIT0Callback,PIT1Callback,PIT2Callback,PIT3Callback, NULL);
+  RTC_Init(RTC_Callback, NULL);
 //  FTM_Init();
   Analog_Init(CPU_BUS_CLK_HZ);
   
@@ -259,8 +281,21 @@ void DEMInit()
   InputVoltPtr = InputVoltValues;
   InputCurrPtr = InputCurrValues;
 
-  PIT_Set(PIT_DELAY, true); // assign the period
-  PIT_Enable(true);
+  VoltageInputData.InputPtr = VoltageInputData.InputValues;
+  CurrentInputData.InputPtr = CurrentInputData.InputValues;
+
+  MyPIT_Set(PIT_DELAY, PIT_SELECT_0); // assign the period
+  MyPIT_Enable(true, PIT_SELECT_0);
+
+  MyPIT_Set(PIT_DELAY, PIT_SELECT_1); // assign the period
+  MyPIT_Enable(true, PIT_SELECT_1);
+
+  // These two for the DAC when in test mode.
+//  MyPIT_Set(PIT_DELAY, PIT_SELECT_2); // assign the period
+//  MyPIT_Enable(true, PIT_SELECT_2);
+//
+//  MyPIT_Set(PIT_DELAY, PIT_SELECT_3); // assign the period
+//  MyPIT_Enable(true, PIT_SELECT_3);
 
   // Write default tariff values to flash if clear
 TariffDefaults();

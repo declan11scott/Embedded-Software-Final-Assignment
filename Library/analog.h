@@ -52,7 +52,13 @@ typedef struct AnalogInputData
 {
   int16_t InputValues[16];
   int16_t* InputPtr;
+  float RMS;
+  float Phase;
+  float Frequency;
 }TAnalogInputData;
+
+extern TAnalogInputData VoltageInputData;
+extern TAnalogInputData CurrentInputData;
 
 extern int16_t InputVoltValues[16];
 extern int16_t InputCurrValues[16];

@@ -15,7 +15,11 @@
 #include "types.h"
 #include "OS.h"
 
-extern OS_ECB* PITSemaphore;
+#define PIT_SELECT_0 1
+#define PIT_SELECT_1 2
+#define PIT_SELECT_2 4
+#define PIT_SELECT_3 8
+
 
 /*! @brief Sets up the PIT before first use.
  *
@@ -26,7 +30,7 @@ extern OS_ECB* PITSemaphore;
  *  @return bool - TRUE if the PIT was successfully initialized.
  *  @note Assumes that moduleClk has a period which can be expressed as an integral number of nanoseconds.
  */
-bool PIT_Init(const uint32_t moduleClk, void (*userFunction)(void*), void* userArguments);
+void MyPIT_Init();
 
 /*! @brief Sets the value of the desired period of the PIT.
  *
@@ -35,13 +39,13 @@ bool PIT_Init(const uint32_t moduleClk, void (*userFunction)(void*), void* userA
  *                 FALSE if the PIT will use the new value after a trigger event.
  *  @note The function will enable the timer and interrupts for the PIT.
  */
-void PIT_Set(const uint32_t period, const bool restart);
+void MyPIT_Set(const uint32_t period, const uint8_t pitNb);
 
 /*! @brief Enables or disables the PIT.
  *
  *  @param enable - TRUE if the PIT is to be enabled, FALSE if the PIT is to be disabled.
  */
-void PIT_Enable(const bool enable);
+void MyPIT_Enable(const bool enable, uint8_t pitNb);
 
 /*! @brief Interrupt service routine for the PIT.
  *
@@ -49,6 +53,9 @@ void PIT_Enable(const bool enable);
  *  The user callback function will be called.
  *  @note Assumes the PIT has been initialized.
  */
-void __attribute__ ((interrupt)) PIT_ISR(void);
+void __attribute__ ((interrupt)) PIT0_ISR(void);
+void __attribute__ ((interrupt)) PIT1_ISR(void);
+void __attribute__ ((interrupt)) PIT2_ISR(void);
+void __attribute__ ((interrupt)) PIT3_ISR(void);
 
 #endif

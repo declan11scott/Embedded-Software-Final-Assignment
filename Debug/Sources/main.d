@@ -18,6 +18,7 @@ Sources/main.o: ../Sources/main.c \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/FIFO.h \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/UART.h \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/Flash.h \
+ C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/RTC.h \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/PIT.h \
  ../Sources/median.h
 
@@ -60,6 +61,8 @@ C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/FIFO.h:
 C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/UART.h:
 
 C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/Flash.h:
+
+C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/RTC.h:
 
 C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/PIT.h:
 
