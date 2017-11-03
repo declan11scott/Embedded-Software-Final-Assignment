@@ -4,22 +4,22 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Sources/Calculate.c \
 ../Sources/Command.c \
-../Sources/Mathematics.c \
 ../Sources/MyPIT.c \
 ../Sources/main.c \
 ../Sources/median.c 
 
 OBJS += \
+./Sources/Calculate.o \
 ./Sources/Command.o \
-./Sources/Mathematics.o \
 ./Sources/MyPIT.o \
 ./Sources/main.o \
 ./Sources/median.o 
 
 C_DEPS += \
+./Sources/Calculate.d \
 ./Sources/Command.d \
-./Sources/Mathematics.d \
 ./Sources/MyPIT.d \
 ./Sources/main.d \
 ./Sources/median.d 

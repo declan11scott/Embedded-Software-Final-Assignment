@@ -45,7 +45,9 @@ typedef struct
 typedef struct AnalogWaveData
 {
   int16_t* wavePtr;
-  int16_t wave[18];
+  int16union_t RMS;
+  uint16union_t Frequency;
+  uint16union_t Phase;
 }TAnalogOutputData;
 
 typedef struct AnalogInputData
@@ -55,11 +57,18 @@ typedef struct AnalogInputData
   float RMS;
   float Phase;
   float Frequency;
-  float Power;
+  uint16_t Power;
+  int16_t* Largest;
+  uint8_t LargestCount[2];
+  uint8_t LargestCountPtr;
+  float Instant;
+  float PF;
 }TAnalogInputData;
 
-extern TAnalogInputData VoltageInputData;
-extern TAnalogInputData CurrentInputData;
+
+
+extern TAnalogInputData VoltageInput;
+extern TAnalogInputData CurrentInput;
 
 extern int16_t InputVoltValues[16];
 extern int16_t InputCurrValues[16];

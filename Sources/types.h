@@ -45,6 +45,10 @@ typedef union
     uint16_t Lo;
     uint16_t Hi;
   } s;
+  struct
+  {
+    uint8_t B[4];
+  }BoP;
 } uint32union_t;
 
 // Union to efficiently access hi and lo parts of a "phrase" (8 bytes)
