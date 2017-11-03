@@ -6,8 +6,10 @@
  */
 #include "types.h"
 #include "analog.h"
+#include "Mathematics.h"
+#include "math.h"
 
-float Mathematics_RMS(const int16_t* ValuePtr)
+void Mathematics_RMS(const int16_t* ValuePtr)
 {
   float temp;
   temp = (float)*ValuePtr;
@@ -15,26 +17,32 @@ float Mathematics_RMS(const int16_t* ValuePtr)
 
 }
 
-bool Mathematics_FindLargest(const int16_t* ValuePtr)
+void Mathematics_PF(int16_t voltage, int16_t current, int16_t angle)
 {
-  int16_t* InputValue;
+  VoltageInputData.Power = voltage * current * cosf(angle);
+}
+
+int16_t Mathematics_FindLargest(int16_t* valuePtr)
+{
+  int16_t* InputValue = valuePtr;
   int16_t x, y;
 
-  int i = (int)ValuePtr;
-  int16_t* tempPtr;
-  *tempPtr = *ValuePtr;
+  x = *InputValue;
+  y = *(InputValue - 1);
 
-    x = *InputValue;
-    y = *(InputValue + 1);
-    // Get first entry and compare
-    if (x > y)
-    {
-      // RMS
-      Mathematics_RMS(ValuePtr);
-      return true;
-    }
+  if ((x | y) >> 15)
+    return 0;
 
-  return false;
+  // Get first entry and compare
+  if (x > y)
+  {
+    // RMS
+
+    return *InputValue;
+  }
+
+  return 0;
 }
+
 
 

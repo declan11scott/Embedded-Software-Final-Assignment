@@ -63,6 +63,7 @@
 //#include "SPI.h"
 #include "OS.h"
 #include "Command.h"
+#include "Mathematics.h"
 
 // Tariff scaled constants by 1000 saved in NvM
 #define TARIFF_PEAK       22235
@@ -86,13 +87,20 @@
 // Arbitrary thread stack size - big enough for stacking of interrupts and OS use.
 #define THREAD_STACK_SIZE 100
 
-    int16_t InputVoltValues[16];
-    int16_t InputCurrValues[16];
-    float   VoltageRMS[ANALOG_NB_IO];
-    float   CurrentRMS[ANALOG_NB_IO];
+int16_t InputVoltValues[16];
+int16_t InputCurrValues[16];
+float   VoltageRMS[ANALOG_NB_IO];
+float   CurrentRMS[ANALOG_NB_IO];
+float Power[16];
+float Energy;
 
-    uint16_t* InputVoltPtr;
-    uint16_t* InputCurrPtr;
+uint16_t* InputVoltPtr;
+uint16_t* InputCurrPtr;
+float* PowerPtr = Power;
+uint16union_t PowerW;
+
+float ADCConversion = 0xCCC;
+float RMSMultiple = 0.707;
 
 //    TAnalogInputData InputData[2] =
 //        {
@@ -106,28 +114,46 @@ TAnalogOutputData AnalogOutput[2];
 
 TAnalogInputData VoltageInputData;
 TAnalogInputData CurrentInputData;
-int32_t InstantPower;
+int16_t InstantPower;
+uint8_t CurrentMaxCount[2], VoltageMaxCount[2], Phase, TimeDifference, InputFrequency, PIT0Frequency, VoltageCounter, CurrentCounter;
+uint8_t* CurrentMaxPtr;
+uint8_t* VoltageMaxPtr;
 
-int16_t sine[18] =
+int16_t sine[32] =
     {
-        0xFC0C,
-        0xF81F,
-        0xF533,
-        0xF393,
-        0xF3B1,
-        0xF53B,
-        0xF7DF,
-        0xFB60,
-        0xFF47,
-        0x0377,
-        0x0719,
-        0x09F8,
-        0x0BC5,
+        0x0000,
+        0x0265,
+        0x04B3,
+        0x06D3,
+        0x08B0,
+        0x0A37,
+        0x0B5A,
+        0x0C0D,
         0x0C4A,
-        0x0AE9,
-        0x083C,
-        0x0480,
-        0x0034
+        0x0C0D,
+        0x0B5A,
+        0x0A37,
+        0x08B0,
+        0x06D3,
+        0x04B3,
+        0x0265,
+        0x0000,
+        0xFD9B,
+        0xFB4D,
+        0xF92D,
+        0xF750,
+        0xF5C9,
+        0xF4A6,
+        0xF3F3,
+        0xF3B6,
+        0xF3F3,
+        0xF4A6,
+        0xF5C9,
+        0xF750,
+        0xF92D,
+        0xFB4D,
+        0xFD9B,
+
     };
 
 
@@ -164,61 +190,172 @@ int16_t sine[18] =
 //        },
 //      };
 
+int16_t FindLargest(TAnalogInputData InputData)
+{
+  int16_t largestValue = InputData.InputValues[0];
+  int16_t temp;
+  for (int i = 0 ;  i < 16 ;  i++)
+  {
+    if(InputData.InputValues[i + 1] >> 15)
+      {
+        temp = InputData.InputValues[i + 1] * -1;
+      }
+    else
+      {
+        temp =  InputData.InputValues[i + 1];
+      }
+    if (largestValue < temp)
+      largestValue = temp;
+  }
+
+return largestValue;
+
+}
+
+void CalculateEnergy(void)
+{
+  //energy = sum of (Power*Ts)
+  for (int i = 0; i < 16; i++)
+  {
+    Energy += Power[i]*0.125;
+  }
+}
+
+void CalculatePower()
+{
+  // Power = Vrms * Irms * p.f
+//  PowerW.l = (int16_t)(rVoltage * rCurrent * cosf(angle));
+}
+
+
 static void PIT0Callback(void* args)
 {
-//      uint16union_t flashTemp;
-//      *Flashy = FLASH_DATA_START;
-//        Analog_Put(0x00, *AnalogOutput.wavePtr);
-//
-//
-//        if (*AnalogOutput.wavePtr == AnalogOutput[i])
-//          wavePtr = sine;
-//        else wavePtr++;
-
-//      //read and send back flash data.
-//      for(uint16_t i = 0; i < 8; i++)
-//      {
-//        flashTemp.l = _FH(Flashy);
-//        Packet_Put(0x40, 0x00, flashTemp.s.Lo, flashTemp.s.Hi);
-//        Flashy++;
-//      }
-
-  //sample the analog data and send to computer
-
+  // Sample both channels
   Analog_Get(0x00, VoltageInputData.InputPtr);
   Analog_Get(0x01, CurrentInputData.InputPtr);
-  VoltageInputData.InputPtr++;
-  CurrentInputData.InputPtr++;
 
-  InstantPower = (uint32_t)(VoltageInputData.InputPtr * CurrentInputData.InputPtr);
 
-  if(Mathematics_FindLargest(InputVoltPtr))
+//        //InstantPower = (uint32_t)(VoltageInputData.InputPtr * CurrentInputData.InputPtr);
+//        int16_t instantVoltage = *VoltageInputData.InputPtr;
+//        int16_t instantCurrent = *CurrentInputData.InputPtr;
+//
+//        bool inverseV, inverseC;
+//        if(instantVoltage >> 15)
+//        {
+//          instantVoltage *= -1;
+//          inverseV = true;
+//        }
+//        else inverseV = false;
+//        if(instantCurrent >> 15)
+//        {
+//          instantCurrent *= -1;
+//          inverseC = true;
+//        }
+//        else inverseC = false;
+//        InstantPower = (int16_t)(((int32_t)instantVoltage * (int32_t)instantCurrent) >> 8);
+//        if(inverseC || inverseV)
+//            InstantPower *= -1;
+  float iVoltage, iCurrent, iPower, rVoltage, rCurrent, rPower;
+
+
+  iVoltage = (float)*VoltageInputData.InputPtr / ADCConversion;
+  iCurrent = (float)*CurrentInputData.InputPtr / ADCConversion;
+
+  iPower = iVoltage * iCurrent;
+  PowerPtr = &iPower;
+  PowerPtr++;
+
+  Analog_Put(0x2,iPower * 0xCCC);
+
+  int16_t maxVInt = Mathematics_FindLargest(VoltageInputData.InputPtr);
+
+/*
+  InputVoltPtr++;
+  // If there is a maximum voltage, RMS and frequency will be counted.
+  if(FindLargest(InputVoltPtr))
+  {
+    // If there is a maximum, store that value.
+    *VoltageMaxPtr = VoltageCounter;
+
+    // Clear the counters
+    VoltageCounter = 0;
+    CurrentCounter = 0;
+
     // Calculate the amount of interrupts to find frequency and p.f
-    ;
+    if(VoltageMaxPtr = &VoltageMaxCount[1])
+    {
+      // Calculate frequency
+      InputFrequency = PIT0Frequency / (VoltageMaxCount[1] - VoltageMaxCount[0]);
+
+      // Move the new value into the first entry of the array to update every period.
+      VoltageMaxCount[0] - VoltageMaxCount[1];
+    }
+
+    else VoltageMaxPtr++;
+  }
+
+  else
+  {
+    VoltageCounter++;
+  }
+
   if(Mathematics_FindLargest(InputCurrPtr))
-    // Calculate the amount of interrupts to find frequency and p.f
-    ;
-  // Calculate instantaneous power
-  // Calculate cost
+  {
+    // Make sure there has been an entry into the InputFrequency
+    if(InputFrequency)
+    {
+      // Calculate phase
+      Phase = (360 * CurrentCounter * InputFrequency) / PIT0Frequency;
+      Mathematics_Power(VoltageInputData.RMS, CurrentInputData.RMS, Phase);
+    }
+  }
+*/
+  // Check if the whole sample array is 16
   if(VoltageInputData.InputPtr == &VoltageInputData.InputValues[15])
     // Call the functions to calc.
     //
     // - Multiply with current and store in the a p array
     // - calc. cost
     // - clear Ptrs
+
   {
 
+
+    VoltageInputData.RMS = (float)FindLargest(VoltageInputData) / ADCConversion * RMSMultiple;
+    CurrentInputData.RMS = (float)FindLargest(CurrentInputData) / ADCConversion * RMSMultiple;
+    VoltageInputData.InputPtr = VoltageInputData.InputValues;
+    CurrentInputData.InputPtr = CurrentInputData.InputValues;
+    CalculateEnergy();
+    Phase = (360 * CurrentCounter * InputFrequency) / PIT0Frequency;
+    PowerPtr = Power;
   }
+
+  VoltageInputData.InputPtr++;
+  CurrentInputData.InputPtr++;
 }
 
 
 static void PIT1Callback(void* args)
 {
   Analog_Put(0x00, *AnalogOutput[0].wavePtr);
-  Analog_Put(0x01, *AnalogOutput[1].wavePtr);
-  if (AnalogOutput[0].wavePtr == &sine[17])
+  Analog_Put(0x01, 3 * *AnalogOutput[1].wavePtr);
+  if (AnalogOutput[0].wavePtr >= &sine[30])
+  {
     AnalogOutput[0].wavePtr = sine;
-  else AnalogOutput[0].wavePtr++;
+  }
+  else
+    {
+    AnalogOutput[0].wavePtr+=2;
+    }
+
+  if (AnalogOutput[1].wavePtr >= &sine[30])
+  {
+    AnalogOutput[1].wavePtr = sine;
+  }
+  else
+    {
+    AnalogOutput[1].wavePtr+=2;
+    }
 }
 
 static void PIT2Callback(void* args)
@@ -257,12 +394,15 @@ void TariffDefaults()
 
 static void RTC_Callback(void *args)
 {
+  // Calculate energy for the second and convert to kWh.
 
 }
 
 
 void DEMInit()
 {
+
+  int phase = 0;
   Packet_Init(UARTBaudRate, CPU_BUS_CLK_HZ);
   Flash_Init();
 //  LEDs_Init();
@@ -271,28 +411,29 @@ void DEMInit()
 //  FTM_Init();
   Analog_Init(CPU_BUS_CLK_HZ);
   
-// Initialise the wave pointers.
-  for(int i = 0; i < 2; i++)
-  {
-//    *AnalogOutput[i].wave = *sine;
-    AnalogOutput[i].wavePtr = sine;
-//    AnalogInput[i].putPtr  = AnalogInput[i].values;
-  }
+  // 1/period
+//  pit2Frequency =
+
+  AnalogOutput[0].wavePtr = sine;
+  AnalogOutput[1].wavePtr = sine + phase;
+  VoltageMaxPtr = VoltageMaxCount;
+  CurrentMaxPtr = CurrentMaxCount;
+
   InputVoltPtr = InputVoltValues;
   InputCurrPtr = InputCurrValues;
 
   VoltageInputData.InputPtr = VoltageInputData.InputValues;
   CurrentInputData.InputPtr = CurrentInputData.InputValues;
 
-  MyPIT_Set(PIT_DELAY, PIT_SELECT_0); // assign the period
+  MyPIT_Set(50, PIT_SELECT_0); // assign the period
   MyPIT_Enable(true, PIT_SELECT_0);
 
-  MyPIT_Set(PIT_DELAY, PIT_SELECT_1); // assign the period
+  MyPIT_Set(50, PIT_SELECT_1); // assign the period
   MyPIT_Enable(true, PIT_SELECT_1);
 
   // These two for the DAC when in test mode.
-//  MyPIT_Set(PIT_DELAY, PIT_SELECT_2); // assign the period
-//  MyPIT_Enable(true, PIT_SELECT_2);
+  MyPIT_Set(PIT_DELAY, PIT_SELECT_2); // assign the period
+  MyPIT_Enable(true, PIT_SELECT_2);
 //
 //  MyPIT_Set(PIT_DELAY, PIT_SELECT_3); // assign the period
 //  MyPIT_Enable(true, PIT_SELECT_3);

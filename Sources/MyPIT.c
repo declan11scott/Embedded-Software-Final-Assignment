@@ -92,6 +92,14 @@ void MyPIT_Init(void (*userFunction0)(void*),
   // 71 % 32 = 7
   NVICISER2 |= NVIC_ISER_SETENA(1 << 7);
   NVICICPR2 |= NVIC_ICPR_CLRPEND(1 << 7);
+
+  // User Functions
+  Callback0 = userFunction0;
+  Callback1 = userFunction1;
+  Callback2 = userFunction2;
+  Callback3 = userFunction3;
+  Arguments = userArguments;
+
 }
 
 /*! @brief Sets the value of the desired period of the PIT.
@@ -101,10 +109,10 @@ void MyPIT_Init(void (*userFunction0)(void*),
  *                 FALSE if the PIT will use the new value after a trigger event.
  *  @note The function will enable the timer and interrupts for the PIT.
  */
-void MyPIT_Set(const uint32_t period, const uint8_t pitNb)
+void MyPIT_Set(const uint32_t freq, const uint8_t pitNb)
 {
-  uint32_t freq = 1000000000/period;
-  uint32_t cycles = CPU_BUS_CLK_HZ/freq - 1;
+//  uint32_t freq = 1000000000/period;
+  uint32_t cycles = CPU_BUS_CLK_HZ/(16 * freq) - 1;
   switch(pitNb)
   {
     case PIT_SELECT_0:
@@ -183,18 +191,21 @@ void MyPIT_Enable(const bool enable, uint8_t pitNb)
 void __attribute__ ((interrupt)) PIT0_ISR(void)
 {
   PIT_TFLG0 |= PIT_TFLG_TIF_MASK;
-
+  (*Callback0)(Arguments);
 }
 void __attribute__ ((interrupt)) PIT1_ISR(void)
 {
   PIT_TFLG1 |= PIT_TFLG_TIF_MASK;
+  (*Callback1)(Arguments);
 }
 void __attribute__ ((interrupt)) PIT2_ISR(void)
 {
   PIT_TFLG2 |= PIT_TFLG_TIF_MASK;
+  (*Callback2)(Arguments);
 }
 void __attribute__ ((interrupt)) PIT3_ISR(void)
 {
   PIT_TFLG3 |= PIT_TFLG_TIF_MASK;
+  (*Callback3)(Arguments);
 }
 

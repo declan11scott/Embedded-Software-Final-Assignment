@@ -55,6 +55,7 @@ typedef struct AnalogInputData
   float RMS;
   float Phase;
   float Frequency;
+  float Power;
 }TAnalogInputData;
 
 extern TAnalogInputData VoltageInputData;
