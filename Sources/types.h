@@ -14,7 +14,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "OS.h"
-#include "PE_Types.h"
 
 // Unions to efficiently access hi and lo parts of integers and words
 typedef union
