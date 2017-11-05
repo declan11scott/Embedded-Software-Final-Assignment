@@ -8,6 +8,7 @@ Generated_Code/Vectors.o: ../Generated_Code/Vectors.c \
  C:/Users/Declan/Documents/GitKraken/Power\ Meter/Sources/types.h \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/PIT.h \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/OS.h \
+ C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/analog.h \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/FTM.h \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/RTC.h
 
@@ -32,6 +33,8 @@ C:/Users/Declan/Documents/GitKraken/Power\ Meter/Sources/types.h:
 C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/PIT.h:
 
 C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/OS.h:
+
+C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/analog.h:
 
 C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/FTM.h:
 

@@ -14,11 +14,15 @@
 // new types
 #include "types.h"
 #include "OS.h"
+#include "analog.h"
 
 #define PIT_SELECT_0 1
 #define PIT_SELECT_1 2
 #define PIT_SELECT_2 4
 #define PIT_SELECT_3 8
+
+extern OS_ECB *PIT0Semaphore;
+extern OS_ECB *PIT1Semaphore;
 
 
 /*! @brief Sets up the PIT before first use.

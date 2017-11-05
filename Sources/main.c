@@ -51,7 +51,7 @@
 
 #include "FIFO.h"
 #include "packet.h"
-#include "UART.h"
+#include "MyUART.h"
 #include "Flash.h"
 #include "types.h"
 //#include "LEDs.h"
@@ -59,18 +59,11 @@
 #include "RTC.h"
 #include "PIT.h"
 #include "analog.h"
-#include "median.h"
 //#include "SPI.h"
 #include "OS.h"
 #include "Command.h"
 #include "Calculate.h"
-
-// Tariff scaled constants by 1000 saved in NvM
-#define TARIFF_PEAK       22235
-#define TARIFF_SHOULDER   4400
-#define TARIFF_OPEAK      2109
-#define TARIFF_TWO        1713
-#define TARIFF_THREE      4100
+#include "Tariff.h"
 
 // Default constants to be saved in NvM
 #define FREQUENCY_Hz      50
@@ -81,7 +74,14 @@
 
 #define ADCConversion 0xCCC
 
-// Flash defines
+
+// Tariff scaled constants by 1000 saved in NvM
+#define TARIFF_PEAK       22235
+#define TARIFF_SHOULDER   4400
+#define TARIFF_OPEAK      2109
+#define TARIFF_TWO        1713
+#define TARIFF_THREE      4100
+
 
 // ----------------------------------------
 // Thread set up
@@ -89,12 +89,8 @@
 // Arbitrary thread stack size - big enough for stacking of interrupts and OS use.
 #define THREAD_STACK_SIZE 100
 
-int16_t InputVoltValues[16];
-int16_t InputCurrValues[16];
-float   VoltageRMS[ANALOG_NB_IO];
-float   CurrentRMS[ANALOG_NB_IO];
 float Power[16];
-float Energy, iPower;
+float Energy, iPower, iVoltage, iCurrent;
 uint32union_t EnergykWh;
 
 uint16_t* InputVoltPtr;
@@ -104,6 +100,7 @@ uint16union_t PowerW;
 
 TTariff Tariff;
 
+OS_ECB* FlashSemaphore;
 
 
 //    TAnalogInputData InputData[2] =
@@ -120,11 +117,21 @@ TAnalogOutputData CurrentOutput;
 TAnalogInputData VoltageInput;
 TAnalogInputData CurrentInput;
 int16_t InstantPower;
-uint8_t CurrentMaxCount[2], VoltageMaxCount[2], TimeDifference, InputFrequency, VoltageCounter, CurrentCounter;
+uint8_t CurrentMaxCount, VoltageMaxCount[2], TimeDifference, InputFrequency, VoltageCounter, CurrentCounter;
 uint16union_t PIT0Frequency;
-uint8_t* CurrentMaxPtr;
-uint8_t* VoltageMaxPtr;
+uint8_t CurrentMaxCtr;
+uint8_t VoltageMaxCtr;
+float Cost;
 float Psi;
+int Phase = 0;
+
+
+// Flash variables
+static volatile uint16union_t* NvTariff1Peak;
+static volatile uint16union_t* NvTariff1Shoulder;
+static volatile uint16union_t* NvTariff1OPeak;
+static volatile uint16union_t* NvTariff2;
+static volatile uint16union_t* NvTariff3;
 
 int16_t sine[32] =
     {
@@ -160,152 +167,209 @@ int16_t sine[32] =
         0xF92D,
         0xFB4D,
         0xFD9B,
-
     };
+      OS_ECB* RTCSemaphore;
 
+// Thread stacks
+OS_THREAD_STACK(InitModulesThreadStack, THREAD_STACK_SIZE); /*!< The stack for the LED Init thread. */
+static uint32_t AnalogThreadStacks[ANALOG_NB_IO][THREAD_STACK_SIZE] __attribute__ ((aligned(0x08)));
+static uint32_t PIT0ThreadStacks[THREAD_STACK_SIZE] __attribute__ ((aligned(0x08)));
+static uint32_t PIT1ThreadStacks[THREAD_STACK_SIZE] __attribute__ ((aligned(0x08)));
+static uint32_t RTCThreadStacks[THREAD_STACK_SIZE] __attribute__ ((aligned(0x08)));
+static uint32_t PacketThreadStacks[THREAD_STACK_SIZE] __attribute__ ((aligned(0x08)));
+static uint32_t FlashThreadStacks[THREAD_STACK_SIZE] __attribute__ ((aligned(0x08)));
 
-//      // Thread stacks
-//      OS_THREAD_STACK(InitModulesThreadStack, THREAD_STACK_SIZE); /*!< The stack for the LED Init thread. */
-//      static uint32_t AnalogThreadStacks[NB_ANALOG_CHANNELS][THREAD_STACK_SIZE] __attribute__ ((aligned(0x08)));
-//
-//      // ----------------------------------------
-//      // Thread priorities
-//      // 0 = highest priority
-//      // ----------------------------------------
-//      const uint8_t ANALOG_THREAD_PRIORITIES[NB_ANALOG_CHANNELS] = {1, 2, 3, 4};
-//
-//      /*! @brief Analog thread configuration data
-//       *
-//       */
-//      static TAnalogThreadData AnalogThreadData[NB_ANALOG_CHANNELS] =
-//      {
-//        {
-//          .semaphore = NULL,
-//          .channelNb = 0
-//        },
-//        {
-//          .semaphore = NULL,
-//          .channelNb = 1
-//        },
-//        {
-//          .semaphore = NULL,
-//          .channelNb = 2
-//        },
-//        {
-//          .semaphore = NULL,
-//          .channelNb = 3
-//        },
-//      };
+// ----------------------------------------
+// Thread priorities
+// 0 = highest priority
+// ----------------------------------------
+const uint8_t ANALOG_THREAD_PRIORITIES[ANALOG_NB_OUTPUTS] = {2, 3};
+
+/*! @brief Analog thread configuration data
+ *
+ */
+TAnalogThreadData AnalogThreadData[ANALOG_NB_IO] =
+{
+  {
+    .semaphore = NULL,
+    .channelNb = 0
+  },
+  {
+    .semaphore = NULL,
+    .channelNb = 1
+  },
+};
 
 int16_t FindLargest(TAnalogInputData InputData)
 {
-  int16_t largestValue = InputData.InputValues[0];
-  int16_t temp;
-  for (int i = 0 ;  i < 16 ;  i++)
-  {
-    if(InputData.InputValues[i + 1] >> 15)
-      {
-        temp = InputData.InputValues[i + 1] * -1;
-      }
-    else
-      {
-        temp =  InputData.InputValues[i + 1];
-      }
-    if (largestValue < temp)
-      largestValue = temp;
-  }
 
-return largestValue;
+//    OS_Wait(CalculateSemaphore,0);
+    int16_t largestValue = InputData.InputValues[0];
+    int16_t temp;
+    int min = 255;
+    uint16_t max = 0xFFFF-255;
+
+    for (int i = 0 ;  i < 15 ;  i++)
+    {
+      if (!(uint16_t)largestValue < min | (uint16_t)largestValue > max)
+      {
+      if(InputData.InputValues[i + 1] >> 15)
+        {
+          temp = InputData.InputValues[i + 1] * -1;
+        }
+      else
+        {
+          temp =  InputData.InputValues[i + 1];
+        }
+      if (largestValue < temp)
+        largestValue = temp;
+      }
+    }
+ return largestValue;
+}
+
+float MeasureEnergy()
+{
+  float sampleEnergy;
+  for (int i = 0; i < 16; i++)
+  {
+    sampleEnergy += *PowerPtr * 0.125 / 1000000;
+  }
+  return sampleEnergy;
+}
+static void CalculateCost()
+{
 
 }
 
-
-
-
 static void PIT0Callback(void* args)
 {
-  // Sample both channels
-  Analog_Get(0x00, VoltageInput.InputPtr);
-  Analog_Get(0x01, CurrentInput.InputPtr);
-
-  // Calculate instant power for energy calculation
-  *PowerPtr = Calculate_InstantPower(*VoltageInput.InputPtr, *CurrentInput.InputPtr);
-  PowerPtr++;
-
-  if(Calculate_Largest(VoltageInput.InputPtr))
+  for(;;)
   {
-    VoltageInput.LargestCount[1] = (0xFF) & (uint8_t)(*VoltageInput.InputPtr);
-    if(VoltageInput.LargestCount[0] > 0)
+    OS_SemaphoreWait(PIT0Semaphore, 0);
+    // Sample both channels
+    Analog_Get(0x00, VoltageInput.InputPtr);
+    Analog_Get(0x01, CurrentInput.InputPtr);
+
+    // Calculate instant power for energy calculation
+  //  *PowerPtr = Calculate_InstantPower(*VoltageInput.InputPtr, *CurrentInput.InputPtr);
+  //
+        iVoltage = (float)(*VoltageInput.InputPtr/3.3);
+        iCurrent = (float)(*CurrentInput.InputPtr/3.3);
+        *PowerPtr = iVoltage * iCurrent;
+        *PowerPtr++;
+  //        int16_t power = ((int32_t)*VoltageInput.InputPtr * (int32_t)*CurrentInput.InputPtr) >> 16;
+
+//            if(Calculate_Largest(*VoltageInput.InputPtr, *(VoltageInput.InputPtr - 1), *(VoltageInput.InputPtr - 2)))
+//            {
+//              if(VoltageMaxCount[0] > 0)
+//                {
+//                  VoltageMaxCount[1] = VoltageMaxCtr;
+//                  VoltageInput.Frequency = (50 * 16) / (2 * (VoltageMaxCount[1] - VoltageMaxCount[0])) ;
+//                }
+//              else VoltageMaxCount[0] = VoltageMaxCtr;
+//
+//              VoltageInput.LargestCount[1] = (0xFF) & (uint8_t)(*VoltageInput.InputPtr);
+//              if(VoltageInput.LargestCount[0] > 0)
+//              {
+//                // Calculate the frequency
+//          //      VoltageInput.Frequency = (50 * 16) / (VoltageInput.LargestCount[1] - VoltageInput.LargestCount[0]) ;
+//              }
+//
+//              VoltageInput.LargestCount[0] = VoltageInput.LargestCount[1];
+//
+//              // RMS
+//              VoltageInput.RMS = Calculate_RMS(*(VoltageInput.InputPtr - 1));
+//
+//              if(VoltageMaxCount[0] && CurrentMaxCount)
+//              {
+//              // Phase
+//          //    CurrentInput.Phase = (float)(360 / (CurrentInput.LargestCount[0] - VoltageInput.LargestCount[0]));
+//              CurrentInput.Phase = 180 - ((360 * (float)(VoltageMaxCount[0] - CurrentMaxCount + 1)) / 16);
+//
+//              // Power factor
+//              VoltageInput.PF = 100 * Calculate_PF(CurrentInput.Phase);
+//              }
+//            }
+//            else
+//            {
+//              VoltageInput.LargestCount[0]++;
+//            }
+//            VoltageMaxCtr++;
+//            if(*CurrentInput.InputPtr > 0)
+//            {
+//              if(Calculate_Largest(*CurrentInput.InputPtr, *(CurrentInput.InputPtr - 1), *(CurrentInput.InputPtr - 2)))
+//              {
+//                CurrentInput.LargestCount[0] = (0xFF) & (uint8_t)(*CurrentInput.InputPtr);
+//                CurrentMaxCount = CurrentMaxCtr;
+//                // RMS
+//                CurrentInput.RMS = Calculate_RMS(*(CurrentInput.InputPtr - 1));
+//
+//              }
+//              else
+//              {
+//                CurrentInput.LargestCount[0]++;
+//              }
+//              CurrentMaxCtr++;
+//            }
+
+    // Check if the whole sample array is 16
+    if(VoltageInput.InputPtr == &VoltageInput.InputValues[15])
     {
-      // Calculate the frequency
-      (VoltageInput.LargestCount[1] - VoltageInput.LargestCount[0]) * 10 / PIT0Frequency.l;
+      // Reset input value pointers to re-sample.
+      VoltageInput.InputPtr = VoltageInput.InputValues;
+      CurrentInput.InputPtr = CurrentInput.InputValues;
+
+      VoltageMaxCtr = 0;
+      CurrentMaxCtr = 0;
+      VoltageMaxCount[0] = 0;
+      VoltageMaxCount[1] = 0;
+
+        VoltageInput.Largest = FindLargest(VoltageInput);
+        VoltageInput.RMS = Calculate_RMS(VoltageInput.Largest);
+
+        CurrentInput.Largest = FindLargest(CurrentInput);
+        CurrentInput.RMS = Calculate_RMS(CurrentInput.Largest);
+
+      // Energy
+      PowerPtr = Power;
+      Energy += MeasureEnergy();
+      PowerPtr = Power;
     }
-
-    VoltageInput.LargestCount[0] = VoltageInput.LargestCount[1];
-
-    // RMS
-    VoltageInput.RMS = Calculate_RMS(*VoltageInput.Largest);
-  }
-  else
-    VoltageInput.LargestCount[0]++;
-
-  if(Calculate_Largest(CurrentInput.InputPtr))
-  {
-    CurrentInput.LargestCount[0] = (0xFF) & (uint8_t)(*CurrentInput.InputPtr);
-
-    // RMS
-    CurrentInput.RMS = Calculate_RMS(*CurrentInput.Largest);
-
-    // Phase
-    CurrentInput.Phase = (float)(360.0 * (CurrentInput.LargestCount - VoltageInput.LargestCount) * (float)PIT0Frequency.l);
-
-    // Power factor
-    VoltageInput.PF = Calculate_PF(CurrentInput.Phase);
-  }
-  else
-    CurrentInput.LargestCount[0]++;
-
-  // Check if the whole sample array is 16
-  if(VoltageInput.InputPtr == &VoltageInput.InputValues[15])
-  {
-    // Reset input value pointers to re-sample.
-    VoltageInput.InputPtr = VoltageInput.InputValues;
-    CurrentInput.InputPtr = CurrentInput.InputValues;
-
-    // Energy
-    PowerPtr = Power;
-    Energy += Calculate_Energy(PowerPtr);
-    PowerPtr = Power;
-  }
-  else
-  {
-    VoltageInput.InputPtr++;
-    CurrentInput.InputPtr++;
+    else
+    {
+      VoltageInput.InputPtr++;
+      CurrentInput.InputPtr++;
+    }
   }
 }
 
 
 static void PIT1Callback(void* args)
 {
-  Analog_Put(0x00, *VoltageOutput.wavePtr);
-  Analog_Put(0x01, 3 * *CurrentOutput.wavePtr);
-  if (VoltageOutput.wavePtr >= &sine[30])
+  for(;;)
   {
-    VoltageOutput.wavePtr = sine;
-  }
-  else
+    OS_SemaphoreWait(PIT1Semaphore,0);
+    Analog_Put(0x00, *VoltageOutput.wavePtr);
+    Analog_Put(0x01, *CurrentOutput.wavePtr);
+    if (VoltageOutput.wavePtr > &sine[29])
     {
-    VoltageOutput.wavePtr+=2;
+      VoltageOutput.wavePtr = sine;
     }
+    else
+      {
+      VoltageOutput.wavePtr+=2;
+      }
 
-  if (VoltageOutput.wavePtr >= &sine[30])
-  {
-    CurrentOutput.wavePtr = sine;
-  }
-  else
+    if (CurrentOutput.wavePtr > &sine[29])
     {
-    CurrentOutput.wavePtr+=2;
+      CurrentOutput.wavePtr = sine;
     }
+    else
+      {
+      CurrentOutput.wavePtr+=2;
+      }
+  }
 }
 
 static void PIT2Callback(void* args)
@@ -318,41 +382,95 @@ static void PIT3Callback(void* args)
 
 }
 
-void TariffDefaults()
+void TariffDefaults(void* args)
 {
   bool success;
-  uint16_t* address;
-  uint8_t size = 0x02;
-  // Read the values, if different, write defaults.
-  if (_FH(FLASH_DATA_START) != TARIFF_THREE)
-  {
-    // If different, erase all before writing
-    success = Flash_Erase();
-    Flash_AllocateVar((volatile void**)&address, size);
-    address+2;
-    success &= Flash_Write16(address,TARIFF_PEAK);
-    address+2;
-    success &= Flash_Write16(address,TARIFF_SHOULDER);
-    address+2;
-    success &= Flash_Write16(address,TARIFF_OPEAK);
-    address+2;
-    success &= Flash_Write16(address,TARIFF_TWO);
-    address+2;
-    success &= Flash_Write16(address,TARIFF_THREE);
-  }
+    int i;
+    volatile uint16union_t* Nv[5] =
+        {
+            NvTariff1Peak, NvTariff1Shoulder, NvTariff1OPeak, NvTariff2, NvTariff3
+        };
+    int def[5] =
+        {
+            TARIFF_PEAK, TARIFF_SHOULDER, TARIFF_OPEAK, TARIFF_TWO, TARIFF_THREE
+        };
+
+    for(i = 0; i < 5; i++)
+    {
+    /* Allocate memory in flash will return true if successful*/
+        success = MyFlash_AllocateVar((volatile void**)&Nv[i], sizeof(*Nv[i]));
+
+        /* Check if there's no previously set value in NvTowerNb in flash memory*/
+        if (success && (*Nv[i]).l == 0xFFFF)
+        {
+           /* If it's empty, just allocate it the default value which is our student number*/
+           success &= Flash_Write16((uint16_t*)Nv[i], def[i]);
+        }
+    }
+     /* Initialise flash just because */
+     uint64_t initialiseFlash = _FP(FLASH_DATA_START);
+
+     NvTariff1Peak      = Nv[4];
+     NvTariff1Shoulder  = Nv[3];
+     NvTariff1OPeak     = Nv[2];
+     NvTariff2          = Nv[1];
+     NvTariff3          = Nv[0];
+
+    OS_ThreadDelete(OS_PRIORITY_SELF);
 }
 
 uint16_t TariffToUFind()
 {
+  uint16_t aTariff;
+  uint8_t hours;
+  RTC_Get(&hours, NULL, NULL);
+  if(!(hours % 7))
+  {
+    if(!(hours % 14))
+      // Peak
+      aTariff = _FH(NvTariff1Peak);
+    else aTariff = _FH(NvTariff1Shoulder);
+  }
+  if(!(hours % 20))
+  {
+    aTariff = _FH(NvTariff1Shoulder);
+  }
+  else aTariff = _FH(NvTariff1OPeak);
 
+}
+
+static void RTCThread(void* args)
+{
+  for(;;)
+  {
+    OS_SemaphoreWait(RTCSemaphore,0);
+    uint16_t aTariff;
+    // Calculate energy for the second and convert to kWh.
+    switch (Tariff)
+    {
+      case Tariff_1:
+        aTariff = TariffToUFind();
+        break;
+      case Tariff_2:
+        // Load tariff 2 cost
+        aTariff = _FH(NvTariff2);
+        break;
+      case Tariff_3:
+        // Load tariff 2 cost
+        aTariff = _FH(NvTariff3);
+        break;
+
+    }
+  //  Calculate_Cost(uint16 TToU, uint16_t Energy
+    EnergykWh.l = (int)Energy;
+    Cost += ((aTariff * Energy) / 1000000);
+    Energy = 0;
+  }
 }
 
 static void RTC_Callback(void *args)
 {
-  // Calculate energy for the second and convert to kWh.
-  if(Tariff == Tariff_1)
-    TariffToUFind();
-  Calculate_Cost(uint16 TToU, uint16_t Energy
+  OS_SemaphoreSignal(RTCSemaphore);
 }
 
 void TestMode()
@@ -363,15 +481,18 @@ void TestMode()
     MyPIT_Enable(true, PIT_SELECT_1);
   }
   else
+  {
     MyPIT_Enable(false, PIT_SELECT_1);
+    Analog_Put(0x00,0);
+    Analog_Put(0x01,0);
+  }
 }
 
 
-void DEMInit()
+static void DEMInit()
 {
 
-  int phase = 0;
-  Packet_Init(UARTBaudRate, CPU_BUS_CLK_HZ);
+  MyPacket_Init(UARTBaudRate, CPU_BUS_CLK_HZ);
   Flash_Init();
 //  LEDs_Init();
   MyPIT_Init(PIT0Callback,PIT1Callback,PIT2Callback,PIT3Callback, NULL);
@@ -383,51 +504,69 @@ void DEMInit()
 //  pit2Frequency =
 
   VoltageOutput.wavePtr = sine;
-  CurrentOutput.wavePtr = sine + phase;
-  VoltageMaxPtr = VoltageMaxCount;
-  CurrentMaxPtr = CurrentMaxCount;
+  CurrentOutput.wavePtr = sine + Phase;
 
-  InputVoltPtr = InputVoltValues;
-  InputCurrPtr = InputCurrValues;
+  CurrentMaxCtr = 0;
+
   PowerPtr = Power;
 
   VoltageInput.InputPtr = VoltageInput.InputValues;
-  CurrentInput.InputPtr = CurrentInput.InputValues;
+  CurrentInput.InputPtr = CurrentInput.InputValues + Phase;
 
   MyPIT_Set(50, PIT_SELECT_0); // assign the period
   MyPIT_Enable(true, PIT_SELECT_0);
 
-  // These two for the DAC when in test mode.
-  MyPIT_Set(PIT_DELAY, PIT_SELECT_2); // assign the period
-  MyPIT_Enable(true, PIT_SELECT_2);
-//
-//  MyPIT_Set(PIT_DELAY, PIT_SELECT_3); // assign the period
-//  MyPIT_Enable(true, PIT_SELECT_3);
-
   // Write default tariff values to flash if clear
-TariffDefaults();
-
-  // write start up values
-  Packet_Put(0x00,0x01,0x02,0x03);
+//  TariffDefaults();
+  Analog_Put(0x00,0);
+  Analog_Put(0x01,0);
 }
 
-//        /*! @brief Initialises modules.
-//         *
-//         */
-//        static void InitModulesThread(void* pData)
-//        {
-//          //Initialise Modules
-//
-//            // Analog
-//          (void)Analog_Init(CPU_BUS_CLK_HZ);
-//
-//          // Generate the global analog semaphores
-//          for (uint8_t analogNb = 0; analogNb < NB_ANALOG_CHANNELS; analogNb++)
-//            AnalogThreadData[analogNb].semaphore = OS_SemaphoreCreate(0);
-//
-//          // We only do this once - therefore delete this thread
-//          OS_ThreadDelete(OS_PRIORITY_SELF);
-//        }
+
+void __attribute__ ((interrupt)) PIT0_ISR(void)
+{
+  OS_ISREnter();
+  PIT_TFLG0 |= PIT_TFLG_TIF_MASK;
+//  for (uint8_t analogNb = 0; analogNb < ANALOG_NB_IO; analogNb++)
+//      (void)OS_SemaphoreSignal(AnalogThreadData[analogNb].semaphore);
+  (void)OS_SemaphoreSignal(PIT0Semaphore);
+//  (*Callback0)(Arguments);
+  OS_ISRExit();
+}
+
+void __attribute__ ((interrupt)) PIT1_ISR(void)
+{
+  OS_ISREnter();
+  PIT_TFLG1 |= PIT_TFLG_TIF_MASK;
+  (void)OS_SemaphoreSignal(PIT1Semaphore);
+//  (*Callback1)(Arguments);
+  OS_ISRExit();
+}
+
+
+        /*! @brief Initialises modules.
+         *
+         */
+static void InitModulesThread(void* pData)
+{
+  DEMInit();
+
+  // Generate the global analog semaphores
+  for (uint8_t analogNb = 0; analogNb < ANALOG_NB_IO; analogNb++)
+    AnalogThreadData[analogNb].semaphore = OS_SemaphoreCreate(0);
+
+  RTCSemaphore        = OS_SemaphoreCreate(0);
+  PIT0Semaphore       = OS_SemaphoreCreate(0);
+  PIT1Semaphore       = OS_SemaphoreCreate(0);
+  CalculateSemaphore  = OS_SemaphoreCreate(1);
+
+
+
+  // We only do this once - therefore delete this thread
+  OS_ThreadDelete(OS_PRIORITY_SELF);
+}
+
+
 //      /*! @brief Samples a value on an ADC channel and sends it to the corresponding DAC channel.
 //       *
 //       */
@@ -464,15 +603,30 @@ TariffDefaults();
 
 void CommandHandle()
 {
-  uint16_t a, b, c;
+  uint8_t dCost, cCost, hours, seconds, minutes;
+  uint16union_t Freqx10, rVoltage, rCurrent;
+
+
   switch (Packet_Command)
     {
-      case 0x04:  //remove after testing
-        Packet_Put(0x04,0x00,0x00,0x00);
-        break;
-
       case CMD_TEST:
-        Command_Test(a, b, c);
+        if(Packet_Parameter2)
+        {
+//          uint16union_t T1P, T1S, T1O, T2, T3;
+//          T1P.l = _FH(NvTariff1Peak);
+//          T1S.l = _FH(NvTariff1Shoulder);
+//          T1O.l = _FH(NvTariff1OPeak);
+//          T2.l = _FH(NvTariff2);
+//          T3.l = _FH(NvTariff3);
+//          Packet_Put(T1P.s.Lo, T1P.s.Hi,0x00,0x00);
+//          Packet_Put(T1S.s.Lo, T1S.s.Hi,0x00,0x00);
+//          Packet_Put(T1O.s.Lo, T1O.s.Hi,0x00,0x00);
+//          Packet_Put(T2.s.Lo, T2.s.Hi,0x00,0x00);
+//          Packet_Put(T3.s.Lo, T3.s.Hi,0x00,0x00);
+//          Command_Test();
+        }
+
+        else TestMode();
         break;
 
       case CMD_TARIFF:
@@ -480,39 +634,45 @@ void CommandHandle()
         break;
 
       case CMD_TIME_A:
-        Command_TimeA();
+        RTC_Get(&hours, &minutes, &seconds);
+        Command_TimeA(seconds, minutes);
         break;
 
       case CMD_TIME_B:
-        Command_TimeB();
+        RTC_Get(&hours, &minutes, &seconds);
+        Command_TimeB(minutes);
         break;
 
 //      case CMD_POWER:
 //        uint16union_t Power = Calculate_Power(VoltageInput.RMS, CurrentInput.RMS, CurrentInput.Phase,CurrentInput.PF);
 //        Command_Power(Power);
 //        break;
-//
-//      case CMD_ENERGY:
-//        Command_Energy(EnergykWh);
-//        break;
-//
-//      case CMD_COST:
-//        float cost;
-//        Command_Cost((float)cost);
-//      break;
-//
-//      case CMD_FREQUENCY:
-//        Command_Frequency((float)VoltageInput.Frequency); //create this command
-//      break;
-//
-//      case CMD_VOLTAGE:
-//        Command_Voltage((float)VoltageInput.RMS);
-//        break;
-//
-//      case CMD_CURRENT:
-//        Command_Current((float)CurrentInput.RMS);
-//      break;
-//
+
+      case CMD_ENERGY:
+        Command_Energy(EnergykWh);
+        break;
+
+      case CMD_COST:
+        dCost = (int)Cost % 100;
+        cCost = (int)(Cost * 100) % 100;
+        Command_Cost(cCost, dCost);
+      break;
+
+      case CMD_FREQUENCY:
+        Freqx10.l = (int)((VoltageInput.Frequency) * 10);
+        Command_Frequency(Freqx10);
+      break;
+
+      case CMD_VOLTAGE:
+        rVoltage.l = (int)(VoltageInput.RMS * 100);
+        Command_Voltage(rVoltage);
+        break;
+
+      case CMD_CURRENT:
+        rCurrent.l = (int)(VoltageInput.RMS * 100000);
+        Command_Current(rCurrent);
+      break;
+
 //      case CMD_PF:
 //        Command_PowerFactor((float)CurrentInput.PF); //create this command
 //      break;
@@ -541,25 +701,58 @@ void CommandHandle()
     }
 }
 
+static void PacketThread(void* arg)
+{
+   for(;;)
+   {
+     if (MyPacket_Get())
+   {
+
+       CommandHandle();
+     }
+   }
+}
+
+
 /*lint -save  -e970 Disable MISRA rule (6.3) checking. */
 int main(void)
 /*lint -restore Enable MISRA rule (6.3) checking. */
 {
-//        OS_ERROR error;
-//
-//        // Initialise low-level clocks etc using Processor Expert code
-//        PE_low_level_init();
-//
-//        // Initialize the RTOS
-//        OS_Init(CPU_CORE_CLK_HZ, true);
-//
-//        // Create module initialisation thread
-//        error = OS_ThreadCreate(InitModulesThread,
-//                                NULL,
-//                                &InitModulesThreadStack[THREAD_STACK_SIZE - 1],
-//                                0); // Highest priority
-//
-//        // Create threads for analog loopback channels
+        OS_ERROR error;
+
+        // Initialise low-level clocks etc using Processor Expert code
+        PE_low_level_init();
+
+        // Initialize the RTOS
+        OS_Init(CPU_CORE_CLK_HZ, false);
+
+        // Create module initialisation thread
+        error = OS_ThreadCreate(InitModulesThread,
+                                NULL,
+                                &InitModulesThreadStack[THREAD_STACK_SIZE - 1],
+                                0); // Highest priority
+        error = OS_ThreadCreate(PIT0Callback,
+                                &PIT0Semaphore,
+                                &PIT0ThreadStacks[THREAD_STACK_SIZE - 1],
+                                4);
+        error = OS_ThreadCreate(PIT1Callback,
+                                &PIT1Semaphore,
+                                &PIT1ThreadStacks[THREAD_STACK_SIZE - 1],
+                                1);
+        error = OS_ThreadCreate(PacketThread,
+                                NULL,
+                                &PacketThreadStacks[THREAD_STACK_SIZE - 1],
+                                9);
+        error = OS_ThreadCreate(RTCThread,
+                                RTCSemaphore,
+                                &RTCThreadStacks[THREAD_STACK_SIZE - 1],
+                                8);
+        error = OS_ThreadCreate(TariffDefaults,
+                                NULL,
+                                &FlashThreadStacks[THREAD_STACK_SIZE - 1],
+                                2);
+
+        // Create threads for analog loopback channels
 //        for (uint8_t threadNb = 0; threadNb < NB_ANALOG_CHANNELS; threadNb++)
 //        {
 //          error = OS_ThreadCreate(AnalogLoopbackThread,
@@ -567,23 +760,23 @@ int main(void)
 //                                  &AnalogThreadStacks[threadNb][THREAD_STACK_SIZE - 1],
 //                                  ANALOG_THREAD_PRIORITIES[threadNb]);
 //        }
-//
-//        // Start multithreading - never returns!
-//        OS_Start();
-EnterCritical();
-  DEMInit();
-ExitCritical();
+
+        // Start multithreading - never returns!
+        OS_Start();
+//EnterCritical();
+////  DEMInit();
+//ExitCritical();
 
 
-  for(;;)
-  {
-    if (Packet_Get())
-    {
-//      FTM_StartTimer(&aFTMChannel);
-//      LEDs_On(LED_BLUE);
-      CommandHandle();
-  }
-}
+//  for(;;)
+//  {
+//    if (Packet_Get())
+//    {
+////      FTM_StartTimer(&aFTMChannel);
+////      LEDs_On(LED_BLUE);
+//      CommandHandle();
+//    }
+//  }
 }
 
 

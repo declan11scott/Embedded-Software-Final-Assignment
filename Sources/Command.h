@@ -40,15 +40,15 @@ void Command_Test();
 
 void Command_Tariff(uint8_t tariff);
 
-void Command_TimeA();
+void Command_TimeA(uint8_t seconds, uint8_t minutes);
 
-void Command_TimeB();
+void Command_TimeB(uint8_t minutes);
 
 void Command_Power(uint16union_t power);
 
 void Command_Energy(uint32union_t energy);
 
-void Command_Cost(uint16union_t cost);
+void Command_Cost(uint8_t cents, uint8_t dollarydoos);
 
 void Command_Frequency(uint16union_t frequency);
 

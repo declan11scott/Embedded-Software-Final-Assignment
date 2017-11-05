@@ -20,6 +20,9 @@
 #include "MK70F12.h"
 #include "CPU.h"
 
+OS_ECB *PIT0Semaphore;
+OS_ECB *PIT1Semaphore;
+
 static void (*Callback0)(void *);
 static void (*Callback1)(void *);
 static void (*Callback2)(void *);
@@ -188,16 +191,8 @@ void MyPIT_Enable(const bool enable, uint8_t pitNb)
 
 }
 
-void __attribute__ ((interrupt)) PIT0_ISR(void)
-{
-  PIT_TFLG0 |= PIT_TFLG_TIF_MASK;
-  (*Callback0)(Arguments);
-}
-void __attribute__ ((interrupt)) PIT1_ISR(void)
-{
-  PIT_TFLG1 |= PIT_TFLG_TIF_MASK;
-  (*Callback1)(Arguments);
-}
+
+
 void __attribute__ ((interrupt)) PIT2_ISR(void)
 {
   PIT_TFLG2 |= PIT_TFLG_TIF_MASK;

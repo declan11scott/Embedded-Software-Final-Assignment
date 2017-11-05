@@ -34,6 +34,8 @@ typedef struct AnalogThreadData
   uint8_t channelNb;
 } TAnalogThreadData;
 
+extern TAnalogThreadData AnalogThreadData[ANALOG_NB_IO];
+
 typedef struct
 {
   int16union_t value;                  /*!< The current "processed" analog value (the user updates this value). */
@@ -58,7 +60,7 @@ typedef struct AnalogInputData
   float Phase;
   float Frequency;
   uint16_t Power;
-  int16_t* Largest;
+  int16_t Largest;
   uint8_t LargestCount[2];
   uint8_t LargestCountPtr;
   float Instant;

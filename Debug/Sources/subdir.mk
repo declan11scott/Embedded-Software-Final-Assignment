@@ -6,23 +6,32 @@
 C_SRCS += \
 ../Sources/Calculate.c \
 ../Sources/Command.c \
+../Sources/MyFIFO.c \
+../Sources/MyFlash.c \
 ../Sources/MyPIT.c \
-../Sources/main.c \
-../Sources/median.c 
+../Sources/MyPacket.c \
+../Sources/MyUART.c \
+../Sources/main.c 
 
 OBJS += \
 ./Sources/Calculate.o \
 ./Sources/Command.o \
+./Sources/MyFIFO.o \
+./Sources/MyFlash.o \
 ./Sources/MyPIT.o \
-./Sources/main.o \
-./Sources/median.o 
+./Sources/MyPacket.o \
+./Sources/MyUART.o \
+./Sources/main.o 
 
 C_DEPS += \
 ./Sources/Calculate.d \
 ./Sources/Command.d \
+./Sources/MyFIFO.d \
+./Sources/MyFlash.d \
 ./Sources/MyPIT.d \
-./Sources/main.d \
-./Sources/median.d 
+./Sources/MyPacket.d \
+./Sources/MyUART.d \
+./Sources/main.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

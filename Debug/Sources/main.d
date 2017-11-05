@@ -18,11 +18,12 @@ Sources/main.o: ../Sources/main.c \
  C:/Users/Declan/Documents/GitKraken/Power\ Meter/Generated_Code/PE_Const.h \
  C:/Users/Declan/Documents/GitKraken/Power\ Meter/Generated_Code/IO_Map.h \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/FIFO.h \
- C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/UART.h \
+ ../Sources/MyUART.h \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/RTC.h \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/OS.h \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/PIT.h \
- ../Sources/median.h ../Sources/Calculate.h
+ C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/analog.h \
+ ../Sources/Calculate.h ../Sources/Tariff.h
 
 C:/Users/Declan/Documents/GitKraken/Power\ Meter/Generated_Code/Cpu.h:
 
@@ -62,7 +63,7 @@ C:/Users/Declan/Documents/GitKraken/Power\ Meter/Generated_Code/IO_Map.h:
 
 C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/FIFO.h:
 
-C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/UART.h:
+../Sources/MyUART.h:
 
 C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/RTC.h:
 
@@ -70,6 +71,8 @@ C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/OS.h:
 
 C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/PIT.h:
 
-../Sources/median.h:
+C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/analog.h:
 
 ../Sources/Calculate.h:
+
+../Sources/Tariff.h:

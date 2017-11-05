@@ -25,6 +25,8 @@
 // Address of the end of the Flash block we are using for data storage
 #define FLASH_DATA_END   0x00080007LU
 
+extern OS_ECB* FlashSemaphore;
+
 
 
 /*! @brief Enables the Flash module.
@@ -33,8 +35,7 @@
  */
 bool Flash_Init(void);
  
-/*! @brief Allocates sp
- * .ace for a non-volatile variable in the Flash memory.
+/*! @brief Allocates space for a non-volatile variable in the Flash memory.
  *
  *  @param variable is the address of a pointer to a variable that is to be allocated space in Flash memory.
  *         The pointer will be allocated to a relevant address:
@@ -47,7 +48,7 @@ bool Flash_Init(void);
  *  @return bool - TRUE if the variable was allocated space in the Flash memory.
  *  @note Assumes Flash has been initialized.
  */
-bool Flash_AllocateVar(volatile void** variable, const uint8_t size);
+bool MyFlash_AllocateVar(volatile void** variable, const uint8_t size);
 
 /*! @brief Writes a 32-bit number to Flash.
  *
