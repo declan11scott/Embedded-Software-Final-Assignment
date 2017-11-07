@@ -11,7 +11,6 @@ Sources/main.o: ../Sources/main.c \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/packet.h \
  ../Sources/Command.h \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/Flash.h \
- C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/Packet.h \
  C:/Users/Declan/Documents/GitKraken/Power\ Meter/Generated_Code/PE_Types.h \
  ../Sources/types.h \
  C:/Users/Declan/Documents/GitKraken/Power\ Meter/Generated_Code/PE_Error.h \
@@ -23,7 +22,7 @@ Sources/main.o: ../Sources/main.c \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/OS.h \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/PIT.h \
  C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/analog.h \
- ../Sources/Calculate.h ../Sources/Tariff.h
+ ../Sources/Calculate.h ../Sources/HMI.h
 
 C:/Users/Declan/Documents/GitKraken/Power\ Meter/Generated_Code/Cpu.h:
 
@@ -49,8 +48,6 @@ C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/packet.h:
 
 C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/Flash.h:
 
-C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/Packet.h:
-
 C:/Users/Declan/Documents/GitKraken/Power\ Meter/Generated_Code/PE_Types.h:
 
 ../Sources/types.h:
@@ -75,4 +72,4 @@ C:\Users\Declan\Documents\GitKraken\Power\ Meter\Library/analog.h:
 
 ../Sources/Calculate.h:
 
-../Sources/Tariff.h:
+../Sources/HMI.h:

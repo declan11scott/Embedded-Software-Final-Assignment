@@ -29,10 +29,6 @@ static void (*Callback2)(void *);
 static void (*Callback3)(void *);
 static void *Arguments;
 
-//    OS_ECB *PIT1Semaphore;
-//    OS_ECB *PIT2Semaphore;
-//    OS_ECB *PIT3Semaphore;
-
 /*! @brief Sets up the PIT before first use.
  *
  *  Enables the PIT and freezes the timer when debugging.
@@ -114,7 +110,6 @@ void MyPIT_Init(void (*userFunction0)(void*),
  */
 void MyPIT_Set(const uint32_t freq, const uint8_t pitNb)
 {
-//  uint32_t freq = 1000000000/period;
   uint32_t cycles = CPU_BUS_CLK_HZ/(16 * freq) - 1;
   switch(pitNb)
   {
@@ -191,16 +186,14 @@ void MyPIT_Enable(const bool enable, uint8_t pitNb)
 
 }
 
-
-
-void __attribute__ ((interrupt)) PIT2_ISR(void)
-{
-  PIT_TFLG2 |= PIT_TFLG_TIF_MASK;
-  (*Callback2)(Arguments);
-}
-void __attribute__ ((interrupt)) PIT3_ISR(void)
-{
-  PIT_TFLG3 |= PIT_TFLG_TIF_MASK;
-  (*Callback3)(Arguments);
-}
+//void __attribute__ ((interrupt)) PIT2_ISR(void)
+//{
+//  PIT_TFLG2 |= PIT_TFLG_TIF_MASK;
+//  (*Callback2)(Arguments);
+//}
+//void __attribute__ ((interrupt)) PIT3_ISR(void)
+//{
+//  PIT_TFLG3 |= PIT_TFLG_TIF_MASK;
+//  (*Callback3)(Arguments);
+//}
 

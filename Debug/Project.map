@@ -8,10 +8,6 @@ C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
                               ./Sources/main.o (Flash_Init)
 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
                               ./Sources/main.o (RTC_Init)
-C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
-                              ./Generated_Code/Vectors.o (UART_ISR)
-C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
-                              C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o) (FIFO_Init)
 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
                               ./Sources/main.o (Analog_Init)
 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
@@ -48,6 +44,34 @@ c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm
                               c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu/crt0.o (__libc_init_array)
 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memset.o)
                               c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu/crt0.o (memset)
+c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-sprintf.o)
+                              ./Sources/main.o (sprintf)
+c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-svfprintf.o)
+                              c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-sprintf.o) (_svfprintf_r)
+c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-vfprintf_i.o)
+                              c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-svfprintf.o) (_printf_i)
+c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memchr-stub.o)
+                              c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-svfprintf.o) (memchr)
+c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memcpy-stub.o)
+                              c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-svfprintf.o) (memcpy)
+c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memmove.o)
+                              c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-svfprintf.o) (memmove)
+c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-freer.o)
+                              c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-svfprintf.o) (_free_r)
+c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-mallocr.o)
+                              c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-svfprintf.o) (_malloc_r)
+c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-reallocr.o)
+                              c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-svfprintf.o) (_realloc_r)
+c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-sbrkr.o)
+                              c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-mallocr.o) (_sbrk_r)
+c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-strlen.o)
+                              c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-vfprintf_i.o) (strlen)
+c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-msizer.o)
+                              c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-reallocr.o) (_malloc_usable_size_r)
+c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-reent.o)
+                              c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-sbrkr.o) (errno)
+c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(sbrk.o)
+                              c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-sbrkr.o) (_sbrk)
 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(_exit.o)
                               c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-exit.o) (_exit)
 
@@ -56,20 +80,29 @@ Common symbol       size              file
 
 Psi                 0x4               ./Sources/main.o
 CurrentInput        0x40              ./Sources/main.o
+errno               0x4               c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-reent.o)
 MyUART_TempRxData   0x1               ./Sources/MyUART.o
 Packet              0x5               ./Sources/MyPacket.o
 PIT0Frequency       0x2               ./Sources/main.o
 EnergykWh           0x4               ./Sources/main.o
+Phase               0x4               ./Sources/main.o
+CalculateAvgSemaphore
+                    0x4               ./Sources/Calculate.o
 VoltageMaxCtr       0x1               ./Sources/main.o
+CalculateInstSemaphore
+                    0x4               ./Sources/Calculate.o
 PIT1Semaphore       0x4               ./Sources/MyPIT.o
 PacketSemaphore     0x4               ./Sources/MyPacket.o
 PIT0Semaphore       0x4               ./Sources/MyPIT.o
 CurrentMaxCtr       0x1               ./Sources/main.o
-ArrayIndex          0xa               ./Sources/MyFlash.o
+DisplayOnCnt        0x1               ./Sources/main.o
 iCurrent            0x4               ./Sources/main.o
+AnalogGetSemaphore  0x4               ./Sources/main.o
 TimeDifference      0x1               ./Sources/main.o
+sTariff             0x1               ./Sources/main.o
 iVoltage            0x4               ./Sources/main.o
 VoltageOutput       0xc               ./Sources/main.o
+NvTariff            0x4               ./Sources/main.o
 FlashSemaphore      0x4               ./Sources/main.o
 RTCSemaphore        0x4               ./Sources/main.o
 Energy              0x4               ./Sources/main.o
@@ -79,10 +112,10 @@ InstantPower        0x2               ./Sources/main.o
 VoltageInput        0x40              ./Sources/main.o
 Power               0x40              ./Sources/main.o
 CurrentOutput       0xc               ./Sources/main.o
-virtualRAM          0x8               ./Sources/MyFlash.o
 CurrentCounter      0x1               ./Sources/main.o
+PowerData           0xc               ./Sources/main.o
 InputFrequency      0x1               ./Sources/main.o
-Tariff              0x1               ./Sources/main.o
+Tariff              0x2               ./Sources/main.o
 UARTRxSemaphore     0x4               ./Sources/MyUART.o
 VoltageMaxCount     0x2               ./Sources/main.o
 VoltageCounter      0x1               ./Sources/main.o
@@ -93,8 +126,9 @@ Cost                0x4               ./Sources/main.o
 InputVoltPtr        0x4               ./Sources/main.o
 PowerPtr            0x4               ./Sources/main.o
 CurrentMaxCount     0x1               ./Sources/main.o
+AnalogPutSemaphore  0x4               ./Sources/main.o
+HMISemaphore        0x4               ./Sources/main.o
 InputCurrPtr        0x4               ./Sources/main.o
-CalculateSemaphore  0x4               ./Sources/Calculate.o
 RX_FIFO             0x114             ./Sources/MyFIFO.o
 TX_FIFO             0x114             ./Sources/MyFIFO.o
 
@@ -125,14 +159,16 @@ Discarded input sections
  .text          0x00000000        0x0 ./Sources/Calculate.o
  .data          0x00000000        0x0 ./Sources/Calculate.o
  .bss           0x00000000        0x0 ./Sources/Calculate.o
+ .data.RMSMultiple
+                0x00000000        0x4 ./Sources/Calculate.o
  .text.Calculate_PF
                 0x00000000       0x20 ./Sources/Calculate.o
+ .text.Calculate_RMS
+                0x00000000       0x40 ./Sources/Calculate.o
  .text.Calculate_InstantPower
                 0x00000000       0x4c ./Sources/Calculate.o
  .text.Calculate_Power
                 0x00000000       0x50 ./Sources/Calculate.o
- .text.Calculate_Largest
-                0x00000000       0xd8 ./Sources/Calculate.o
  .text.Calculate_Energy
                 0x00000000       0x78 ./Sources/Calculate.o
  .group         0x00000000        0x8 ./Sources/Command.o
@@ -152,16 +188,60 @@ Discarded input sections
                 0x00000000       0x34 ./Sources/Command.o
  .text.Command_Test
                 0x00000000       0x40 ./Sources/Command.o
- .text.Command_Power
-                0x00000000       0x20 ./Sources/Command.o
- .text.Command_PowerFactor
-                0x00000000       0x20 ./Sources/Command.o
+ .text.Command_Tariff
+                0x00000000       0x2c ./Sources/Command.o
  .debug_macro   0x00000000      0x850 ./Sources/Command.o
  .debug_macro   0x00000000       0x16 ./Sources/Command.o
  .debug_macro   0x00000000       0x44 ./Sources/Command.o
  .debug_macro   0x00000000      0x209 ./Sources/Command.o
  .debug_macro   0x00000000       0x22 ./Sources/Command.o
  .debug_macro   0x00000000       0x36 ./Sources/Command.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .group         0x00000000        0x8 ./Sources/HMI.o
+ .text          0x00000000        0x0 ./Sources/HMI.o
+ .data          0x00000000        0x0 ./Sources/HMI.o
+ .bss           0x00000000        0x0 ./Sources/HMI.o
+ .debug_macro   0x00000000      0x850 ./Sources/HMI.o
+ .debug_macro   0x00000000       0x16 ./Sources/HMI.o
+ .debug_macro   0x00000000       0x44 ./Sources/HMI.o
+ .debug_macro   0x00000000      0x209 ./Sources/HMI.o
+ .debug_macro   0x00000000       0x58 ./Sources/HMI.o
+ .debug_macro   0x00000000       0x35 ./Sources/HMI.o
+ .debug_macro   0x00000000       0xa3 ./Sources/HMI.o
+ .debug_macro   0x00000000       0x52 ./Sources/HMI.o
+ .debug_macro   0x00000000       0x16 ./Sources/HMI.o
+ .debug_macro   0x00000000       0x43 ./Sources/HMI.o
+ .debug_macro   0x00000000      0x180 ./Sources/HMI.o
+ .debug_macro   0x00000000       0x22 ./Sources/HMI.o
  .group         0x00000000        0x8 ./Sources/MyFIFO.o
  .group         0x00000000        0x8 ./Sources/MyFIFO.o
  .group         0x00000000        0x8 ./Sources/MyFIFO.o
@@ -183,25 +263,6 @@ Discarded input sections
  .debug_macro   0x00000000       0x22 ./Sources/MyFIFO.o
  .debug_macro   0x00000000       0x36 ./Sources/MyFIFO.o
  .debug_macro   0x00000000     0x1800 ./Sources/MyFIFO.o
- .group         0x00000000        0x8 ./Sources/MyFlash.o
- .group         0x00000000        0x8 ./Sources/MyFlash.o
- .group         0x00000000        0x8 ./Sources/MyFlash.o
- .group         0x00000000        0x8 ./Sources/MyFlash.o
- .group         0x00000000        0x8 ./Sources/MyFlash.o
- .group         0x00000000        0x8 ./Sources/MyFlash.o
- .group         0x00000000        0x8 ./Sources/MyFlash.o
- .group         0x00000000        0x8 ./Sources/MyFlash.o
- .text          0x00000000        0x0 ./Sources/MyFlash.o
- .data          0x00000000        0x0 ./Sources/MyFlash.o
- .bss           0x00000000        0x0 ./Sources/MyFlash.o
- .debug_macro   0x00000000      0x850 ./Sources/MyFlash.o
- .debug_macro   0x00000000       0x16 ./Sources/MyFlash.o
- .debug_macro   0x00000000       0x44 ./Sources/MyFlash.o
- .debug_macro   0x00000000      0x209 ./Sources/MyFlash.o
- .debug_macro   0x00000000       0x22 ./Sources/MyFlash.o
- .debug_macro   0x00000000       0x36 ./Sources/MyFlash.o
- .debug_macro   0x00000000       0x28 ./Sources/MyFlash.o
- .debug_macro   0x00000000    0x174c1 ./Sources/MyFlash.o
  .group         0x00000000        0x8 ./Sources/MyPIT.o
  .group         0x00000000        0x8 ./Sources/MyPIT.o
  .group         0x00000000        0x8 ./Sources/MyPIT.o
@@ -258,8 +319,8 @@ Discarded input sections
  .text          0x00000000        0x0 ./Sources/MyUART.o
  .data          0x00000000        0x0 ./Sources/MyUART.o
  .bss           0x00000000        0x0 ./Sources/MyUART.o
- .text.MyUART_ISR
-                0x00000000       0x94 ./Sources/MyUART.o
+ .text.MyUART_OutString
+                0x00000000       0x1c ./Sources/MyUART.o
  .debug_macro   0x00000000      0x850 ./Sources/MyUART.o
  .debug_macro   0x00000000       0x16 ./Sources/MyUART.o
  .debug_macro   0x00000000       0x44 ./Sources/MyUART.o
@@ -297,15 +358,36 @@ Discarded input sections
  .group         0x00000000        0x8 ./Sources/main.o
  .group         0x00000000        0x8 ./Sources/main.o
  .group         0x00000000        0x8 ./Sources/main.o
+ .group         0x00000000        0x8 ./Sources/main.o
+ .group         0x00000000        0x8 ./Sources/main.o
+ .group         0x00000000        0x8 ./Sources/main.o
+ .group         0x00000000        0x8 ./Sources/main.o
+ .group         0x00000000        0x8 ./Sources/main.o
+ .group         0x00000000        0x8 ./Sources/main.o
+ .group         0x00000000        0x8 ./Sources/main.o
+ .group         0x00000000        0x8 ./Sources/main.o
+ .group         0x00000000        0x8 ./Sources/main.o
+ .group         0x00000000        0x8 ./Sources/main.o
+ .group         0x00000000        0x8 ./Sources/main.o
+ .group         0x00000000        0x8 ./Sources/main.o
+ .group         0x00000000        0x8 ./Sources/main.o
  .text          0x00000000        0x0 ./Sources/main.o
  .data          0x00000000        0x0 ./Sources/main.o
  .bss           0x00000000        0x0 ./Sources/main.o
- .bss.AnalogThreadStacks
-                0x00000000      0x320 ./Sources/main.o
- .rodata.ANALOG_THREAD_PRIORITIES
+ .bss.PIT1ThreadStacks
+                0x00000000      0x190 ./Sources/main.o
+ .bss.HMIThreadStacks
+                0x00000000      0x190 ./Sources/main.o
+ .bss.NvTariff1Peak
                 0x00000000        0x4 ./Sources/main.o
- .text.CalculateCost
-                0x00000000        0xc ./Sources/main.o
+ .bss.NvTariff1Shoulder
+                0x00000000        0x4 ./Sources/main.o
+ .bss.NvTariff1OPeak
+                0x00000000        0x4 ./Sources/main.o
+ .bss.NvTariff2
+                0x00000000        0x4 ./Sources/main.o
+ .bss.NvTariff3
+                0x00000000        0x4 ./Sources/main.o
  .debug_macro   0x00000000      0x850 ./Sources/main.o
  .debug_macro   0x00000000       0x16 ./Sources/main.o
  .debug_macro   0x00000000       0x44 ./Sources/main.o
@@ -315,6 +397,8 @@ Discarded input sections
  .debug_macro   0x00000000    0x174c1 ./Sources/main.o
  .debug_macro   0x00000000       0x9a ./Sources/main.o
  .debug_macro   0x00000000       0x22 ./Sources/main.o
+ .debug_macro   0x00000000       0x30 ./Sources/main.o
+ .debug_macro   0x00000000       0x3a ./Sources/main.o
  .debug_macro   0x00000000       0x5e ./Sources/main.o
  .debug_macro   0x00000000       0x1c ./Sources/main.o
  .debug_macro   0x00000000       0x58 ./Sources/main.o
@@ -326,6 +410,18 @@ Discarded input sections
  .debug_macro   0x00000000       0x43 ./Sources/main.o
  .debug_macro   0x00000000      0x180 ./Sources/main.o
  .debug_macro   0x00000000       0xde ./Sources/main.o
+ .debug_macro   0x00000000       0x35 ./Sources/main.o
+ .debug_macro   0x00000000       0x10 ./Sources/main.o
+ .debug_macro   0x00000000       0x10 ./Sources/main.o
+ .debug_macro   0x00000000       0x22 ./Sources/main.o
+ .debug_macro   0x00000000       0xbd ./Sources/main.o
+ .debug_macro   0x00000000       0x16 ./Sources/main.o
+ .debug_macro   0x00000000      0x14a ./Sources/main.o
+ .debug_macro   0x00000000       0x16 ./Sources/main.o
+ .debug_macro   0x00000000       0x22 ./Sources/main.o
+ .debug_macro   0x00000000      0x2a6 ./Sources/main.o
+ .debug_macro   0x00000000       0x10 ./Sources/main.o
+ .debug_macro   0x00000000       0x22 ./Sources/main.o
  .group         0x00000000        0x8 ./Project_Settings/Startup_Code/startup.o
  .group         0x00000000        0x8 ./Project_Settings/Startup_Code/startup.o
  .group         0x00000000        0x8 ./Project_Settings/Startup_Code/startup.o
@@ -362,6 +458,13 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 ./Project_Settings/Startup_Code/startup.o
  .debug_macro   0x00000000       0x43 ./Project_Settings/Startup_Code/startup.o
  .debug_macro   0x00000000      0x180 ./Project_Settings/Startup_Code/startup.o
+ .debug_macro   0x00000000      0x2a6 ./Project_Settings/Startup_Code/startup.o
+ .debug_macro   0x00000000       0x10 ./Project_Settings/Startup_Code/startup.o
+ .debug_macro   0x00000000       0x35 ./Project_Settings/Startup_Code/startup.o
+ .debug_macro   0x00000000       0x16 ./Project_Settings/Startup_Code/startup.o
+ .debug_macro   0x00000000       0x22 ./Project_Settings/Startup_Code/startup.o
+ .debug_macro   0x00000000       0x16 ./Project_Settings/Startup_Code/startup.o
+ .debug_macro   0x00000000    0x174af ./Project_Settings/Startup_Code/startup.o
  .group         0x00000000        0x8 ./Generated_Code/Cpu.o
  .group         0x00000000        0x8 ./Generated_Code/Cpu.o
  .group         0x00000000        0x8 ./Generated_Code/Cpu.o
@@ -395,6 +498,28 @@ Discarded input sections
  .group         0x00000000        0x8 ./Generated_Code/Vectors.o
  .group         0x00000000        0x8 ./Generated_Code/Vectors.o
  .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
+ .group         0x00000000        0x8 ./Generated_Code/Vectors.o
  .text          0x00000000        0x0 ./Generated_Code/Vectors.o
  .data          0x00000000        0x0 ./Generated_Code/Vectors.o
  .bss           0x00000000        0x0 ./Generated_Code/Vectors.o
@@ -409,8 +534,30 @@ Discarded input sections
  .debug_macro   0x00000000       0x9a ./Generated_Code/Vectors.o
  .debug_macro   0x00000000       0x22 ./Generated_Code/Vectors.o
  .debug_macro   0x00000000       0x30 ./Generated_Code/Vectors.o
- .debug_macro   0x00000000       0x22 ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000       0x46 ./Generated_Code/Vectors.o
  .debug_macro   0x00000000       0x1c ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000       0x58 ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000       0x35 ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000       0xa3 ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000       0x16 ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000       0x97 ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000       0x10 ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000       0xef ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000       0x52 ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000       0x16 ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000       0x43 ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000      0x180 ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000       0x10 ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000       0x22 ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000       0xbd ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000       0x16 ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000      0x14a ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000       0x16 ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000       0x35 ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000       0x22 ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000      0x2a6 ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000       0x10 ./Generated_Code/Vectors.o
+ .debug_macro   0x00000000       0x22 ./Generated_Code/Vectors.o
  .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
  .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
  .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
@@ -482,14 +629,8 @@ Discarded input sections
                 0x00000000        0x1 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
  .rodata.FCMD_ERASE_SECTOR
                 0x00000000        0x1 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
- .text.Flash_AllocateVar
-                0x00000000       0x9c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
- .text.Flash_Write8
-                0x00000000       0x4c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
  .text.Flash_Erase
                 0x00000000       0x1c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
- .data.freeList.5646
-                0x00000000        0x1 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
  .debug_macro   0x00000000      0x850 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
  .debug_macro   0x00000000       0x16 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
  .debug_macro   0x00000000       0x44 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
@@ -521,64 +662,6 @@ Discarded input sections
  .debug_macro   0x00000000     0x1800 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
  .debug_macro   0x00000000      0x14e C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
  .debug_macro   0x00000000       0x64 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .text          0x00000000        0x0 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .data          0x00000000        0x0 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .bss           0x00000000        0x0 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .text.UART_Init
-                0x00000000      0x324 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .text.UART_InChar
-                0x00000000       0x20 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .text.UART_OutChar
-                0x00000000       0x88 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .text.UART_Poll
-                0x00000000       0x48 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .debug_macro   0x00000000      0x850 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .debug_macro   0x00000000       0x16 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .debug_macro   0x00000000       0x44 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .debug_macro   0x00000000      0x209 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .debug_macro   0x00000000       0x22 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .debug_macro   0x00000000       0x10 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .debug_macro   0x00000000    0x174c1 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .debug_macro   0x00000000     0x1800 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .debug_macro   0x00000000      0x14e C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .debug_macro   0x00000000       0x64 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .debug_macro   0x00000000       0x94 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .text          0x00000000        0x0 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .data          0x00000000        0x0 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .bss           0x00000000        0x0 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .text.FIFO_Init
-                0x00000000       0x6c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .debug_macro   0x00000000      0x850 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .debug_macro   0x00000000       0x16 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .debug_macro   0x00000000       0x44 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .debug_macro   0x00000000      0x209 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .debug_macro   0x00000000       0x22 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .debug_macro   0x00000000     0x1800 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .debug_macro   0x00000000      0x14e C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .debug_macro   0x00000000       0x64 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .debug_macro   0x00000000    0x174c1 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .debug_macro   0x00000000       0x94 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
  .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
  .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
  .group         0x00000000        0x8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
@@ -699,14 +782,62 @@ Discarded input sections
  .text          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-impure.o)
  .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-impure.o)
  .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-impure.o)
- .data._impure_ptr
-                0x00000000        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-impure.o)
  .text          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-init.o)
  .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-init.o)
  .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-init.o)
  .text          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memset.o)
  .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memset.o)
  .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memset.o)
+ .text          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-sprintf.o)
+ .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-sprintf.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-sprintf.o)
+ .text._sprintf_r
+                0x00000000       0x40 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-sprintf.o)
+ .text          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-svfprintf.o)
+ .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-svfprintf.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-svfprintf.o)
+ .text.__ssprint_r
+                0x00000000       0xf2 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-svfprintf.o)
+ .text          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-vfprintf_i.o)
+ .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-vfprintf_i.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-vfprintf_i.o)
+ .text          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memchr-stub.o)
+ .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memchr-stub.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memchr-stub.o)
+ .text          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memcpy-stub.o)
+ .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memcpy-stub.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memcpy-stub.o)
+ .text          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memmove.o)
+ .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memmove.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memmove.o)
+ .text          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-freer.o)
+ .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-freer.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-freer.o)
+ .text          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-mallocr.o)
+ .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-mallocr.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-mallocr.o)
+ .text          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-reallocr.o)
+ .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-reallocr.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-reallocr.o)
+ .text          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-sbrkr.o)
+ .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-sbrkr.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-sbrkr.o)
+ .text          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-strlen.o)
+ .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-strlen.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-strlen.o)
+ .text          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-msizer.o)
+ .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-msizer.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-msizer.o)
+ .text          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-reent.o)
+ .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-reent.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-reent.o)
+ .text.cleanup_glue
+                0x00000000       0x1a c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-reent.o)
+ .text._reclaim_reent
+                0x00000000       0xbc c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-reent.o)
+ .text          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(sbrk.o)
+ .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(sbrk.o)
+ .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(sbrk.o)
  .text          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(_exit.o)
  .data          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(_exit.o)
  .bss           0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(_exit.o)
@@ -738,8 +869,8 @@ LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/f
 LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu/crt0.o
 LOAD ./Sources/Calculate.o
 LOAD ./Sources/Command.o
+LOAD ./Sources/HMI.o
 LOAD ./Sources/MyFIFO.o
-LOAD ./Sources/MyFlash.o
 LOAD ./Sources/MyPIT.o
 LOAD ./Sources/MyPacket.o
 LOAD ./Sources/MyUART.o
@@ -790,7 +921,7 @@ LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/f
                 0x00000400                _cfm
                 0x00000410                . = ALIGN (0x4)
 
-.text           0x00000410     0x3e80
+.text           0x00000410     0x4ac0
                 0x00000410                . = ALIGN (0x4)
  *(.text)
  .text          0x00000410       0x54 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtbegin.o
@@ -822,391 +953,435 @@ LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/f
                 0x00000c6c                __truncdfsf2
                 0x00000c6c                __aeabi_d2f
  *(.text*)
- .text.Calculate_RMS
-                0x00000d0c       0x40 ./Sources/Calculate.o
-                0x00000d0c                Calculate_RMS
- .text.Command_Tariff
-                0x00000d4c       0x28 ./Sources/Command.o
-                0x00000d4c                Command_Tariff
+ .text.Calculate_Largest
+                0x00000d0c       0xd8 ./Sources/Calculate.o
+                0x00000d0c                Calculate_Largest
  .text.Command_TimeA
-                0x00000d74       0x24 ./Sources/Command.o
-                0x00000d74                Command_TimeA
+                0x00000de4       0x24 ./Sources/Command.o
+                0x00000de4                Command_TimeA
  .text.Command_TimeB
-                0x00000d98       0x40 ./Sources/Command.o
-                0x00000d98                Command_TimeB
+                0x00000e08       0x40 ./Sources/Command.o
+                0x00000e08                Command_TimeB
+ .text.Command_Power
+                0x00000e48       0x20 ./Sources/Command.o
+                0x00000e48                Command_Power
  .text.Command_Energy
-                0x00000dd8       0x1c ./Sources/Command.o
-                0x00000dd8                Command_Energy
+                0x00000e68       0x1c ./Sources/Command.o
+                0x00000e68                Command_Energy
  .text.Command_Cost
-                0x00000df4       0x24 ./Sources/Command.o
-                0x00000df4                Command_Cost
+                0x00000e84       0x24 ./Sources/Command.o
+                0x00000e84                Command_Cost
  .text.Command_Frequency
-                0x00000e18       0x20 ./Sources/Command.o
-                0x00000e18                Command_Frequency
+                0x00000ea8       0x20 ./Sources/Command.o
+                0x00000ea8                Command_Frequency
  .text.Command_Voltage
-                0x00000e38       0x20 ./Sources/Command.o
-                0x00000e38                Command_Voltage
+                0x00000ec8       0x20 ./Sources/Command.o
+                0x00000ec8                Command_Voltage
  .text.Command_Current
-                0x00000e58       0x20 ./Sources/Command.o
-                0x00000e58                Command_Current
+                0x00000ee8       0x20 ./Sources/Command.o
+                0x00000ee8                Command_Current
+ .text.Command_PowerFactor
+                0x00000f08       0x20 ./Sources/Command.o
+                0x00000f08                Command_PowerFactor
+ .text.HMI_Init
+                0x00000f28       0x7c ./Sources/HMI.o
+                0x00000f28                HMI_Init
  .text.MyFIFO_Init
-                0x00000e78       0x50 ./Sources/MyFIFO.o
-                0x00000e78                MyFIFO_Init
+                0x00000fa4       0x50 ./Sources/MyFIFO.o
+                0x00000fa4                MyFIFO_Init
  .text.MyFIFO_Put
-                0x00000ec8       0x98 ./Sources/MyFIFO.o
-                0x00000ec8                MyFIFO_Put
+                0x00000ff4       0x98 ./Sources/MyFIFO.o
+                0x00000ff4                MyFIFO_Put
  .text.MyFIFO_Get
-                0x00000f60       0x98 ./Sources/MyFIFO.o
-                0x00000f60                MyFIFO_Get
- .text.MyFlash_AllocateVar
-                0x00000ff8       0xb0 ./Sources/MyFlash.o
-                0x00000ff8                MyFlash_AllocateVar
+                0x0000108c       0x98 ./Sources/MyFIFO.o
+                0x0000108c                MyFIFO_Get
  .text.MyPIT_Init
-                0x000010a8      0x164 ./Sources/MyPIT.o
-                0x000010a8                MyPIT_Init
+                0x00001124      0x164 ./Sources/MyPIT.o
+                0x00001124                MyPIT_Init
  .text.MyPIT_Set
-                0x0000120c       0xa4 ./Sources/MyPIT.o
-                0x0000120c                MyPIT_Set
+                0x00001288       0xa4 ./Sources/MyPIT.o
+                0x00001288                MyPIT_Set
  .text.MyPIT_Enable
-                0x000012b0       0xf4 ./Sources/MyPIT.o
-                0x000012b0                MyPIT_Enable
- .text.PIT2_ISR
-                0x000013a4       0x40 ./Sources/MyPIT.o
-                0x000013a4                PIT2_ISR
- .text.PIT3_ISR
-                0x000013e4       0x40 ./Sources/MyPIT.o
-                0x000013e4                PIT3_ISR
+                0x0000132c       0xf4 ./Sources/MyPIT.o
+                0x0000132c                MyPIT_Enable
  .text.Checksum_Check
-                0x00001424       0x44 ./Sources/MyPacket.o
+                0x00001420       0x44 ./Sources/MyPacket.o
  .text.MyPacket_Init
-                0x00001468       0x48 ./Sources/MyPacket.o
-                0x00001468                MyPacket_Init
+                0x00001464       0x48 ./Sources/MyPacket.o
+                0x00001464                MyPacket_Init
  .text.Packet_Shift
-                0x000014b0       0x38 ./Sources/MyPacket.o
-                0x000014b0                Packet_Shift
+                0x000014ac       0x38 ./Sources/MyPacket.o
+                0x000014ac                Packet_Shift
  .text.MyPacket_Get
-                0x000014e8      0x104 ./Sources/MyPacket.o
-                0x000014e8                MyPacket_Get
+                0x000014e4      0x104 ./Sources/MyPacket.o
+                0x000014e4                MyPacket_Get
  .text.MyPacket_Put
-                0x000015ec       0x9c ./Sources/MyPacket.o
-                0x000015ec                MyPacket_Put
+                0x000015e8       0x9c ./Sources/MyPacket.o
+                0x000015e8                MyPacket_Put
  .text.MyUART_Init
-                0x00001688      0x15c ./Sources/MyUART.o
-                0x00001688                MyUART_Init
+                0x00001684      0x15c ./Sources/MyUART.o
+                0x00001684                MyUART_Init
  .text.MyUART_InChar
-                0x000017e4       0x20 ./Sources/MyUART.o
-                0x000017e4                MyUART_InChar
+                0x000017e0       0x20 ./Sources/MyUART.o
+                0x000017e0                MyUART_InChar
  .text.MyUART_OutChar
-                0x00001804       0x24 ./Sources/MyUART.o
-                0x00001804                MyUART_OutChar
- .text.FindLargest
-                0x00001828       0xbc ./Sources/main.o
-                0x00001828                FindLargest
- *fill*         0x000018e4        0x4 
- .text.MeasureEnergy
-                0x000018e8       0x90 ./Sources/main.o
-                0x000018e8                MeasureEnergy
- .text.PIT0Callback
-                0x00001978      0x238 ./Sources/main.o
- .text.PIT1Callback
-                0x00001bb0       0x84 ./Sources/main.o
- .text.PIT2Callback
-                0x00001c34       0x14 ./Sources/main.o
- .text.PIT3Callback
-                0x00001c48       0x14 ./Sources/main.o
- .text.TariffDefaults
-                0x00001c5c      0x10c ./Sources/main.o
-                0x00001c5c                TariffDefaults
+                0x00001800       0x24 ./Sources/MyUART.o
+                0x00001800                MyUART_OutChar
+ .text.MyUART_ISR
+                0x00001824       0x94 ./Sources/MyUART.o
+                0x00001824                MyUART_ISR
+ .text.HMI_Output
+                0x000018b8      0x238 ./Sources/main.o
+                0x000018b8                HMI_Output
  .text.TariffToUFind
-                0x00001d68       0xac ./Sources/main.o
-                0x00001d68                TariffToUFind
+                0x00001af0       0xa8 ./Sources/main.o
+                0x00001af0                TariffToUFind
+ .text.PeriodicCalcs
+                0x00001b98      0x208 ./Sources/main.o
+ .text.InstantCalcs
+                0x00001da0      0x154 ./Sources/main.o
+ .text.TariffDefaults
+                0x00001ef4       0x30 ./Sources/main.o
+                0x00001ef4                TariffDefaults
+ .text.TxThread
+                0x00001f24       0x40 ./Sources/main.o
+ .text.RxThread
+                0x00001f64       0x30 ./Sources/main.o
  .text.RTCThread
-                0x00001e14       0xac ./Sources/main.o
- .text.RTC_Callback
-                0x00001ec0       0x1c ./Sources/main.o
- .text.TestMode
-                0x00001edc       0x50 ./Sources/main.o
-                0x00001edc                TestMode
- .text.DEMInit  0x00001f2c       0xbc ./Sources/main.o
+                0x00001f94       0x54 ./Sources/main.o
+ .text.RTCCallback
+                0x00001fe8       0x24 ./Sources/main.o
+ .text.PIT0Callback
+                0x0000200c       0xbc ./Sources/main.o
  .text.PIT0_ISR
-                0x00001fe8       0x40 ./Sources/main.o
-                0x00001fe8                PIT0_ISR
- .text.PIT1_ISR
-                0x00002028       0x40 ./Sources/main.o
-                0x00002028                PIT1_ISR
+                0x000020c8       0x88 ./Sources/main.o
+                0x000020c8                PIT0_ISR
+ .text.HMI_ISR  0x00002150       0x48 ./Sources/main.o
+                0x00002150                HMI_ISR
+ .text.ZeroAnalog
+                0x00002198       0x44 ./Sources/main.o
+ .text.TestMode
+                0x000021dc       0x3c ./Sources/main.o
+                0x000021dc                TestMode
+ .text.DEMInit  0x00002218       0x9c ./Sources/main.o
  .text.InitModulesThread
-                0x00002068       0x80 ./Sources/main.o
+                0x000022b4       0x7c ./Sources/main.o
  .text.CommandHandle
-                0x000020e8      0x194 ./Sources/main.o
-                0x000020e8                CommandHandle
+                0x00002330      0x2c8 ./Sources/main.o
+                0x00002330                CommandHandle
  .text.PacketThread
-                0x0000227c       0x1c ./Sources/main.o
- .text.main     0x00002298       0xc4 ./Sources/main.o
-                0x00002298                main
+                0x000025f8       0x1c ./Sources/main.o
+ .text.main     0x00002614      0x120 ./Sources/main.o
+                0x00002614                main
  .text.__copy_rom_section
-                0x0000235c       0xe4 ./Project_Settings/Startup_Code/startup.o
-                0x0000235c                __copy_rom_section
+                0x00002734       0xe4 ./Project_Settings/Startup_Code/startup.o
+                0x00002734                __copy_rom_section
  .text.__copy_rom_sections_to_ram
-                0x00002440       0x9c ./Project_Settings/Startup_Code/startup.o
-                0x00002440                __copy_rom_sections_to_ram
+                0x00002818       0x9c ./Project_Settings/Startup_Code/startup.o
+                0x00002818                __copy_rom_sections_to_ram
  .text.__init_registers
-                0x000024dc       0x20 ./Project_Settings/Startup_Code/startup.o
-                0x000024dc                __init_registers
+                0x000028b4       0x20 ./Project_Settings/Startup_Code/startup.o
+                0x000028b4                __init_registers
  .text.__init_user
-                0x000024fc        0xc ./Project_Settings/Startup_Code/startup.o
-                0x000024fc                __init_user
+                0x000028d4        0xc ./Project_Settings/Startup_Code/startup.o
+                0x000028d4                __init_user
  .text.__thumb_startup
-                0x00002508       0x34 ./Project_Settings/Startup_Code/startup.o
-                0x00002508                __thumb_startup
+                0x000028e0       0x34 ./Project_Settings/Startup_Code/startup.o
+                0x000028e0                __thumb_startup
  .text.Cpu_Interrupt
-                0x0000253c       0x18 ./Generated_Code/Cpu.o
-                0x0000253c                Cpu_Interrupt
+                0x00002914       0x18 ./Generated_Code/Cpu.o
+                0x00002914                Cpu_Interrupt
  .text.__init_hardware
-                0x00002554      0x1cc ./Generated_Code/Cpu.o
-                0x00002554                __init_hardware
+                0x0000292c      0x1cc ./Generated_Code/Cpu.o
+                0x0000292c                __init_hardware
  .text.Cpu_SetBASEPRI
-                0x00002720       0x18 ./Generated_Code/Cpu.o
-                0x00002720                Cpu_SetBASEPRI
+                0x00002af8       0x18 ./Generated_Code/Cpu.o
+                0x00002af8                Cpu_SetBASEPRI
  .text.PE_low_level_init
-                0x00002738       0xe4 ./Generated_Code/Cpu.o
-                0x00002738                PE_low_level_init
- .text.OS_Init  0x0000281c      0x110 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
-                0x0000281c                OS_Init
+                0x00002b10       0xe4 ./Generated_Code/Cpu.o
+                0x00002b10                PE_low_level_init
+ .text.OS_Init  0x00002bf4      0x110 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x00002bf4                OS_Init
  .text.OS_ISREnter
-                0x0000292c       0x20 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
-                0x0000292c                OS_ISREnter
+                0x00002d04       0x20 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x00002d04                OS_ISREnter
  .text.OS_ISRExit
-                0x0000294c       0x1c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
-                0x0000294c                OS_ISRExit
+                0x00002d24       0x1c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x00002d24                OS_ISRExit
  .text.OS_SemaphoreCreate
-                0x00002968       0x90 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
-                0x00002968                OS_SemaphoreCreate
+                0x00002d40       0x90 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x00002d40                OS_SemaphoreCreate
  .text.OS_SemaphoreSignal
-                0x000029f8       0x44 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
-                0x000029f8                OS_SemaphoreSignal
+                0x00002dd0       0x44 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x00002dd0                OS_SemaphoreSignal
  .text.OS_SemaphoreWait
-                0x00002a3c       0x58 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
-                0x00002a3c                OS_SemaphoreWait
+                0x00002e14       0x58 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x00002e14                OS_SemaphoreWait
  .text.OS_Start
-                0x00002a94       0x10 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
-                0x00002a94                OS_Start
+                0x00002e6c       0x10 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x00002e6c                OS_Start
  .text.OS_ThreadCreate
-                0x00002aa4      0x160 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
-                0x00002aa4                OS_ThreadCreate
+                0x00002e7c      0x160 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x00002e7c                OS_ThreadCreate
  .text.OS_ThreadDelete
-                0x00002c04      0x18c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
-                0x00002c04                OS_ThreadDelete
+                0x00002fdc      0x18c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x00002fdc                OS_ThreadDelete
  .text.EventThreadReady
-                0x00002d90       0x68 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x00003168       0x68 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
  .text.EventThreadWait
-                0x00002df8       0x64 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x000031d0       0x64 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
  .text.EventTimeout
-                0x00002e5c       0x40 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
- .text.Idle     0x00002e9c       0x18 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x00003234       0x40 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+ .text.Idle     0x00003274       0x18 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
  .text.FindFirstSet
-                0x00002eb4       0x44 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x0000328c       0x44 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
  .text.Schedule
-                0x00002ef8       0x64 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
- .text.TCBInit  0x00002f5c       0xcc C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x000032d0       0x64 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+ .text.TCBInit  0x00003334       0xcc C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
  .text.TimeTick
-                0x00003028       0x74 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
- *fill*         0x0000309c        0x4 
+                0x00003400       0x74 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+ *fill*         0x00003474        0xc 
  .text.OS_ContextSwitchISR
-                0x000030a0       0x70 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
-                0x000030a0                OS_ContextSwitchISR
+                0x00003480       0x70 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x00003480                OS_ContextSwitchISR
  .text.OS_SysTickISR
-                0x00003110       0x5c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
-                0x00003110                OS_SysTickISR
+                0x000034f0       0x5c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x000034f0                OS_SysTickISR
  .text.FTM0_ISR
-                0x0000316c       0xb8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
-                0x0000316c                FTM0_ISR
+                0x0000354c       0xb8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
+                0x0000354c                FTM0_ISR
  .text.LaunchCommand
-                0x00003224       0x60 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
+                0x00003604       0x60 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
  .text.WritePhrase
-                0x00003284       0x94 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
+                0x00003664       0x94 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
  .text.EraseSector
-                0x00003318       0x74 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
+                0x000036f8       0x74 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
  .text.ModifyPhrase
-                0x0000338c       0x34 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
+                0x0000376c       0x34 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
  .text.Flash_Init
-                0x000033c0       0x28 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
-                0x000033c0                Flash_Init
+                0x000037a0       0x28 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
+                0x000037a0                Flash_Init
+ .text.Flash_AllocateVar
+                0x000037c8       0x9c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
+                0x000037c8                Flash_AllocateVar
  .text.Flash_Write32
-                0x000033e8       0x64 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
-                0x000033e8                Flash_Write32
+                0x00003864       0x64 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
+                0x00003864                Flash_Write32
  .text.Flash_Write16
-                0x0000344c       0x64 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
-                0x0000344c                Flash_Write16
+                0x000038c8       0x64 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
+                0x000038c8                Flash_Write16
+ .text.Flash_Write8
+                0x0000392c       0x4c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
+                0x0000392c                Flash_Write8
  .text.RTC_Init
-                0x000034b0       0xd0 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
-                0x000034b0                RTC_Init
- .text.RTC_Get  0x00003580       0xa0 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
-                0x00003580                RTC_Get
- .text.RTC_ISR  0x00003620       0x34 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
-                0x00003620                RTC_ISR
- .text.UART_ISR
-                0x00003654       0x90 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
-                0x00003654                UART_ISR
- .text.FIFO_Put
-                0x000036e4       0xa8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
-                0x000036e4                FIFO_Put
- .text.FIFO_Get
-                0x0000378c       0xa8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
-                0x0000378c                FIFO_Get
+                0x00003978       0xd0 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
+                0x00003978                RTC_Init
+ .text.RTC_Get  0x00003a48       0xa0 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
+                0x00003a48                RTC_Get
+ .text.RTC_ISR  0x00003ae8       0x34 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
+                0x00003ae8                RTC_ISR
  .text.DACWrite
-                0x00003834       0x6c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
+                0x00003b1c       0x6c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
  .text.Analog_Init
-                0x000038a0       0x7c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
-                0x000038a0                Analog_Init
+                0x00003b88       0x7c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
+                0x00003b88                Analog_Init
  .text.Analog_Get
-                0x0000391c       0x78 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
-                0x0000391c                Analog_Get
+                0x00003c04       0x78 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
+                0x00003c04                Analog_Get
  .text.Analog_Put
-                0x00003994       0x50 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
-                0x00003994                Analog_Put
+                0x00003c7c       0x50 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
+                0x00003c7c                Analog_Put
  .text.InitChipSelectPins
-                0x000039e4       0x6c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
+                0x00003ccc       0x6c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
  .text.SetupModuleConfigurationRegister
-                0x00003a50      0x104 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
+                0x00003d38      0x104 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
  .text.SetBaudRate
-                0x00003b54      0x15c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
+                0x00003e3c      0x15c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
  .text.SetDelayAfterTransfer
-                0x00003cb0      0x168 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
+                0x00003f98      0x168 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
  .text.SetupClockAndTransferAttributesRegister
-                0x00003e18      0x16c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
+                0x00004100      0x16c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
  .text.SPI_Init
-                0x00003f84       0x90 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
-                0x00003f84                SPI_Init
+                0x0000426c       0x90 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
+                0x0000426c                SPI_Init
  .text.SPI_SelectSlaveDevice
-                0x00004014       0x6c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
-                0x00004014                SPI_SelectSlaveDevice
+                0x000042fc       0x6c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
+                0x000042fc                SPI_SelectSlaveDevice
  .text.SPI_Exchange
-                0x00004080       0x94 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
-                0x00004080                SPI_Exchange
- .text.exit     0x00004114       0x28 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-exit.o)
-                0x00004114                exit
+                0x00004368       0x94 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
+                0x00004368                SPI_Exchange
+ .text.exit     0x000043fc       0x28 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-exit.o)
+                0x000043fc                exit
  .text.__libc_init_array
-                0x0000413c       0x4c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-init.o)
-                0x0000413c                __libc_init_array
- .text.memset   0x00004188       0x10 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memset.o)
-                0x00004188                memset
- .text._exit    0x00004198        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(_exit.o)
-                0x00004198                _exit
+                0x00004424       0x4c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-init.o)
+                0x00004424                __libc_init_array
+ .text.memset   0x00004470       0x10 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memset.o)
+                0x00004470                memset
+ .text.sprintf  0x00004480       0x48 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-sprintf.o)
+                0x00004480                siprintf
+                0x00004480                sprintf
+ .text.__ssputs_r
+                0x000044c8       0xb8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-svfprintf.o)
+                0x000044c8                __ssputs_r
+ .text._svfprintf_r
+                0x00004580      0x1dc c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-svfprintf.o)
+                0x00004580                _svfiprintf_r
+                0x00004580                _svfprintf_r
+ .text._printf_common
+                0x0000475c       0xe4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-vfprintf_i.o)
+                0x0000475c                _printf_common
+ .text._printf_i
+                0x00004840      0x228 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-vfprintf_i.o)
+                0x00004840                _printf_i
+ .text.memchr   0x00004a68       0x1e c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memchr-stub.o)
+                0x00004a68                memchr
+ .text.memcpy   0x00004a86       0x12 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memcpy-stub.o)
+                0x00004a86                memcpy
+ .text.memmove  0x00004a98       0x36 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memmove.o)
+                0x00004a98                memmove
+ *fill*         0x00004ace        0x2 
+ .text._free_r  0x00004ad0       0x88 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-freer.o)
+                0x00004ad0                _free_r
+ .text._malloc_r
+                0x00004b58       0xa8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-mallocr.o)
+                0x00004b58                _malloc_r
+ .text._realloc_r
+                0x00004c00       0x4c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-reallocr.o)
+                0x00004c00                _realloc_r
+ .text._sbrk_r  0x00004c4c       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-sbrkr.o)
+                0x00004c4c                _sbrk_r
+ .text.strlen   0x00004c6c       0x10 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-strlen.o)
+                0x00004c6c                strlen
+ .text._malloc_usable_size_r
+                0x00004c7c       0x12 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-msizer.o)
+                0x00004c7c                _malloc_usable_size_r
+ *fill*         0x00004c8e        0x2 
+ .text._sbrk    0x00004c90       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(sbrk.o)
+                0x00004c90                _sbrk
+ .text._exit    0x00004cc4        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(_exit.o)
+                0x00004cc4                _exit
  *(.rodata)
- .rodata        0x0000419c       0x14 ./Sources/main.o
- .rodata        0x000041b0        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
- .rodata        0x000041b4       0xa0 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
+ .rodata        0x00004cc8       0xcc ./Sources/main.o
+ .rodata        0x00004d94        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
+ .rodata        0x00004d98       0xa0 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
  *(.rodata*)
+ .rodata.HMI_FSM
+                0x00004e38       0x28 ./Sources/main.o
  .rodata.SPI_SETUP
-                0x00004254       0x1c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
+                0x00004e60       0x1c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
  .rodata.str1.1
-                0x00004270        0x2 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-impure.o)
- *fill*         0x00004272        0x2 
+                0x00004e7c        0x2 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-impure.o)
+ *fill*         0x00004e7e        0x2 
  .rodata._global_impure_ptr
-                0x00004274        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-impure.o)
-                0x00004274                _global_impure_ptr
+                0x00004e80        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-impure.o)
+                0x00004e80                _global_impure_ptr
+ .rodata.str1.1
+                0x00004e84       0x11 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-svfprintf.o)
+ .rodata.str1.1
+                0x00004e95       0x22 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-vfprintf_i.o)
  *(.glue_7)
  .glue_7        0x00000000        0x0 linker stubs
  *(.glue_7t)
  .glue_7t       0x00000000        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x00004278        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtbegin.o
+ *fill*         0x00004eb7        0x1 
+ .eh_frame      0x00004eb8        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtbegin.o
  *(.init)
- .init          0x00004278        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crti.o
-                0x00004278                _init
- .init          0x0000427c        0x8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtn.o
+ .init          0x00004eb8        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crti.o
+                0x00004eb8                _init
+ .init          0x00004ebc        0x8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtn.o
  *(.fini)
- .fini          0x00004284        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crti.o
-                0x00004284                _fini
- .fini          0x00004288        0x8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtn.o
-                0x00004290                . = ALIGN (0x4)
-                0x00004290                _etext = .
+ .fini          0x00004ec4        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crti.o
+                0x00004ec4                _fini
+ .fini          0x00004ec8        0x8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtn.o
+                0x00004ed0                . = ALIGN (0x4)
+                0x00004ed0                _etext = .
 
-.vfp11_veneer   0x00004290        0x0
+.vfp11_veneer   0x00004ed0        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x00004290        0x0
+.v4_bx          0x00004ed0        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x00004290        0x0
+.iplt           0x00004ed0        0x0
  .iplt          0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x00004290        0x8
-                0x00004290                __exidx_start = .
+.ARM            0x00004ed0        0x8
+                0x00004ed0                __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x00004290        0x8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu/crt0.o
-                0x00004298                __exidx_end = .
+ .ARM.exidx     0x00004ed0        0x8 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu/crt0.o
+                0x00004ed8                __exidx_end = .
 
-.rel.dyn        0x00004298        0x0
+.rel.dyn        0x00004ed8        0x0
  .rel.iplt      0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtbegin.o
 
-.ctors          0x00004298        0x0
-                0x00004298                __CTOR_LIST__ = .
+.ctors          0x00004ed8        0x0
+                0x00004ed8                __CTOR_LIST__ = .
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *(.ctors)
-                0x00004298                __CTOR_END__ = .
+                0x00004ed8                __CTOR_END__ = .
 
-.dtors          0x00004298        0x0
-                0x00004298                __DTOR_LIST__ = .
+.dtors          0x00004ed8        0x0
+                0x00004ed8                __DTOR_LIST__ = .
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *(.dtors)
-                0x00004298                __DTOR_END__ = .
+                0x00004ed8                __DTOR_END__ = .
 
-.preinit_array  0x00004298        0x0
-                0x00004298                PROVIDE (__preinit_array_start, .)
+.preinit_array  0x00004ed8        0x0
+                0x00004ed8                PROVIDE (__preinit_array_start, .)
  *(.preinit_array*)
-                0x00004298                PROVIDE (__preinit_array_end, .)
+                0x00004ed8                PROVIDE (__preinit_array_end, .)
 
-.init_array     0x00004298        0x4
-                0x00004298                PROVIDE (__init_array_start, .)
+.init_array     0x00004ed8        0x4
+                0x00004ed8                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*))
  *(.init_array*)
- .init_array    0x00004298        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtbegin.o
-                0x0000429c                PROVIDE (__init_array_end, .)
+ .init_array    0x00004ed8        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtbegin.o
+                0x00004edc                PROVIDE (__init_array_end, .)
 
-.fini_array     0x0000429c        0x4
-                0x0000429c                PROVIDE (__fini_array_start, .)
+.fini_array     0x00004edc        0x4
+                0x00004edc                PROVIDE (__fini_array_start, .)
  *(SORT(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0000429c        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtbegin.o
-                0x000042a0                PROVIDE (__fini_array_end, .)
-                0x000042a0                ___ROM_AT = .
+ .fini_array    0x00004edc        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtbegin.o
+                0x00004ee0                PROVIDE (__fini_array_end, .)
+                0x00004ee0                ___ROM_AT = .
 
-.data           0x1fff0000       0xb4 load address 0x000042a0
+.data           0x1fff0000       0xe8 load address 0x00004ee0
                 0x1fff0000                . = ALIGN (0x4)
                 0x1fff0000                _sdata = .
  *(.data)
  *(.data*)
- .data.RMSMultiple
-                0x1fff0000        0x4 ./Sources/Calculate.o
-                0x1fff0000                RMSMultiple
- .data.sine     0x1fff0004       0x40 ./Sources/main.o
-                0x1fff0004                sine
- .data.AnalogThreadData
-                0x1fff0044       0x10 ./Sources/main.o
-                0x1fff0044                AnalogThreadData
+ .data.sine     0x1fff0000       0x80 ./Sources/main.o
+                0x1fff0000                sine
+ .data.freeList.5646
+                0x1fff0080        0x1 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
+ *fill*         0x1fff0081        0x3 
  .data.impure_data
-                0x1fff0054       0x60 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-impure.o)
-                0x1fff00b4                . = ALIGN (0x4)
-                0x1fff00b4                _edata = .
-                0x000000b4                ___data_size = (_edata - _sdata)
-                0x00004354                ___m_data_20000000_ROMStart = (___ROM_AT + SIZEOF (.data))
+                0x1fff0084       0x60 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-impure.o)
+ .data._impure_ptr
+                0x1fff00e4        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-impure.o)
+                0x1fff00e4                _impure_ptr
+                0x1fff00e8                . = ALIGN (0x4)
+                0x1fff00e8                _edata = .
+                0x000000e8                ___data_size = (_edata - _sdata)
+                0x00004fc8                ___m_data_20000000_ROMStart = (___ROM_AT + SIZEOF (.data))
 
-.jcr            0x1fff00b4        0x0 load address 0x00004354
- .jcr           0x1fff00b4        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtbegin.o
+.jcr            0x1fff00e8        0x0 load address 0x00004fc8
+ .jcr           0x1fff00e8        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtbegin.o
 
-.igot.plt       0x1fff00b4        0x0 load address 0x00004354
+.igot.plt       0x1fff00e8        0x0 load address 0x00004fc8
  .igot.plt      0x00000000        0x0 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtbegin.o
 
 .m_data_20000000
-                0x20000000        0x0 load address 0x00004354
+                0x20000000        0x0 load address 0x00004fc8
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                ___m_data_20000000_RAMStart = .
  *(.m_data_20000000)
@@ -1215,182 +1390,192 @@ LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/f
                 0x00000000                ___m_data_20000000_ROMSize = (___m_data_20000000_RAMEnd - ___m_data_20000000_RAMStart)
                 0x20000000                . = ALIGN (0x4)
 
-.bss            0x1fff00b8     0x186c load address 0x00004358
-                0x1fff00b8                __START_BSS = .
-                0x1fff00b8                PROVIDE (__bss_start__, __START_BSS)
+.bss            0x1fff00e8     0x1b1c load address 0x00004fc8
+                0x1fff00e8                __START_BSS = .
+                0x1fff00e8                PROVIDE (__bss_start__, __START_BSS)
  *(.bss)
- .bss           0x1fff00b8       0x1c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtbegin.o
+ .bss           0x1fff00e8       0x1c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtbegin.o
  *(.bss*)
  .bss.Callback0
-                0x1fff00d4        0x4 ./Sources/MyPIT.o
+                0x1fff0104        0x4 ./Sources/MyPIT.o
  .bss.Callback1
-                0x1fff00d8        0x4 ./Sources/MyPIT.o
+                0x1fff0108        0x4 ./Sources/MyPIT.o
  .bss.Callback2
-                0x1fff00dc        0x4 ./Sources/MyPIT.o
+                0x1fff010c        0x4 ./Sources/MyPIT.o
  .bss.Callback3
-                0x1fff00e0        0x4 ./Sources/MyPIT.o
+                0x1fff0110        0x4 ./Sources/MyPIT.o
  .bss.Arguments
-                0x1fff00e4        0x4 ./Sources/MyPIT.o
+                0x1fff0114        0x4 ./Sources/MyPIT.o
  .bss.PacketPosition
-                0x1fff00e8        0x1 ./Sources/MyPacket.o
- *fill*         0x1fff00e9        0x3 
- .bss.PacketPosition.4137
-                0x1fff00ec        0x4 ./Sources/MyPacket.o
- .bss.Phase     0x1fff00f0        0x4 ./Sources/main.o
-                0x1fff00f0                Phase
- .bss.NvTariff1Peak
-                0x1fff00f4        0x4 ./Sources/main.o
- .bss.NvTariff1Shoulder
-                0x1fff00f8        0x4 ./Sources/main.o
- .bss.NvTariff1OPeak
-                0x1fff00fc        0x4 ./Sources/main.o
- .bss.NvTariff2
-                0x1fff0100        0x4 ./Sources/main.o
- .bss.NvTariff3
-                0x1fff0104        0x4 ./Sources/main.o
+                0x1fff0118        0x1 ./Sources/MyPacket.o
+ *fill*         0x1fff0119        0x3 
+ .bss.PacketPosition.4139
+                0x1fff011c        0x4 ./Sources/MyPacket.o
  .bss.InitModulesThreadStack
-                0x1fff0108      0x190 ./Sources/main.o
+                0x1fff0120      0x190 ./Sources/main.o
  .bss.PIT0ThreadStacks
-                0x1fff0298      0x190 ./Sources/main.o
- .bss.PIT1ThreadStacks
-                0x1fff0428      0x190 ./Sources/main.o
+                0x1fff02b0      0x190 ./Sources/main.o
  .bss.RTCThreadStacks
-                0x1fff05b8      0x190 ./Sources/main.o
+                0x1fff0440      0x190 ./Sources/main.o
  .bss.PacketThreadStacks
-                0x1fff0748      0x190 ./Sources/main.o
+                0x1fff05d0      0x190 ./Sources/main.o
  .bss.FlashThreadStacks
-                0x1fff08d8      0x190 ./Sources/main.o
- .bss.SR_lock   0x1fff0a68        0x1 ./Generated_Code/Cpu.o
-                0x1fff0a68                SR_lock
- *fill*         0x1fff0a69        0x3 
+                0x1fff0760      0x190 ./Sources/main.o
+ .bss.InstantCalcStacks
+                0x1fff08f0      0x190 ./Sources/main.o
+ .bss.PeriodicCalcStacks
+                0x1fff0a80      0x190 ./Sources/main.o
+ .bss.UARTTxThreadStacks
+                0x1fff0c10      0x190 ./Sources/main.o
+ .bss.UARTRxThreadStacks
+                0x1fff0da0      0x190 ./Sources/main.o
+ .bss.StatePtr  0x1fff0f30        0x4 ./Sources/main.o
+ .bss.SR_lock   0x1fff0f34        0x1 ./Generated_Code/Cpu.o
+                0x1fff0f34                SR_lock
+ *fill*         0x1fff0f35        0x3 
  .bss.TCBUnusedMain
-                0x1fff0a6c       0x18 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
- .bss.TCBTable  0x1fff0a84      0x300 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x1fff0f38       0x18 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+ .bss.TCBTable  0x1fff0f50      0x300 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
  .bss.pTCBFreeList
-                0x1fff0d84        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x1fff1250        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
  .bss.pTCBAllocatedList
-                0x1fff0d88        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x1fff1254        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
  .bss.pTCBPriorityTable
-                0x1fff0d8c       0x80 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x1fff1258       0x80 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
  .bss.pTCBRunning
-                0x1fff0e0c        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x1fff12d8        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
  .bss.pTCBHighestReady
-                0x1fff0e10        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x1fff12dc        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
  .bss.ReadyList
-                0x1fff0e14        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
- .bss.ECBTable  0x1fff0e18      0x100 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x1fff12e0        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+ .bss.ECBTable  0x1fff12e4      0x100 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
  .bss.NextECBFree
-                0x1fff0f18        0x1 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
- *fill*         0x1fff0f19        0x3 
+                0x1fff13e4        0x1 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+ *fill*         0x1fff13e5        0x3 
  .bss.IdleCounter
-                0x1fff0f1c        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x1fff13e8        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+ *fill*         0x1fff13ec        0x4 
  .bss.IdleStack
-                0x1fff0f20      0x400 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
- .bss.Ticks     0x1fff1320        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x1fff13f0      0x400 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+ .bss.Ticks     0x1fff17f0        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
  .bss.ToggleCntr
-                0x1fff1324        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x1fff17f4        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
  .bss.ToggleLED
-                0x1fff1328        0x1 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x1fff17f8        0x1 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
  .bss.ISRNestLevel
-                0x1fff1329        0x1 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
- *fill*         0x1fff132a        0x2 
+                0x1fff17f9        0x1 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+ *fill*         0x1fff17fa        0x2 
  .bss.UserFunction
-                0x1fff132c       0x20 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
+                0x1fff17fc       0x20 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
  .bss.UserArguments
-                0x1fff134c       0x20 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
+                0x1fff181c       0x20 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
  .bss.FlashCommonCommandObject
-                0x1fff136c        0xc C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
+                0x1fff183c        0xc C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
  .bss.UserFunction
-                0x1fff1378        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
+                0x1fff1848        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
  .bss.UserArguments
-                0x1fff137c        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
- .bss.TxFIFO    0x1fff1380      0x108 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .bss.RxFIFO    0x1fff1488      0x108 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
+                0x1fff184c        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
  .bss.ADCCommandUnion
-                0x1fff1590        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
+                0x1fff1850        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
+ .bss.__malloc_sbrk_start
+                0x1fff1854        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-mallocr.o)
+                0x1fff1854                __malloc_sbrk_start
+ .bss.__malloc_free_list
+                0x1fff1858        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-mallocr.o)
+                0x1fff1858                __malloc_free_list
+ .bss.heap_end.4246
+                0x1fff185c        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(sbrk.o)
  *(COMMON)
- COMMON         0x1fff1594        0x4 ./Sources/Calculate.o
-                0x1fff1594                CalculateSemaphore
- COMMON         0x1fff1598      0x228 ./Sources/MyFIFO.o
-                0x1fff1598                RX_FIFO
-                0x1fff16ac                TX_FIFO
- COMMON         0x1fff17c0       0x18 ./Sources/MyFlash.o
-                0x1fff17c0                ArrayIndex
-                0x1fff17d0                virtualRAM
- COMMON         0x1fff17d8        0x8 ./Sources/MyPIT.o
-                0x1fff17d8                PIT1Semaphore
-                0x1fff17dc                PIT0Semaphore
- COMMON         0x1fff17e0        0xc ./Sources/MyPacket.o
-                0x1fff17e0                Packet
-                0x1fff17e8                PacketSemaphore
- COMMON         0x1fff17ec        0xc ./Sources/MyUART.o
-                0x1fff17ec                MyUART_TempRxData
-                0x1fff17f0                UARTRxSemaphore
-                0x1fff17f4                UARTTxSemaphore
- COMMON         0x1fff17f8      0x124 ./Sources/main.o
-                0x1fff17f8                Psi
-                0x1fff17fc                CurrentInput
-                0x1fff183c                PIT0Frequency
-                0x1fff1840                EnergykWh
-                0x1fff1844                VoltageMaxCtr
-                0x1fff1845                CurrentMaxCtr
-                0x1fff1848                iCurrent
-                0x1fff184c                TimeDifference
-                0x1fff1850                iVoltage
-                0x1fff1854                VoltageOutput
-                0x1fff1860                FlashSemaphore
-                0x1fff1864                RTCSemaphore
-                0x1fff1868                Energy
-                0x1fff186c                PowerW
-                0x1fff186e                InstantPower
-                0x1fff1870                VoltageInput
-                0x1fff18b0                Power
-                0x1fff18f0                CurrentOutput
-                0x1fff18fc                CurrentCounter
-                0x1fff18fd                InputFrequency
-                0x1fff18fe                Tariff
-                0x1fff1900                VoltageMaxCount
-                0x1fff1902                VoltageCounter
-                0x1fff1904                iPower
-                0x1fff1908                Cost
-                0x1fff190c                InputVoltPtr
-                0x1fff1910                PowerPtr
-                0x1fff1914                CurrentMaxCount
-                0x1fff1918                InputCurrPtr
- COMMON         0x1fff191c        0x1 ./Generated_Code/Cpu.o
-                0x1fff191c                SR_reg
- *fill*         0x1fff191d        0x3 
- COMMON         0x1fff1920        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
-                0x1fff1920                DACInput
-                0x1fff1924                . = ALIGN (0x4)
-                0x1fff1924                __END_BSS = .
-                0x1fff1924                PROVIDE (__bss_end__, __END_BSS)
-                0x00004354                _romp_at = ((___ROM_AT + SIZEOF (.data)) + SIZEOF (.m_data_20000000))
+ COMMON         0x1fff1860        0x8 ./Sources/Calculate.o
+                0x1fff1860                CalculateAvgSemaphore
+                0x1fff1864                CalculateInstSemaphore
+ COMMON         0x1fff1868      0x228 ./Sources/MyFIFO.o
+                0x1fff1868                RX_FIFO
+                0x1fff197c                TX_FIFO
+ COMMON         0x1fff1a90        0x8 ./Sources/MyPIT.o
+                0x1fff1a90                PIT1Semaphore
+                0x1fff1a94                PIT0Semaphore
+ COMMON         0x1fff1a98        0xc ./Sources/MyPacket.o
+                0x1fff1a98                Packet
+                0x1fff1aa0                PacketSemaphore
+ COMMON         0x1fff1aa4        0xc ./Sources/MyUART.o
+                0x1fff1aa4                MyUART_TempRxData
+                0x1fff1aa8                UARTRxSemaphore
+                0x1fff1aac                UARTTxSemaphore
+ COMMON         0x1fff1ab0      0x148 ./Sources/main.o
+                0x1fff1ab0                Psi
+                0x1fff1ab4                CurrentInput
+                0x1fff1af4                PIT0Frequency
+                0x1fff1af8                EnergykWh
+                0x1fff1afc                Phase
+                0x1fff1b00                VoltageMaxCtr
+                0x1fff1b01                CurrentMaxCtr
+                0x1fff1b02                DisplayOnCnt
+                0x1fff1b04                iCurrent
+                0x1fff1b08                AnalogGetSemaphore
+                0x1fff1b0c                TimeDifference
+                0x1fff1b0d                sTariff
+                0x1fff1b10                iVoltage
+                0x1fff1b14                VoltageOutput
+                0x1fff1b20                NvTariff
+                0x1fff1b24                FlashSemaphore
+                0x1fff1b28                RTCSemaphore
+                0x1fff1b2c                Energy
+                0x1fff1b30                PowerW
+                0x1fff1b32                InstantPower
+                0x1fff1b34                VoltageInput
+                0x1fff1b74                Power
+                0x1fff1bb4                CurrentOutput
+                0x1fff1bc0                CurrentCounter
+                0x1fff1bc4                PowerData
+                0x1fff1bd0                InputFrequency
+                0x1fff1bd2                Tariff
+                0x1fff1bd4                VoltageMaxCount
+                0x1fff1bd6                VoltageCounter
+                0x1fff1bd8                iPower
+                0x1fff1bdc                Cost
+                0x1fff1be0                InputVoltPtr
+                0x1fff1be4                PowerPtr
+                0x1fff1be8                CurrentMaxCount
+                0x1fff1bec                AnalogPutSemaphore
+                0x1fff1bf0                HMISemaphore
+                0x1fff1bf4                InputCurrPtr
+ COMMON         0x1fff1bf8        0x1 ./Generated_Code/Cpu.o
+                0x1fff1bf8                SR_reg
+ *fill*         0x1fff1bf9        0x3 
+ COMMON         0x1fff1bfc        0x4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
+                0x1fff1bfc                DACInput
+ COMMON         0x1fff1c00        0x4 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-reent.o)
+                0x1fff1c00                errno
+                0x1fff1c04                . = ALIGN (0x4)
+                0x1fff1c04                __END_BSS = .
+                0x1fff1c04                PROVIDE (__bss_end__, __END_BSS)
+                0x00004fc8                _romp_at = ((___ROM_AT + SIZEOF (.data)) + SIZEOF (.m_data_20000000))
 
-.romp           0x1fff1924       0x24 load address 0x00004354
-                0x00004354                __S_romp = _romp_at
-                0x1fff1924        0x4 LONG 0x42a0 ___ROM_AT
-                0x1fff1928        0x4 LONG 0x1fff0000 _sdata
-                0x1fff192c        0x4 LONG 0xb4 ___data_size
-                0x1fff1930        0x4 LONG 0x4354 ___m_data_20000000_ROMStart
-                0x1fff1934        0x4 LONG 0x20000000 ___m_data_20000000_RAMStart
-                0x1fff1938        0x4 LONG 0x0 ___m_data_20000000_ROMSize
-                0x1fff193c        0x4 LONG 0x0
-                0x1fff1940        0x4 LONG 0x0
-                0x1fff1944        0x4 LONG 0x0
+.romp           0x1fff1c04       0x24 load address 0x00004fc8
+                0x00004fc8                __S_romp = _romp_at
+                0x1fff1c04        0x4 LONG 0x4ee0 ___ROM_AT
+                0x1fff1c08        0x4 LONG 0x1fff0000 _sdata
+                0x1fff1c0c        0x4 LONG 0xe8 ___data_size
+                0x1fff1c10        0x4 LONG 0x4fc8 ___m_data_20000000_ROMStart
+                0x1fff1c14        0x4 LONG 0x20000000 ___m_data_20000000_RAMStart
+                0x1fff1c18        0x4 LONG 0x0 ___m_data_20000000_ROMSize
+                0x1fff1c1c        0x4 LONG 0x0
+                0x1fff1c20        0x4 LONG 0x0
+                0x1fff1c24        0x4 LONG 0x0
 
 ._user_heap_stack
-                0x1fff1948      0x400 load address 0x00004378
-                0x1fff1948                . = ALIGN (0x4)
-                0x1fff1948                PROVIDE (end, .)
-                0x1fff1948                PROVIDE (_end, .)
-                0x1fff1948                __heap_addr = .
-                0x1fff1948                __HeapBase = .
-                0x1fff1948                . = (. + __heap_size)
-                0x1fff1948                __HeapLimit = .
-                0x1fff1d48                . = (. + __stack_size)
- *fill*         0x1fff1948      0x400 
-                0x1fff1d48                . = ALIGN (0x4)
+                0x1fff1c28      0x400 load address 0x00004fec
+                0x1fff1c28                . = ALIGN (0x4)
+                0x1fff1c28                PROVIDE (end, .)
+                0x1fff1c28                PROVIDE (_end, .)
+                0x1fff1c28                __heap_addr = .
+                0x1fff1c28                __HeapBase = .
+                0x1fff1c28                . = (. + __heap_size)
+                0x1fff1c28                __HeapLimit = .
+                0x1fff2028                . = (. + __stack_size)
+ *fill*         0x1fff1c28      0x400 
+                0x1fff2028                . = ALIGN (0x4)
 
 .ARM.attributes
                 0x00000000       0x30
@@ -1406,9 +1591,9 @@ LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/f
  .ARM.attributes
                 0x000000af       0x39 ./Sources/Command.o
  .ARM.attributes
-                0x000000e8       0x39 ./Sources/MyFIFO.o
+                0x000000e8       0x39 ./Sources/HMI.o
  .ARM.attributes
-                0x00000121       0x39 ./Sources/MyFlash.o
+                0x00000121       0x39 ./Sources/MyFIFO.o
  .ARM.attributes
                 0x0000015a       0x39 ./Sources/MyPIT.o
  .ARM.attributes
@@ -1432,136 +1617,150 @@ LOAD c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/f
  .ARM.attributes
                 0x00000394       0x39 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
  .ARM.attributes
-                0x000003cd       0x39 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
+                0x000003cd       0x39 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
  .ARM.attributes
-                0x00000406       0x39 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
+                0x00000406       0x39 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
  .ARM.attributes
-                0x0000043f       0x39 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
+                0x0000043f       0x22 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu\libgcc.a(_arm_addsubdf3.o)
  .ARM.attributes
-                0x00000478       0x39 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
+                0x00000461       0x22 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu\libgcc.a(_arm_muldivdf3.o)
  .ARM.attributes
-                0x000004b1       0x22 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu\libgcc.a(_arm_addsubdf3.o)
+                0x00000483       0x22 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu\libgcc.a(_arm_truncdfsf2.o)
  .ARM.attributes
-                0x000004d3       0x22 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu\libgcc.a(_arm_muldivdf3.o)
+                0x000004a5       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-exit.o)
  .ARM.attributes
-                0x000004f5       0x22 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu\libgcc.a(_arm_truncdfsf2.o)
+                0x000004d9       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-impure.o)
  .ARM.attributes
-                0x00000517       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-exit.o)
+                0x0000050d       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-init.o)
  .ARM.attributes
-                0x0000054b       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-impure.o)
+                0x00000541       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memset.o)
  .ARM.attributes
-                0x0000057f       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-init.o)
+                0x00000575       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-sprintf.o)
  .ARM.attributes
-                0x000005b3       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memset.o)
+                0x000005a9       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-svfprintf.o)
  .ARM.attributes
-                0x000005e7       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(_exit.o)
+                0x000005dd       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-vfprintf_i.o)
  .ARM.attributes
-                0x0000061b       0x22 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtn.o
+                0x00000611       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memchr-stub.o)
+ .ARM.attributes
+                0x00000645       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x00000679       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memmove.o)
+ .ARM.attributes
+                0x000006ad       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-freer.o)
+ .ARM.attributes
+                0x000006e1       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-mallocr.o)
+ .ARM.attributes
+                0x00000715       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-reallocr.o)
+ .ARM.attributes
+                0x00000749       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-sbrkr.o)
+ .ARM.attributes
+                0x0000077d       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-strlen.o)
+ .ARM.attributes
+                0x000007b1       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-msizer.o)
+ .ARM.attributes
+                0x000007e5       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-reent.o)
+ .ARM.attributes
+                0x00000819       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(sbrk.o)
+ .ARM.attributes
+                0x0000084d       0x34 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(_exit.o)
+ .ARM.attributes
+                0x00000881       0x22 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7e-m/fpu/crtn.o
 OUTPUT(Project.elf elf32-littlearm)
 
-.debug_info     0x00000000     0x7ab5
- .debug_info    0x00000000      0x2ca ./Sources/Calculate.o
- .debug_info    0x000002ca      0x3ab ./Sources/Command.o
- .debug_info    0x00000675      0x2bd ./Sources/MyFIFO.o
- .debug_info    0x00000932      0x1ce ./Sources/MyFlash.o
- .debug_info    0x00000b00      0x645 ./Sources/MyPIT.o
- .debug_info    0x00001145      0x37a ./Sources/MyPacket.o
- .debug_info    0x000014bf      0x94e ./Sources/MyUART.o
- .debug_info    0x00001e0d      0xd32 ./Sources/main.o
- .debug_info    0x00002b3f      0x3b0 ./Project_Settings/Startup_Code/startup.o
- .debug_info    0x00002eef      0xc82 ./Generated_Code/Cpu.o
- .debug_info    0x00003b71      0x167 ./Generated_Code/Vectors.o
- .debug_info    0x00003cd8      0xd02 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
- .debug_info    0x000049da      0x761 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
- .debug_info    0x0000513b      0x8d3 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
- .debug_info    0x00005a0e      0x608 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
- .debug_info    0x00006016      0x999 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .debug_info    0x000069af      0x23c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .debug_info    0x00006beb      0x46a C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
- .debug_info    0x00007055      0xa60 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
+.debug_info     0x00000000     0x76b0
+ .debug_info    0x00000000      0x2db ./Sources/Calculate.o
+ .debug_info    0x000002db      0x3af ./Sources/Command.o
+ .debug_info    0x0000068a      0x4b5 ./Sources/HMI.o
+ .debug_info    0x00000b3f      0x2bd ./Sources/MyFIFO.o
+ .debug_info    0x00000dfc      0x623 ./Sources/MyPIT.o
+ .debug_info    0x0000141f      0x37a ./Sources/MyPacket.o
+ .debug_info    0x00001799      0x985 ./Sources/MyUART.o
+ .debug_info    0x0000211e     0x1249 ./Sources/main.o
+ .debug_info    0x00003367      0x3b0 ./Project_Settings/Startup_Code/startup.o
+ .debug_info    0x00003717      0xc82 ./Generated_Code/Cpu.o
+ .debug_info    0x00004399      0x10f ./Generated_Code/Vectors.o
+ .debug_info    0x000044a8      0xd02 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+ .debug_info    0x000051aa      0x761 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
+ .debug_info    0x0000590b      0x8d3 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
+ .debug_info    0x000061de      0x608 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
+ .debug_info    0x000067e6      0x46a C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
+ .debug_info    0x00006c50      0xa60 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
 
-.debug_abbrev   0x00000000     0x1d4b
+.debug_abbrev   0x00000000     0x1a26
  .debug_abbrev  0x00000000       0xe6 ./Sources/Calculate.o
- .debug_abbrev  0x000000e6      0x13e ./Sources/Command.o
- .debug_abbrev  0x00000224      0x127 ./Sources/MyFIFO.o
- .debug_abbrev  0x0000034b       0xfa ./Sources/MyFlash.o
- .debug_abbrev  0x00000445      0x167 ./Sources/MyPIT.o
- .debug_abbrev  0x000005ac      0x11c ./Sources/MyPacket.o
- .debug_abbrev  0x000006c8      0x1c2 ./Sources/MyUART.o
- .debug_abbrev  0x0000088a      0x327 ./Sources/main.o
- .debug_abbrev  0x00000bb1      0x189 ./Project_Settings/Startup_Code/startup.o
- .debug_abbrev  0x00000d3a      0x185 ./Generated_Code/Cpu.o
- .debug_abbrev  0x00000ebf       0xb3 ./Generated_Code/Vectors.o
- .debug_abbrev  0x00000f72      0x2f8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
- .debug_abbrev  0x0000126a      0x1b1 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
- .debug_abbrev  0x0000141b      0x1fb C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
- .debug_abbrev  0x00001616      0x15f C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
- .debug_abbrev  0x00001775      0x1b4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .debug_abbrev  0x00001929       0xfc C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .debug_abbrev  0x00001a25      0x151 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
- .debug_abbrev  0x00001b76      0x1d5 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
+ .debug_abbrev  0x000000e6      0x124 ./Sources/Command.o
+ .debug_abbrev  0x0000020a       0xe2 ./Sources/HMI.o
+ .debug_abbrev  0x000002ec      0x127 ./Sources/MyFIFO.o
+ .debug_abbrev  0x00000413      0x14f ./Sources/MyPIT.o
+ .debug_abbrev  0x00000562      0x11c ./Sources/MyPacket.o
+ .debug_abbrev  0x0000067e      0x1cf ./Sources/MyUART.o
+ .debug_abbrev  0x0000084d      0x2fe ./Sources/main.o
+ .debug_abbrev  0x00000b4b      0x189 ./Project_Settings/Startup_Code/startup.o
+ .debug_abbrev  0x00000cd4      0x185 ./Generated_Code/Cpu.o
+ .debug_abbrev  0x00000e59       0xa4 ./Generated_Code/Vectors.o
+ .debug_abbrev  0x00000efd      0x2f8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+ .debug_abbrev  0x000011f5      0x1b1 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
+ .debug_abbrev  0x000013a6      0x1fb C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
+ .debug_abbrev  0x000015a1      0x15f C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
+ .debug_abbrev  0x00001700      0x151 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
+ .debug_abbrev  0x00001851      0x1d5 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
 
-.debug_aranges  0x00000000      0x5b8
+.debug_aranges  0x00000000      0x540
  .debug_aranges
                 0x00000000       0x48 ./Sources/Calculate.o
  .debug_aranges
                 0x00000048       0x78 ./Sources/Command.o
  .debug_aranges
-                0x000000c0       0x30 ./Sources/MyFIFO.o
+                0x000000c0       0x20 ./Sources/HMI.o
  .debug_aranges
-                0x000000f0       0x20 ./Sources/MyFlash.o
+                0x000000e0       0x30 ./Sources/MyFIFO.o
  .debug_aranges
-                0x00000110       0x40 ./Sources/MyPIT.o
+                0x00000110       0x30 ./Sources/MyPIT.o
  .debug_aranges
-                0x00000150       0x40 ./Sources/MyPacket.o
+                0x00000140       0x40 ./Sources/MyPacket.o
  .debug_aranges
-                0x00000190       0x38 ./Sources/MyUART.o
+                0x00000180       0x40 ./Sources/MyUART.o
  .debug_aranges
-                0x000001c8       0xb0 ./Sources/main.o
+                0x000001c0       0xb0 ./Sources/main.o
  .debug_aranges
-                0x00000278       0x50 ./Project_Settings/Startup_Code/startup.o
+                0x00000270       0x50 ./Project_Settings/Startup_Code/startup.o
  .debug_aranges
-                0x000002c8       0x38 ./Generated_Code/Cpu.o
+                0x000002c0       0x38 ./Generated_Code/Cpu.o
  .debug_aranges
-                0x00000300       0x18 ./Generated_Code/Vectors.o
+                0x000002f8       0x18 ./Generated_Code/Vectors.o
  .debug_aranges
-                0x00000318       0xc8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+                0x00000310       0xc8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
  .debug_aranges
-                0x000003e0       0x38 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
+                0x000003d8       0x38 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
  .debug_aranges
-                0x00000418       0x68 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
+                0x00000410       0x68 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
  .debug_aranges
-                0x00000480       0x38 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
+                0x00000478       0x38 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
  .debug_aranges
-                0x000004b8       0x40 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
+                0x000004b0       0x38 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
  .debug_aranges
-                0x000004f8       0x30 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .debug_aranges
-                0x00000528       0x38 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
- .debug_aranges
-                0x00000560       0x58 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
+                0x000004e8       0x58 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
 
-.debug_ranges   0x00000000      0x480
+.debug_ranges   0x00000000      0x428
  .debug_ranges  0x00000000       0x38 ./Sources/Calculate.o
  .debug_ranges  0x00000038       0x68 ./Sources/Command.o
- .debug_ranges  0x000000a0       0x20 ./Sources/MyFIFO.o
- .debug_ranges  0x000000c0       0x10 ./Sources/MyFlash.o
- .debug_ranges  0x000000d0       0x30 ./Sources/MyPIT.o
- .debug_ranges  0x00000100       0x30 ./Sources/MyPacket.o
- .debug_ranges  0x00000130       0x28 ./Sources/MyUART.o
- .debug_ranges  0x00000158       0xa0 ./Sources/main.o
- .debug_ranges  0x000001f8       0x40 ./Project_Settings/Startup_Code/startup.o
- .debug_ranges  0x00000238       0x28 ./Generated_Code/Cpu.o
- .debug_ranges  0x00000260       0xb8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
- .debug_ranges  0x00000318       0x28 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
- .debug_ranges  0x00000340       0x58 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
- .debug_ranges  0x00000398       0x28 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
- .debug_ranges  0x000003c0       0x30 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .debug_ranges  0x000003f0       0x20 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .debug_ranges  0x00000410       0x28 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
- .debug_ranges  0x00000438       0x48 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
+ .debug_ranges  0x000000a0       0x10 ./Sources/HMI.o
+ .debug_ranges  0x000000b0       0x20 ./Sources/MyFIFO.o
+ .debug_ranges  0x000000d0       0x20 ./Sources/MyPIT.o
+ .debug_ranges  0x000000f0       0x30 ./Sources/MyPacket.o
+ .debug_ranges  0x00000120       0x30 ./Sources/MyUART.o
+ .debug_ranges  0x00000150       0xa0 ./Sources/main.o
+ .debug_ranges  0x000001f0       0x40 ./Project_Settings/Startup_Code/startup.o
+ .debug_ranges  0x00000230       0x28 ./Generated_Code/Cpu.o
+ .debug_ranges  0x00000258       0xb8 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+ .debug_ranges  0x00000310       0x28 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
+ .debug_ranges  0x00000338       0x58 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
+ .debug_ranges  0x00000390       0x28 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
+ .debug_ranges  0x000003b8       0x28 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
+ .debug_ranges  0x000003e0       0x48 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
 
-.debug_macro    0x00000000    0x344f0
+.debug_macro    0x00000000    0x36325
  .debug_macro   0x00000000       0xf9 ./Sources/Calculate.o
  .debug_macro   0x000000f9      0x850 ./Sources/Calculate.o
  .debug_macro   0x00000949       0x16 ./Sources/Calculate.o
@@ -1583,118 +1782,121 @@ OUTPUT(Project.elf elf32-littlearm)
  .debug_macro   0x00001257       0x3a ./Sources/Command.o
  .debug_macro   0x00001291     0x1800 ./Sources/Command.o
  .debug_macro   0x00002a91       0x5e ./Sources/Command.o
- .debug_macro   0x00002aef       0xab ./Sources/MyFIFO.o
- .debug_macro   0x00002b9a      0x14e ./Sources/MyFIFO.o
- .debug_macro   0x00002ce8       0x64 ./Sources/MyFIFO.o
- .debug_macro   0x00002d4c    0x174c1 ./Sources/MyFIFO.o
- .debug_macro   0x0001a20d       0x9a ./Sources/MyFIFO.o
- .debug_macro   0x0001a2a7       0x7a ./Sources/MyFlash.o
- .debug_macro   0x0001a321       0xbf ./Sources/MyPIT.o
- .debug_macro   0x0001a3e0       0x22 ./Sources/MyPIT.o
- .debug_macro   0x0001a402       0x1c ./Sources/MyPIT.o
- .debug_macro   0x0001a41e       0x9a ./Sources/MyPIT.o
- .debug_macro   0x0001a4b8       0x7b ./Sources/MyPacket.o
- .debug_macro   0x0001a533       0x34 ./Sources/MyPacket.o
- .debug_macro   0x0001a567       0xc7 ./Sources/MyUART.o
- .debug_macro   0x0001a62e      0x205 ./Sources/main.o
- .debug_macro   0x0001a833     0x17fa ./Sources/main.o
- .debug_macro   0x0001c02d       0x30 ./Sources/main.o
- .debug_macro   0x0001c05d       0x1c ./Sources/main.o
- .debug_macro   0x0001c079       0x3a ./Sources/main.o
- .debug_macro   0x0001c0b3       0x2e ./Sources/main.o
- .debug_macro   0x0001c0e1       0x10 ./Sources/main.o
- .debug_macro   0x0001c0f1      0x121 ./Project_Settings/Startup_Code/startup.o
- .debug_macro   0x0001c212       0x4a ./Project_Settings/Startup_Code/startup.o
- .debug_macro   0x0001c25c      0x2a6 ./Project_Settings/Startup_Code/startup.o
- .debug_macro   0x0001c502       0x10 ./Project_Settings/Startup_Code/startup.o
- .debug_macro   0x0001c512       0x35 ./Project_Settings/Startup_Code/startup.o
- .debug_macro   0x0001c547       0x16 ./Project_Settings/Startup_Code/startup.o
- .debug_macro   0x0001c55d       0x22 ./Project_Settings/Startup_Code/startup.o
- .debug_macro   0x0001c57f       0x16 ./Project_Settings/Startup_Code/startup.o
- .debug_macro   0x0001c595      0x20f ./Project_Settings/Startup_Code/startup.o
- .debug_macro   0x0001c7a4    0x174af ./Project_Settings/Startup_Code/startup.o
- .debug_macro   0x00033c53       0x84 ./Generated_Code/Cpu.o
- .debug_macro   0x00033cd7       0xa0 ./Generated_Code/Cpu.o
- .debug_macro   0x00033d77       0xe1 ./Generated_Code/Vectors.o
- .debug_macro   0x00033e58       0xa3 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
- .debug_macro   0x00033efb       0x94 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
- .debug_macro   0x00033f8f       0xbf C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
- .debug_macro   0x0003404e       0xaa C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
- .debug_macro   0x000340f8       0xa4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
- .debug_macro   0x0003419c       0x94 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
- .debug_macro   0x00034230       0xad C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .debug_macro   0x000342dd       0xa6 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .debug_macro   0x00034383       0xf5 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
- .debug_macro   0x00034478       0x10 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
- .debug_macro   0x00034488       0x68 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
+ .debug_macro   0x00002aef      0x1cf ./Sources/HMI.o
+ .debug_macro   0x00002cbe       0x16 ./Sources/HMI.o
+ .debug_macro   0x00002cd4    0x174af ./Sources/HMI.o
+ .debug_macro   0x0001a183       0x16 ./Sources/HMI.o
+ .debug_macro   0x0001a199       0x97 ./Sources/HMI.o
+ .debug_macro   0x0001a230       0x10 ./Sources/HMI.o
+ .debug_macro   0x0001a240       0xef ./Sources/HMI.o
+ .debug_macro   0x0001a32f       0x10 ./Sources/HMI.o
+ .debug_macro   0x0001a33f       0x22 ./Sources/HMI.o
+ .debug_macro   0x0001a361       0xbd ./Sources/HMI.o
+ .debug_macro   0x0001a41e       0x16 ./Sources/HMI.o
+ .debug_macro   0x0001a434      0x14a ./Sources/HMI.o
+ .debug_macro   0x0001a57e       0x16 ./Sources/HMI.o
+ .debug_macro   0x0001a594       0x35 ./Sources/HMI.o
+ .debug_macro   0x0001a5c9       0x22 ./Sources/HMI.o
+ .debug_macro   0x0001a5eb      0x2a6 ./Sources/HMI.o
+ .debug_macro   0x0001a891       0x10 ./Sources/HMI.o
+ .debug_macro   0x0001a8a1       0x30 ./Sources/HMI.o
+ .debug_macro   0x0001a8d1       0x22 ./Sources/HMI.o
+ .debug_macro   0x0001a8f3     0x17fa ./Sources/HMI.o
+ .debug_macro   0x0001c0ed       0xab ./Sources/MyFIFO.o
+ .debug_macro   0x0001c198      0x14e ./Sources/MyFIFO.o
+ .debug_macro   0x0001c2e6       0x64 ./Sources/MyFIFO.o
+ .debug_macro   0x0001c34a    0x174c1 ./Sources/MyFIFO.o
+ .debug_macro   0x0003380b       0x9a ./Sources/MyFIFO.o
+ .debug_macro   0x000338a5       0xbf ./Sources/MyPIT.o
+ .debug_macro   0x00033964       0x46 ./Sources/MyPIT.o
+ .debug_macro   0x000339aa       0x1c ./Sources/MyPIT.o
+ .debug_macro   0x000339c6       0x9a ./Sources/MyPIT.o
+ .debug_macro   0x00033a60       0x7b ./Sources/MyPacket.o
+ .debug_macro   0x00033adb       0x34 ./Sources/MyPacket.o
+ .debug_macro   0x00033b0f       0xcb ./Sources/MyUART.o
+ .debug_macro   0x00033bda      0x2bd ./Sources/main.o
+ .debug_macro   0x00033e97     0x17fa ./Sources/main.o
+ .debug_macro   0x00035691       0x40 ./Sources/main.o
+ .debug_macro   0x000356d1       0x2e ./Sources/main.o
+ .debug_macro   0x000356ff       0x10 ./Sources/main.o
+ .debug_macro   0x0003570f       0x1c ./Sources/main.o
+ .debug_macro   0x0003572b      0x121 ./Project_Settings/Startup_Code/startup.o
+ .debug_macro   0x0003584c       0x4a ./Project_Settings/Startup_Code/startup.o
+ .debug_macro   0x00035896      0x20f ./Project_Settings/Startup_Code/startup.o
+ .debug_macro   0x00035aa5       0x84 ./Generated_Code/Cpu.o
+ .debug_macro   0x00035b29       0xa0 ./Generated_Code/Cpu.o
+ .debug_macro   0x00035bc9      0x217 ./Generated_Code/Vectors.o
+ .debug_macro   0x00035de0       0xa3 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+ .debug_macro   0x00035e83       0x94 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+ .debug_macro   0x00035f17       0xbf C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
+ .debug_macro   0x00035fd6       0xaa C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
+ .debug_macro   0x00036080       0xa4 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
+ .debug_macro   0x00036124       0x94 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
+ .debug_macro   0x000361b8       0xf5 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
+ .debug_macro   0x000362ad       0x10 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
+ .debug_macro   0x000362bd       0x68 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
 
-.debug_line     0x00000000     0x3978
- .debug_line    0x00000000      0x2cf ./Sources/Calculate.o
- .debug_line    0x000002cf      0x33d ./Sources/Command.o
- .debug_line    0x0000060c      0x313 ./Sources/MyFIFO.o
- .debug_line    0x0000091f      0x290 ./Sources/MyFlash.o
- .debug_line    0x00000baf      0x364 ./Sources/MyPIT.o
- .debug_line    0x00000f13      0x2a0 ./Sources/MyPacket.o
- .debug_line    0x000011b3      0x33c ./Sources/MyUART.o
- .debug_line    0x000014ef      0x5eb ./Sources/main.o
- .debug_line    0x00001ada      0x3d1 ./Project_Settings/Startup_Code/startup.o
- .debug_line    0x00001eab      0x275 ./Generated_Code/Cpu.o
- .debug_line    0x00002120      0x2b0 ./Generated_Code/Vectors.o
- .debug_line    0x000023d0      0x496 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
- .debug_line    0x00002866      0x222 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
- .debug_line    0x00002a88      0x2c7 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
- .debug_line    0x00002d4f      0x25d C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
- .debug_line    0x00002fac      0x299 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .debug_line    0x00003245      0x260 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .debug_line    0x000034a5      0x200 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
- .debug_line    0x000036a5      0x2d3 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
+.debug_line     0x00000000     0x3813
+ .debug_line    0x00000000      0x2d8 ./Sources/Calculate.o
+ .debug_line    0x000002d8      0x33d ./Sources/Command.o
+ .debug_line    0x00000615      0x3e9 ./Sources/HMI.o
+ .debug_line    0x000009fe      0x313 ./Sources/MyFIFO.o
+ .debug_line    0x00000d11      0x33e ./Sources/MyPIT.o
+ .debug_line    0x0000104f      0x2a0 ./Sources/MyPacket.o
+ .debug_line    0x000012ef      0x365 ./Sources/MyUART.o
+ .debug_line    0x00001654      0x6e8 ./Sources/main.o
+ .debug_line    0x00001d3c      0x3d1 ./Project_Settings/Startup_Code/startup.o
+ .debug_line    0x0000210d      0x275 ./Generated_Code/Cpu.o
+ .debug_line    0x00002382      0x3e2 ./Generated_Code/Vectors.o
+ .debug_line    0x00002764      0x496 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+ .debug_line    0x00002bfa      0x222 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
+ .debug_line    0x00002e1c      0x2c7 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
+ .debug_line    0x000030e3      0x25d C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
+ .debug_line    0x00003340      0x200 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
+ .debug_line    0x00003540      0x2d3 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
 
-.debug_str      0x00000000    0x8fbe9
- .debug_str     0x00000000     0x4b91 ./Sources/Calculate.o
-                               0x4d97 (size before relaxing)
- .debug_str     0x00004b91     0x75ec ./Sources/Command.o
+.debug_str      0x00000000    0x90702
+ .debug_str     0x00000000     0x4bab ./Sources/Calculate.o
+                               0x4db1 (size before relaxing)
+ .debug_str     0x00004bab     0x75ec ./Sources/Command.o
                                0xa694 (size before relaxing)
- .debug_str     0x0000c17d    0x807a6 ./Sources/MyFIFO.o
+ .debug_str     0x0000c197    0x81969 ./Sources/HMI.o
+                              0x8d00f (size before relaxing)
+ .debug_str     0x0008db00      0x9f5 ./Sources/MyFIFO.o
                               0x8a8f4 (size before relaxing)
- .debug_str     0x0008c923       0x7a ./Sources/MyFlash.o
-                              0x82fd0 (size before relaxing)
- .debug_str     0x0008c99d      0x2e1 ./Sources/MyPIT.o
-                              0x8aa53 (size before relaxing)
- .debug_str     0x0008cc7e      0x109 ./Sources/MyPacket.o
+ .debug_str     0x0008e4f5      0x241 ./Sources/MyPIT.o
+                              0x8aae5 (size before relaxing)
+ .debug_str     0x0008e736      0x101 ./Sources/MyPacket.o
                                0x33cc (size before relaxing)
- .debug_str     0x0008cd87      0x18b ./Sources/MyUART.o
-                              0x8aae2 (size before relaxing)
- .debug_str     0x0008cf12      0x4dc ./Sources/main.o
-                              0x8cfed (size before relaxing)
- .debug_str     0x0008d3ee     0x1147 ./Project_Settings/Startup_Code/startup.o
+ .debug_str     0x0008e837      0x161 ./Sources/MyUART.o
+                              0x8aaf3 (size before relaxing)
+ .debug_str     0x0008e998      0x56a ./Sources/main.o
+                              0x8ed13 (size before relaxing)
+ .debug_str     0x0008ef02      0x187 ./Project_Settings/Startup_Code/startup.o
                               0x853f6 (size before relaxing)
- .debug_str     0x0008e535      0x21a ./Generated_Code/Cpu.o
+ .debug_str     0x0008f089      0x21a ./Generated_Code/Cpu.o
                               0x8aa27 (size before relaxing)
- .debug_str     0x0008e74f       0x23 ./Generated_Code/Vectors.o
-                              0x8a869 (size before relaxing)
- .debug_str     0x0008e772      0x3eb C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+ .debug_str     0x0008f2a3       0x23 ./Generated_Code/Vectors.o
+                              0x8d884 (size before relaxing)
+ .debug_str     0x0008f2c6      0x3eb C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
                               0x8ad2a (size before relaxing)
- .debug_str     0x0008eb5d      0x3a2 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
+ .debug_str     0x0008f6b1      0x3ac C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
                               0x8a2a8 (size before relaxing)
- .debug_str     0x0008eeff      0x315 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
+ .debug_str     0x0008fa5d      0x33e C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
                               0x835e7 (size before relaxing)
- .debug_str     0x0008f214       0x41 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
+ .debug_str     0x0008fd9b       0x41 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
                               0x8a848 (size before relaxing)
- .debug_str     0x0008f255       0x5c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
-                              0x8a9c4 (size before relaxing)
- .debug_str     0x0008f2b1       0x12 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
-                              0x8a6ef (size before relaxing)
- .debug_str     0x0008f2c3      0x57c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
+ .debug_str     0x0008fddc      0x57c C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
                                0x3866 (size before relaxing)
- .debug_str     0x0008f83f      0x3aa C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
+ .debug_str     0x00090358      0x3aa C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
                               0x83389 (size before relaxing)
 
 .comment        0x00000000       0x70
  .comment       0x00000000       0x70 ./Sources/Calculate.o
                                  0x71 (size before relaxing)
  .comment       0x00000000       0x71 ./Sources/Command.o
+ .comment       0x00000000       0x71 ./Sources/HMI.o
  .comment       0x00000000       0x71 ./Sources/MyFIFO.o
- .comment       0x00000000       0x71 ./Sources/MyFlash.o
  .comment       0x00000000       0x71 ./Sources/MyPIT.o
  .comment       0x00000000       0x71 ./Sources/MyPacket.o
  .comment       0x00000000       0x71 ./Sources/MyUART.o
@@ -1706,31 +1908,41 @@ OUTPUT(Project.elf elf32-littlearm)
  .comment       0x00000000       0x71 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
  .comment       0x00000000       0x71 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
  .comment       0x00000000       0x71 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
- .comment       0x00000000       0x71 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .comment       0x00000000       0x71 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
  .comment       0x00000000       0x71 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
  .comment       0x00000000       0x71 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
 
-.debug_frame    0x00000000     0x109c
+.debug_frame    0x00000000     0x1274
  .debug_frame   0x00000000       0xc4 ./Sources/Calculate.o
  .debug_frame   0x000000c4      0x188 ./Sources/Command.o
- .debug_frame   0x0000024c       0x70 ./Sources/MyFIFO.o
- .debug_frame   0x000002bc       0x2c ./Sources/MyFlash.o
- .debug_frame   0x000002e8       0xac ./Sources/MyPIT.o
- .debug_frame   0x00000394       0xa0 ./Sources/MyPacket.o
- .debug_frame   0x00000434       0x94 ./Sources/MyUART.o
- .debug_frame   0x000004c8      0x270 ./Sources/main.o
- .debug_frame   0x00000738       0xc0 ./Project_Settings/Startup_Code/startup.o
- .debug_frame   0x000007f8       0x80 ./Generated_Code/Cpu.o
- .debug_frame   0x00000878      0x2a0 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
- .debug_frame   0x00000b18       0x84 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
- .debug_frame   0x00000b9c      0x140 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
- .debug_frame   0x00000cdc       0x88 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
- .debug_frame   0x00000d64       0xb0 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(UART.o)
- .debug_frame   0x00000e14       0x64 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FIFO.o)
- .debug_frame   0x00000e78       0x90 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
- .debug_frame   0x00000f08      0x100 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
- .debug_frame   0x00001008       0x28 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-exit.o)
- .debug_frame   0x00001030       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-init.o)
- .debug_frame   0x0000105c       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memset.o)
- .debug_frame   0x0000107c       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(_exit.o)
+ .debug_frame   0x0000024c       0x28 ./Sources/HMI.o
+ .debug_frame   0x00000274       0x70 ./Sources/MyFIFO.o
+ .debug_frame   0x000002e4       0x64 ./Sources/MyPIT.o
+ .debug_frame   0x00000348       0xa0 ./Sources/MyPacket.o
+ .debug_frame   0x000003e8       0xb4 ./Sources/MyUART.o
+ .debug_frame   0x0000049c      0x270 ./Sources/main.o
+ .debug_frame   0x0000070c       0xc0 ./Project_Settings/Startup_Code/startup.o
+ .debug_frame   0x000007cc       0x80 ./Generated_Code/Cpu.o
+ .debug_frame   0x0000084c      0x2a0 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libOS.a(OS.o)
+ .debug_frame   0x00000aec       0x84 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(FTM.o)
+ .debug_frame   0x00000b70      0x140 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(Flash.o)
+ .debug_frame   0x00000cb0       0x88 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libLab3.a(RTC.o)
+ .debug_frame   0x00000d38       0x90 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(analog.o)
+ .debug_frame   0x00000dc8      0x100 C:\Users\Declan\Documents\GitKraken\Power Meter\Library\libAnalog.a(SPI.o)
+ .debug_frame   0x00000ec8       0x28 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-exit.o)
+ .debug_frame   0x00000ef0       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-init.o)
+ .debug_frame   0x00000f1c       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memset.o)
+ .debug_frame   0x00000f3c       0x58 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-sprintf.o)
+ .debug_frame   0x00000f94       0x88 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-svfprintf.o)
+ .debug_frame   0x0000101c       0x60 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-vfprintf_i.o)
+ .debug_frame   0x0000107c       0x28 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memchr-stub.o)
+ .debug_frame   0x000010a4       0x28 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x000010cc       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-memmove.o)
+ .debug_frame   0x000010f8       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-freer.o)
+ .debug_frame   0x00001124       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x00001150       0x30 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-reallocr.o)
+ .debug_frame   0x00001180       0x2c c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-sbrkr.o)
+ .debug_frame   0x000011ac       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-strlen.o)
+ .debug_frame   0x000011cc       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-nano-msizer.o)
+ .debug_frame   0x000011ec       0x48 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg_s.a(lib_a-reent.o)
+ .debug_frame   0x00001234       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(sbrk.o)
+ .debug_frame   0x00001254       0x20 c:/freescale/kds_v3/toolchain/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(_exit.o)

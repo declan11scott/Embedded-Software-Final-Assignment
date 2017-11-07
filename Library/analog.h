@@ -55,31 +55,15 @@ typedef struct AnalogInputData
   float Phase;
   float Frequency;
   uint16_t Power;
-//  int16_t Largest;
   uint8_t LargestCount[2];
-//  uint8_t LargestCountPtr;
   float Instant;
   float InstantSquared;
   float PF;
 }TAnalogInputData;
 
-//typedef struct AnalogIO
-//{
-//	TAnalogInputData analogInput;
-//	TAnalogOutputData analogOutput;
-//}TAnalogIO;
-
 extern TAnalogInputData VoltageInput;
 extern TAnalogInputData CurrentInput;
-
-//extern TAnalogInputData AnalogInput[2];
-//extern TAnalogOutputData AnalogOutput[2];
-
 extern TPowerData		PowerData;
-
-//extern OS_ECB *AnalogGetSemaphore;
-//extern OS_ECB *AnalogPutSemaphore;
-
 
 /*! @brief Sets up the ADC before first use.
  *

@@ -79,7 +79,7 @@ bool MyUART_OutChar(const uint8_t data)
 	{
 		int i;
 		do	{
-			 UART_OutChar(*data);
+			 MyUART_OutChar(*data);
 			 data++;
 			}
 		while (/**data != '\0'*/1);

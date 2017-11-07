@@ -58,8 +58,8 @@ void MyPIT_Enable(const bool enable, uint8_t pitNb);
  *  @note Assumes the PIT has been initialized.
  */
 void __attribute__ ((interrupt)) PIT0_ISR(void);
-void __attribute__ ((interrupt)) PIT1_ISR(void);
-void __attribute__ ((interrupt)) PIT2_ISR(void);
-void __attribute__ ((interrupt)) PIT3_ISR(void);
+//void __attribute__ ((interrupt)) PIT1_ISR(void);
+//void __attribute__ ((interrupt)) PIT2_ISR(void);
+//void __attribute__ ((interrupt)) PIT3_ISR(void);
 
 #endif

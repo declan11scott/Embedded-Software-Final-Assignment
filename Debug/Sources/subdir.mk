@@ -6,8 +6,8 @@
 C_SRCS += \
 ../Sources/Calculate.c \
 ../Sources/Command.c \
+../Sources/HMI.c \
 ../Sources/MyFIFO.c \
-../Sources/MyFlash.c \
 ../Sources/MyPIT.c \
 ../Sources/MyPacket.c \
 ../Sources/MyUART.c \
@@ -16,8 +16,8 @@ C_SRCS += \
 OBJS += \
 ./Sources/Calculate.o \
 ./Sources/Command.o \
+./Sources/HMI.o \
 ./Sources/MyFIFO.o \
-./Sources/MyFlash.o \
 ./Sources/MyPIT.o \
 ./Sources/MyPacket.o \
 ./Sources/MyUART.o \
@@ -26,8 +26,8 @@ OBJS += \
 C_DEPS += \
 ./Sources/Calculate.d \
 ./Sources/Command.d \
+./Sources/HMI.d \
 ./Sources/MyFIFO.d \
-./Sources/MyFlash.d \
 ./Sources/MyPIT.d \
 ./Sources/MyPacket.d \
 ./Sources/MyUART.d \
