@@ -10,7 +10,9 @@
 #include "types.h"
 #include "math.h"
 
-extern OS_ECB *CalculateSemaphore;
+extern OS_ECB *CalculateInstSemaphore;
+extern OS_ECB *CalculateAvgSemaphore;
+
 
 typedef enum
 {

@@ -14,8 +14,8 @@
 // new types
 #include "types.h"
 
-OS_ECB* UARTRxSemaphore;
-OS_ECB* UARTTxSemaphore;
+//OS_ECB* UARTRxSemaphore;
+//OS_ECB* UARTTxSemaphore;
 
 
 /*! @brief Sets up the UART interface before first use.

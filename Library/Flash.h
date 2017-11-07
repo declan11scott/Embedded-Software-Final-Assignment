@@ -48,7 +48,7 @@ bool Flash_Init(void);
  *  @return bool - TRUE if the variable was allocated space in the Flash memory.
  *  @note Assumes Flash has been initialized.
  */
-bool MyFlash_AllocateVar(volatile void** variable, const uint8_t size);
+bool Flash_AllocateVar(volatile void** variable, const uint8_t size);
 
 /*! @brief Writes a 32-bit number to Flash.
  *

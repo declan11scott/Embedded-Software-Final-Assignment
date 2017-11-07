@@ -38,7 +38,7 @@ extern TFIFO TX_FIFO, RX_FIFO;
  *  @param FIFO A pointer to the FIFO that needs initializing.
  *  @return void
  */
-void MyFIFO_Init(TFIFO* const FIFO);
+void FIFO_Init(TFIFO* const FIFO);
 
 /*! @brief Put one character into the FIFO.
  *
@@ -47,7 +47,7 @@ void MyFIFO_Init(TFIFO* const FIFO);
  *  @return bool - TRUE if data is successfully stored in the FIFO.
  *  @note Assumes that FIFO_Init has been called.
  */
-bool MyFIFO_Put(TFIFO* const FIFO, const uint8_t data);
+bool FIFO_Put(TFIFO* const FIFO, const uint8_t data);
 
 /*! @brief Get one character from the FIFO.
  *
@@ -56,6 +56,6 @@ bool MyFIFO_Put(TFIFO* const FIFO, const uint8_t data);
  *  @return bool - TRUE if data is successfully retrieved from the FIFO.
  *  @note Assumes that FIFO_Init has been called.
  */
-bool MyFIFO_Get(TFIFO * const FIFO, uint8_t volatile * const dataPtr);
+bool FIFO_Get(TFIFO * const FIFO, uint8_t volatile * const dataPtr);
 
 #endif

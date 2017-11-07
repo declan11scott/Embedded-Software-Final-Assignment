@@ -25,24 +25,12 @@
 #define SINE_VALUES 6
 #define SINE_QUARTER_SAMPLE 5
 
-/*! @brief Data structure used to pass Analog configuration to a user thread
- *
- */
-typedef struct AnalogThreadData
-{
-  OS_ECB* semaphore;
-  uint8_t channelNb;
-} TAnalogThreadData;
-
-extern TAnalogThreadData AnalogThreadData[ANALOG_NB_IO];
-
-typedef struct
-{
-  int16union_t value;                  /*!< The current "processed" analog value (the user updates this value). */
-  int16union_t oldValue;               /*!< The previous "processed" analog value (the user updates this value). */
-  int16_t values[5];  /*!< An array of sample values to create a "sliding window". */
-  int16_t* putPtr;                     /*!< A pointer into the array of the last sample taken. */
-} TAnalogInput;
+#define Vrms  VoltageInput.RMS
+#define Irms  CurrentInput.RMS
+#define Vsqu  VoltageInput.InstantSquared
+#define Isqu  CurrentInput.InstantSquared
+#define Vinst VoltageInput.Instant
+#define Iinst CurrentInput.Instant
 
 typedef struct AnalogWaveData
 {
@@ -52,6 +40,13 @@ typedef struct AnalogWaveData
   uint16union_t Phase;
 }TAnalogOutputData;
 
+typedef struct InputPowerData
+{
+  float Average;
+  float Instant;
+  float PF;
+}TPowerData;
+
 typedef struct AnalogInputData
 {
   int16_t InputValues[16];
@@ -60,45 +55,31 @@ typedef struct AnalogInputData
   float Phase;
   float Frequency;
   uint16_t Power;
-  int16_t Largest;
+//  int16_t Largest;
   uint8_t LargestCount[2];
-  uint8_t LargestCountPtr;
+//  uint8_t LargestCountPtr;
   float Instant;
+  float InstantSquared;
   float PF;
 }TAnalogInputData;
 
-
+//typedef struct AnalogIO
+//{
+//	TAnalogInputData analogInput;
+//	TAnalogOutputData analogOutput;
+//}TAnalogIO;
 
 extern TAnalogInputData VoltageInput;
 extern TAnalogInputData CurrentInput;
 
-extern int16_t InputVoltValues[16];
-extern int16_t InputCurrValues[16];
+//extern TAnalogInputData AnalogInput[2];
+//extern TAnalogOutputData AnalogOutput[2];
 
-//      /*! @brief array to identify the direction and polarity of the wave
-//       *  @note This can be used for a FSM with sine[]
-//       */
-//      int wavequarter[4];
-//
-//      /* @brief FSM set up for wave output
-//       * @param value is the pointer to the voltage value
-//       * @param quarter is the state of the wave depending on the quadrant it is in
-//       */
-//      const struct QuarterWaveState
-//      {
-//        uint16_t *magnitude;
-//        int *quarter;
-//      };
-//      //Define the States
-//      #define Q1 &Analog_SineFSM[0]
-//      #define Q2 &Analog_SineFSM[1]
-//      #define Q3 &Analog_SineFSM[2]
-//      #define Q4 &Analog_SineFSM[3]
-//
-//      // FSM sine wave defined
-//      QuarterWaveState Analog_SineFSM[4];
+extern TPowerData		PowerData;
 
-extern TAnalogInput Analog_Input[ANALOG_NB_IO];
+//extern OS_ECB *AnalogGetSemaphore;
+//extern OS_ECB *AnalogPutSemaphore;
+
 
 /*! @brief Sets up the ADC before first use.
  *

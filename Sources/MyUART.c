@@ -16,6 +16,7 @@
 #include "MK70F12.h"
 #include "FIFO.h"
 #include "PE_Types.h"
+#include "UART.h"
 
 #define THREAD_STACK_SIZE 100
 
@@ -73,6 +74,17 @@ bool MyUART_OutChar(const uint8_t data)
    //UART2_C2 |= UART_C2_TIE_MASK;
    return  MyFIFO_Put(&TX_FIFO, data);
 }
+
+	bool MyUART_OutString(const uint8_t* data)
+	{
+		int i;
+		do	{
+			 UART_OutChar(*data);
+			 data++;
+			}
+		while (/**data != '\0'*/1);
+
+	}
 
 void __attribute__ ((interrupt)) MyUART_ISR(void)
 {

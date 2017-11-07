@@ -1,6 +1,6 @@
 
 #include "Flash.h"
-#include "Packet.h"
+#include "packet.h"
 #include "PE_Types.h"
 #include "types.h"
 
@@ -16,7 +16,7 @@
 #define CMD_FREQUENCY     0x17
 #define CMD_VOLTAGE       0x18
 #define CMD_CURRENT       0x19
-#define CMD_PF  0x20
+#define CMD_PF  		  0x1A
 
 #define CMD_FREQ_ENTER    0x27
 #define CMD_VOLTAGE_ENTER 0x28
@@ -38,7 +38,7 @@
 
 void Command_Test();
 
-void Command_Tariff(uint8_t tariff);
+uint8_t Command_Tariff(uint8_t tariff);
 
 void Command_TimeA(uint8_t seconds, uint8_t minutes);
 

@@ -44,6 +44,8 @@ bool MyUART_InChar(uint8_t* const dataPtr);
  */
 bool MyUART_OutChar(const uint8_t data);
 
+bool MyUART_OutString(const uint8_t* data);
+
 /*! @brief Poll the UART status register to try and receive and/or transmit one character.
  *
  *  @return void

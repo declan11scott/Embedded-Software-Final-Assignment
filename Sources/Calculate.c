@@ -9,7 +9,8 @@
 
 #define ADCConversion 0xCCC
 
-OS_ECB *CalculateSemaphore;
+OS_ECB *CalculateInstSemaphore;
+OS_ECB *CalculateAvgSemaphore;
 
 float RMSMultiple = 0.707;
 
@@ -42,7 +43,7 @@ int16_t Calculate_Largest(int16_t x, int16_t y, int16_t z)
 
 
 
-  if ((uint16_t)x < min | (uint16_t)x > max)
+  if ((uint16_t)x < min)
     return 0;
 
   // Ignore if not all values are negative.
@@ -54,6 +55,14 @@ int16_t Calculate_Largest(int16_t x, int16_t y, int16_t z)
     a = x * -1;
     b = y * -1;
     c = z * -1;
+    if (b < a)
+      {
+        if (c > b)
+        {
+    //      if ((a - c) < 20)
+          return y;
+        }
+      }
   }
   else
   {
