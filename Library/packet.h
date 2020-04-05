@@ -72,18 +72,18 @@ extern const uint8_t PACKET_ACK_MASK;
  *  @param moduleClk The module clock rate in Hz.
  *  @return bool - TRUE if the packet module was successfully initialized.
  */
-bool MyPacket_Init(const uint32_t baudRate, const uint32_t moduleClk);
+bool Packet_Init(const uint32_t baudRate, const uint32_t moduleClk);
 
 /*! @brief Attempts to get a packet from the received data.
  *
  *  @return bool - TRUE if a valid packet was received.
  */
-bool MyPacket_Get(void);
+bool Packet_Get(void);
 
 /*! @brief Builds a packet and places it in the transmit FIFO buffer.
  *
  *  @return bool - TRUE if a valid packet was sent.
  */
-bool MyPacket_Put(const uint8_t command, const uint8_t parameter1, const uint8_t parameter2, const uint8_t parameter3);
+bool Packet_Put(const uint8_t command, const uint8_t parameter1, const uint8_t parameter2, const uint8_t parameter3);
 
 #endif

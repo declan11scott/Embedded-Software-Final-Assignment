@@ -14,10 +14,8 @@
 // new types
 #include "types.h"
 
-extern OS_ECB* UARTRxSemaphore;
-extern OS_ECB* UARTTxSemaphore;
-
-extern uint8_t MyUART_TempRxData;
+OS_ECB* UARTRxSemaphore;
+OS_ECB* UARTTxSemaphore;
 
 
 /*! @brief Sets up the UART interface before first use.
@@ -26,7 +24,7 @@ extern uint8_t MyUART_TempRxData;
  *  @param moduleClk The module clock rate in Hz.
  *  @return bool - TRUE if the UART was successfully initialized.
  */
-bool MyUART_Init(const uint32_t baudRate, const uint32_t moduleClk);
+bool UART_Init(const uint32_t baudRate, const uint32_t moduleClk);
  
 /*! @brief Get a character from the receive FIFO if it is not empty.
  *
@@ -34,7 +32,7 @@ bool MyUART_Init(const uint32_t baudRate, const uint32_t moduleClk);
  *  @return bool - TRUE if the receive FIFO returned a character.
  *  @note Assumes that UART_Init has been called.
  */
-bool MyUART_InChar(uint8_t* const dataPtr);
+bool UART_InChar(uint8_t* const dataPtr);
  
 /*! @brief Put a byte in the transmit FIFO if it is not full.
  *
@@ -42,19 +40,12 @@ bool MyUART_InChar(uint8_t* const dataPtr);
  *  @return bool - TRUE if the data was placed in the transmit FIFO.
  *  @note Assumes that UART_Init has been called.
  */
-bool MyUART_OutChar(const uint8_t data);
-
-/*! @brief Poll the UART status register to try and receive and/or transmit one character.
- *
- *  @return void
- *  @note Assumes that UART_Init has been called.
- */
-void MyUART_Poll(void);
+bool UART_OutChar(const uint8_t data);
 
 /*! @brief Interrupt service routine for the UART.
  *
  *  @note Assumes the transmit and receive FIFOs have been initialized.
  */
-void __attribute__ ((interrupt)) MyUART_ISR(void);
+void __attribute__ ((interrupt)) UART_ISR(void);
 
 #endif

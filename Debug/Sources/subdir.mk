@@ -4,23 +4,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Sources/MyFIFO.c \
-../Sources/MyPacket.c \
-../Sources/MyUART.c \
+../Sources/Command.c \
 ../Sources/main.c \
 ../Sources/median.c 
 
 OBJS += \
-./Sources/MyFIFO.o \
-./Sources/MyPacket.o \
-./Sources/MyUART.o \
+./Sources/Command.o \
 ./Sources/main.o \
 ./Sources/median.o 
 
 C_DEPS += \
-./Sources/MyFIFO.d \
-./Sources/MyPacket.d \
-./Sources/MyUART.d \
+./Sources/Command.d \
 ./Sources/main.d \
 ./Sources/median.d 
 
